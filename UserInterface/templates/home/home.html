@@ -1,0 +1,555 @@
+<div>
+
+    <head>
+        <title>Team Earth</title>
+        <!--Bootstrap-->
+        <!--javascript-->
+        {% load static %}
+            <script text="javascript" src="{% static 'home/js/bootstrap.bundle.js' %}"></script>
+            <script text="javascript" src="{% static 'home/js/bootstrap.bundle.min.js' %}"></script>
+            <script text="javascript" src="{% static 'home/js/bootstrap.js' %}"></script>
+            <script text="javascript" src="{% static 'home/js/bootstrap.min.js' %}"></script>
+            <!--Styles-->
+            <link rel="stylesheet" href="{% static 'home/css/bootstrap_grid.css' %}">
+            <link rel="stylesheet" href="{% static 'home/css/bootstrap_grid.min.css' %}">
+            <link rel="stylesheet" href="{% static 'home/css/bootstrap_reboot.css' %}">
+            <link rel="stylesheet" href="{% static 'home/css/bootstrap_reboot.min.css' %}">
+            <link rel="stylesheet" href="{% static 'home/css/bootstrap.css' %}">
+            <link rel="stylesheet" href="{% static 'home/css/bootstrap.min.css' %}"> 
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+        <!--Charts Source-->
+        <!--javascript-->
+            <script text="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+            <script text="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+            <script text="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+            <script text="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+        <!--Styles-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css">
+
+        <!--jQuery-->
+        <script src="{% static 'home/js/jquery/jquery.min.js' %}"></script>
+
+        <!--Font Awosome
+        <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+        <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+        <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">-->
+
+        <!--Custom Scripts-->
+        <!--javascript-->
+        <script text="javascript" src="{% static custom.js %}"></script>
+        <script text="javascript" src="{% static progressbar.js %}"></script>
+        <script text="javascript" src="{% static progressbar.min.js %}"></script>
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
+
+        <!--styles-->
+        <link rel="stylesheet" href="{% static 'home/css/customcopy.css' %}">
+    </head>
+    <div>
+        <div class="d-flex" id="wrapper">
+
+            <!-- Sidebar 
+            <div class="bg-light border-right" id="sidebar-wrapper">
+                <div class="sidebar-heading">Project Earth</div>
+                <div class="list-group list-group-flush" style="background-color: transparent;">
+                <a href="#" class="list-group-item list-group-item-action">Dashboard</a>
+                <a href="#" class="list-group-item list-group-item-action">Shortcuts</a>
+                <a href="#" class="list-group-item list-group-item-action">Overview</a>
+                <a href="#" class="list-group-item list-group-item-action">Events</a>
+                <a href="#" class="list-group-item list-group-item-action">Profile</a>
+                <a href="#" class="list-group-item list-group-item-action">Status</a>
+                </div>
+            </div>-->
+
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
+                    <div class="row" style="margin-top:10px;">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade show active" id="robot" role="tabpanel" aria-labelledby="robot-tab">
+                                            <div class="box-container">
+                                                <div id="titled"><a>Monitor of Robots</a></div>
+                                                <div class="tab-content" id="pills-tabContent">
+                                                    <div class="tab-pane fade show active" id="pills-tritrack"  role="tabpanel" aria-labelledby="pills-tritrack-tab">
+                                                        <div class="content-box">
+                                                            <div class="box-container noneed">
+                                                                <div class="row">
+                                                                    <div class="col-md-4">
+                                                                        <div id="titled"><a style="text-align: center;">TriTrack</a></div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div id="titled" style="background-color: green;"><a style="text-align: center;">Operational</a></div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div id="titled" style="background-color: green;"><a style="text-align: center;">No Warnings</a></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div class="box-container noneed"
+                                                                        style="margin-top:10px">
+                                                                        <div id="titled">
+                                                                            <a style="text-align: center;">Microcontrollers</a>
+                                                                        </div>
+                                                                        <div class="row" style="margin:0px">
+                                                                            <div class="col-md-12">
+                                                                                <h5 style="color:rgba(241, 232, 232, 0.822); text-align: center;">RaspberyPi</h5>
+                                                                                <table class="table table-dark table-responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                                                                                    <tr><th>Status</th><td>{{PiStat}}</td></tr>
+                                                                                    <tr><th>Processing</th><td>{{ Pi4procTri }}</td></tr>
+                                                                                </table>
+                                                                            </div>
+                                                                            <div class="col-md-12" style="border-top: 1px solid #454d55; padding-top:5px;">
+                                                                                <h5 style="color:rgba(241, 232, 232, 0.822); text-align: center;"> Boarduino</h5>
+                                                                                <table class="table table-dark table-responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                                                                                    <tr><th>Status</th><td>{{ BrdStat }}</td></tr>
+                                                                                    <tr><th>Processing</th><td>{{ BrdProc }}%</td></tr>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="box-container noneed" style="margin-top:10px">
+                                                                        <div id="titled">
+                                                                            <a style="text-align: center;">Powerboard</a>
+                                                                        </div>
+                                                                        <div class="row" style="margin:0px">
+                                                                            <div class="col-md-12">
+                                                                                <h5 style="color:rgba(241, 232, 232, 0.822); text-align: center;">RaspberyPi</h5>
+                                                                                <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                                                                                    <tr><th>Consumption</th><td>{{Consumption}} W</td></tr>
+                                                                                </table>
+                                                                            </div>
+                                                                            <div class="col-md-12" style="border-top: 1px solid #454d55; padding-top:5px;">
+                                                                                <h5 style="color:rgba(241, 232, 232, 0.822); text-align: center;">Battery 1</h5>
+                                                                                <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                                                                                    <tr><th>Capacity</th><td><img src="{% get_static_prefix %}home/src/{{ CapA }}.svg"></td></tr>
+                                                                                </table>
+                                                                            </div>
+                                                                            <div class="col-md-12" style="border-top: 1px solid #454d55; padding-top:5px;">
+                                                                                <h5 style="color:rgba(241, 232, 232, 0.822); text-align: center;">Battery 2</h5>
+                                                                                <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                                                                                    <tr><th>Capacity</th><td><img src="{% get_static_prefix %}home/src/{{ CapB }}.svg"></tr>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="pills-DaNI" role="tabpanel" aria-labelledby="pills-dani-tab">
+                                                        <div class="content-box">
+                                                            <div class="box-container noneed">
+                                                                <div class="row">
+                                                                    <div class="col-md-4">
+                                                                        <div id="titled">
+                                                                            <a style="text-align: center;">DaNI</a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div id="titled" style="background-color: green;">
+                                                                            <a style="text-align: center;">Operational</a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div id="titled"style="background-color: green;">
+                                                                            <a style="text-align: center;">No Warnings</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div class="box-container noneed"
+                                                                        style="margin-top:10px">
+                                                                        <div id="titled">
+                                                                            <a style="text-align: center;">Microcontrollers</a>
+                                                                        </div>
+                                                                        <div class="row" style="margin:0px">
+                                                                            <div class="col-md-12">
+                                                                                <h5 style="color:white; text-align: center;">RaspberyPi</h5>
+                                                                                <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                                                                                    <tr><th>Status</th><td>Operational</td></tr>
+                                                                                    <tr><th>Processing</th><td>NaN %</td></tr>
+                                                                                </table>
+                                                                            </div>
+                                                                            <div class="col-md-12" style="border-top: 1px solid #454d55; padding-top:5px;">
+                                                                                <h5 style="color:white; text-align: center;">Boarduino</h5>
+                                                                                <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                                                                                    <tr><th>Status</th><td>Operational</td></tr>
+                                                                                    <tr><th>Processing</th><td>NaN %</td></tr>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="box-container noneed"
+                                                                        style="margin-top:10px">
+                                                                        <div id="titled">
+                                                                            <a style="color:white; text-align: center;">Powerboard</a>
+                                                                        </div>
+                                                                        <div class="row" style="margin:0px">
+                                                                            <div class="col-md-12">
+                                                                                <h5 style="color:rgba(241, 232, 232, 0.822); text-align: center;">RaspberyPi</h5>
+                                                                                <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                                                                                    <tr><th>Consumption</th><td>NaN W</td></tr>
+                                                                                </table>
+                                                                            </div>
+                                                                            <div class="col-md-12" style="border-top: 1px solid #454d55; padding-top:5px;">
+                                                                                <h5 style="color:rgba(241, 232, 232, 0.822); text-align: center;">Battery 1</h5>
+                                                                                <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                                                                                    <tr><th>Capacity</th><td>NaN %</td></tr>
+                                                                                </table>
+                                                                            </div>
+                                                                            <div class="col-md-12" style="border-top: 1px solid #454d55; padding-top:5px;">
+                                                                                <h5 style="color:rgba(241, 232, 232, 0.822); text-align: center;">Battery 2</h5>
+                                                                                <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                                                                                    <tr><th>Capacity</th><td>NaN %</td></tr>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box-container noneed" style="margin-top:10px">
+                                                <div class="row" style="margin:0px">
+                                                    <div class="col-md-6">
+                                                        <div class="content-box">
+                                                            <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link active" id="pills-tritrack-tab" data-toggle="pill" href="#pills-tritrack" role="tab" aria-controls="pills-tritrack" aria-selected="true">Tritrack</a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link" id="pills-dani-tab" data-toggle="pill" href="#pills-dani" role="tab" aria-controls="pills-DaNI" aria-selected="false">DaNI</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="content-box" style="text-align: right;">
+                                                            <button type="button" class="btn btn-info">Refresh</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box-container" style="margin-top:10px;">
+                                                <div id="titled">
+                                                    <a>Rubbish</a>
+                                                </div>
+                                                <!--Rounded Progress-->
+                                                <div class="content-box" style="padding-left:0px;padding-right:0px;">
+                                                    <div class="row" style="margin: 0px">
+                                                        <div class="col-md-12" style="text-align:center;    width:100%">
+                                                            <table class="table table-dark table-responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                                                                <tr>
+                                                                    <th>Estimated</th><td>NaN</td>
+                                                                    <th>Collected</th><td>NaN</td>
+                                                                    <th>Sorted</th><td>NaN</td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="box-container noneed">
+                                                                <div id="titled">
+                                                                    <a>Bin A</a>
+                                                                </div>
+                                                                <!--Rounded Progress-->
+                                                                <div class="content-box">
+                                                                    <table class="table table-dark table-responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                                                                        <tr><th>Amount</th><td>NaN</td></tr>
+                                                                        <tr><th>Trasnfer</th><td>NaN</td></tr>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="box-container noneed">
+                                                                <div id="titled">
+                                                                    <a>Bin B</a>
+                                                                </div>
+                                                                <!--Rounded Progress-->
+                                                                <div class="content-box">
+                                                                    <table class="table table-dark"
+                                                                        style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                                                                        <tr><th>Amount</th><td>NaN</td></tr>
+                                                                        <tr><th>Waitinig</th><td>NaN</td></tr>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="box-container noneed">
+                                                                <div id="titled">
+                                                                    <a>Bin C</a>
+                                                                </div>
+                                                                <!--Rounded Progress-->
+                                                                <div class="content-box">
+                                                                    <table class="table table-dark"
+                                                                        style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                                                                        <tr><th>Amount</th><td>NaN</td></tr>
+                                                                        <tr><th>Waiting</th> <td>NaN</td></tr>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="docs" role="tabpanel" aria-labelledby="docs-tab">
+                                            <div class="box-container">
+                                                <div id="titled">
+                                                    <a>Documentantion</a>
+                                                </div>
+                                                <div class="content-box">
+                                                    <div class="box-container noneed">
+                                                        <div id="titled">
+                                                            <a>User Manual </a>
+                                                        </div>
+                                                        <div class="content-box">
+                                                            <div class="input-group mb-3">
+                                                                <div class="input-group-prepend">
+                                                                    <label class="input-group-text"
+                                                                        for="inputGroupSelect01">Choose Device</label>
+                                                                </div>
+                                                                <select class="custom-select" id="inputGroupSelect01">
+                                                                    <option selected>Select...</option>
+                                                                    <option value="1">TriTrack</option>
+                                                                    <option value="2">Eye In the Sky</option>
+                                                                    <option value="2">DaNI</option>
+                                                                    <option value="3">Trash Sorting Rig</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="input-group mb-3">
+                                                                <div class="input-group-prepend">
+                                                                    <label class="input-group-text"
+                                                                        for="inputGroupSelect01">Section</label>
+                                                                </div>
+                                                                <select class="custom-select" id="inputGroupSelect01">
+                                                                    <option selected>Select...</option>
+                                                                    <option value="1">Procedures</option>
+                                                                    <option value="1">Pathing</option>
+                                                                    <option value="2">Bin Collection Mechanism</option>
+                                                                    <option value="3">Calibration</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box-container noneed" style="margin-top:10px">
+                                                        <div id="titled">
+                                                            <a>Technical Manual</a>
+                                                        </div>
+                                                        <div class="content-box">
+                                                            <div class="input-group mb-3">
+                                                                <div class="input-group-prepend">
+                                                                    <label class="input-group-text"
+                                                                        for="inputGroupSelect01">Choose Device</label>
+                                                                </div>
+                                                                <select class="custom-select" id="inputGroupSelect01">
+                                                                    <option selected>Select...</option>
+                                                                    <option value="1">TriTrack</option>
+                                                                    <option value="2">Eye In the Sky</option>
+                                                                    <option value="2">DaNI</option>
+                                                                    <option value="3">Trash Sorting Rig</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="input-group mb-3">
+                                                                <div class="input-group-prepend">
+                                                                    <label class="input-group-text"
+                                                                        for="inputGroupSelect01">Section</label>
+                                                                </div>
+                                                                <select class="custom-select" id="inputGroupSelect01">
+                                                                    <option selected>Select...</option>
+                                                                    <option value="1">Wiring</option>
+                                                                    <option value="1">Pathing</option>
+                                                                    <option value="2">Bin Collection Mechanism</option>
+                                                                    <option value="3">Calibration</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box-container noneed" style="margin-top:10px">
+                                                        <div class="content-box">
+                                                            <div id="titled">
+                                                                <a>Troubleshooting</a>
+                                                            </div>
+                                                            <div class="input-group mb-3">
+                                                                <div class="input-group-prepend">
+                                                                    <label class="input-group-text"
+                                                                        for="inputGroupSelect01">Choose Device</label>
+                                                                </div>
+                                                                <select class="custom-select" id="inputGroupSelect01">
+                                                                    <option selected>Select...</option>
+                                                                    <option value="1">TriTrack</option>
+                                                                    <option value="2">Eye In the Sky</option>
+                                                                    <option value="2">DaNI</option>
+                                                                    <option value="3">Trash Sorting Rig</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="input-group mb-3">
+                                                                <div class="input-group-prepend">
+                                                                    <label class="input-group-text"
+                                                                        for="inputGroupSelect01">Section</label>
+                                                                </div>
+                                                                <select class="custom-select" id="inputGroupSelect01">
+                                                                    <option selected>Select...</option>
+                                                                    <option value="1">Wiring</option>
+                                                                    <option value="1">Pathing</option>
+                                                                    <option value="2">Bin Collection Mechanism</option>
+                                                                    <option value="3">Calibration</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box-container noneed" style="margin-top:10px">
+                                                        <div class="content-box">
+                                                            <div id="titled">
+                                                                <a>Tools</a>
+                                                            </div>
+                                                            <div class="content-box"
+                                                                style="text-align: center; font-size: 20px;">
+                                                                <button type="button" class="btn btn-outline-success"
+                                                                    style="text-align: center; font-size: 20px;">View</button>
+                                                                <button type="button" class="btn btn-outline-danger"
+                                                                    style="text-align: center; font-size: 20px;">Assistance</button>
+                                                                <button type="button" class="btn btn-outline-warning"
+                                                                    style="text-align: center; font-size: 20px;">Download</button>
+                                                                <button type="button" class="btn btn-outline-secondary"
+                                                                    style="text-align: center; font-size: 20px;">Print</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="box-container" style="margin-top:0px;height:776px;">
+                                        <div id="titled">
+                                            <a>Live View</a>
+                                        </div>
+                                        <div class="content-box">
+                                            <center><img src="{% static 'home/src/liveview.jpg' %}" style="height:570px;"></center>
+                                            <div class="box-container noneed" style="margin-top:10px">
+                                                <div class="content-box">
+                                                    <div class="row" style="margin:0px">
+                                                        <div class="col-md-6">
+                                                            <ul class="nav nav-pills mb-3" id="tabs" role="tablist"
+                                                                style="margin-bottom:0px!important; font-size:18px;">
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link active" id="robot-tab" data-toggle="pill" href="#robot" role="tab" aria-controls="robot" aria-selected="true" style="font-size:18px;">Status of Robots and Rubbish</a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link" id="docs-tab" data-toggle="pill" href="#docs" role="tab" aria-controls="docs" aria-selected="false" style="font-size:18px;">Documentantion</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <ul class="nav nav-pills mb-3" id="tabs" role="tablist"
+                                                                style="margin-bottom:0px!important; font-size:18px;">
+                                                                <li class="nav-item" style="margin-left:5px">
+                                                                    <button type="button" class="btn btn-outline-info"s tyle="font-size:18px;">Live View</button>
+                                                                </li>
+                                                                <li class="nav-item" style="margin-left:5px">
+                                                                    <button type="button" class="btn btn-outline-success" style="font-size:18px;">Contact Support</button>
+                                                                </li>
+                                                                <li class="nav-item" style="margin-left:5px">
+                                                                    <button type="button" class="btn btn-outline-warning" style="font-size:18px;">Manual / Automatic Operation</button>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top:10px;color:white">
+                                        <div class="col-md-6">
+                                            <div class="box-container">
+                                                <div class="row">
+                                                    <div class="col-md-8">
+                                                        <div id="titled">
+                                                            <a>Automatic Operation</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div id="titled" style="background-color: green;"><a
+                                                                style="text-align: center;">Enabled</a></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="content-box">
+                                                    <div class="box-container noneed">
+                                                        <p>Here will show the current state of the operation</p>
+                                                        <p>Current state of the operation</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="box-container">
+                                                <div class="row">
+                                                    <div class="col-md-8">
+                                                        <div id="titled">
+                                                            <a>Manual Operation</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div id="titled" style="background-color: red;"><a style="text-align: center;">Disabled</a></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="content-box">
+                                                    <div class="box-container noneed">
+                                                        <p>Select Funtion for Manual Control</p>
+                                                        <p>Current state of the operation</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <script>
+            /*$("#menu-toggle").click(function(e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });*/
+            $('#pills-tab a').on('click', function (e) {
+                e.preventDefault()
+                $(this).tab('show')
+            })
+        </script>
+        </body>
+    </div>

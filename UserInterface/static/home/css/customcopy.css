@@ -1,0 +1,133 @@
+body {
+    overflow-x: hidden;
+    background-color: #2b2b2b;
+    padding-left:30px;
+    padding-right:30px;
+}
+
+#page-content-wrapper {
+    min-width: 98vw;
+}
+
+#wrapper.toggled #page-content-wrapper{
+    min-width:85vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0rem;
+    background-color: #5f5f5f;
+}
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -12rem;
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
+    background-color: #5f5f5f !important;
+}
+
+#sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+    width: 15rem;
+    background-color: #5f5f5f;
+}
+
+#titled a {
+    padding:5px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    margin-left:5px;
+    text-align: center;
+    /*transform: skewX(20deg);*/
+}
+
+#titled a:hover {
+    color: #fffb00;
+    cursor: pointer;
+}
+
+.table .table-dark tr th {
+    border-color:none;
+}
+
+#titled {
+    border:1px solid #335aa1 ;
+    background-color: #335aa1;
+    padding: 5px 5px 5px 0px;
+    width:90%;
+    margin-top:1vh;
+    margin-bottom:1vh;
+    margin-left:5%;
+    margin-right:5;
+    border-radius:20px; 
+    /*transform: skewX(-20deg);*/
+    box-shadow: 6px 6px rgba(10, 6, 71, 0.445);
+}
+
+.lead{
+    color:white;
+    text-align:center;
+}
+
+.box-container{
+    background-color: black;
+    box-shadow: 6px 6px rgba(17, 16, 85, 0.342);
+    padding: 10px 5px 10px 5px;
+    border-radius:20px;
+    /*transform: skewX(-20deg);*/
+    /*margin-left:30px;*/
+}
+
+.noneed{
+    background-color: #012c63;
+    margin-left:0px;
+    width:100%;
+}
+
+.content-box{
+    padding: 10px 5px 5px 12px;
+    /*transform: skewX(20deg);*/
+}
+
+/*
+
+***Progress Bar**
+
+*/
+
+.progress {
+    background-color: #FFFFFF!important;
+    border-radius: 29px!important;
+    height: 24px!important;
+    margin-bottom: 24px!important;
+    overflow: hidden!important;
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2) inset!important;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2) inset!important;
+}
+.progress-bar {
+    font-size: 10px!important;
+    ;
+    line-height: 14px!important;
+    
+}
+.progress-bar-success {
+    background-color: #45B6B0!important;
+}
+.progress-bar-info {
+    background-color: #012c63!important;
+}
+.progress-bar-warning {
+    background-color: #FBB44C!important;
+}
+.progress-bar-danger {
+    background-color: #FF6B6B!important;
+}
