@@ -11,10 +11,30 @@
  - Now you are ready to run the server
   <code>python manage.py runserver</code>
 
-## To view the UserInterface
+## To view the User Interface
 
 - Chrome: https://127.0.0.1:8000/
 - Edge: https://localhost:8000/
 - Firefox & Opera: Not Tested
 
 Noteed that there are some difference between edge and chrome and edge which have not been corrected
+
+## Data oon UI
+
+- TriTrack Microprocessors
+   - "PiStat": PiStat
+   - "Pi4procTri": 12,
+   - "BrdStat":"Operational",
+   - "BrdProc":30,
+- TriTrack PowerBoard
+   - "Consumption": 1243,
+   - "CapA":"threequarter",
+   - "CapB":"half",
+
+- Rubbish
+   - "totRub": dataRub["totRub"],
+   - "colRub": dataRub["colRub"],
+   - "BinG": dataRub["BinG"],
+   - "BinA": dataRub["BinA"],
+   - "BinB": dataRub["BinB"],
+   - "BinC": dataRub["BinC"],
