@@ -5,6 +5,7 @@
   > BE AWARE EXECUTION POLICY MUST BE UNRESTRICTED
     - Open the PowerShell as an Administator and run the following command <code>Set-ExecutionPolciy Unrestricted</code>
     - Press Y after you have activated the env go back and set the Policy again restricted
+    - This is only for running the server on localhost
  - To ensure everything is in place you must run the collect  static 
   <code>python manage.py collectedstatic</code>
  - Now you are ready to run the server
@@ -18,7 +19,7 @@
 
 Noteed that there are some difference between edge and chrome and edge which have not been corrected
 
-## Data oon UI
+## Data on UI
 - TriTrack Microprocessors
    - "PiStat": PiStat
    - "Pi4procTri": 12
@@ -35,8 +36,17 @@ Noteed that there are some difference between edge and chrome and edge which hav
    - "BinA": dataRub["BinA"]
    - "BinB": dataRub["BinB"]
    - "BinC": dataRub["BinC"]
+- Manual Operation
+   - "Inputs" : serialized data for xbob  controller
+   - "Assigned Goal" : Coordinates from the Grid - Noot yet implimented on this version
+- Automatic Operatin
+   - Not yet decided what data needs to be represented their, mostly information and warnings regarding the environment
+   
+## Things to be followed
+- Sorting Rig interface
+- Live Streaming
 
-## Systems Requirements
+## Requirements.txt
 - Python    3.8.1 (32-bit)
 - Django    3.0.2
 - pip       20.0.2
