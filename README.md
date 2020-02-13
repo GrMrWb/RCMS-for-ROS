@@ -1,17 +1,3 @@
-## Requirements
-- Python    3.8.1 (32-bit)
-- Django    3.0.2
-- pip       20.0.2
-- asgiref   3.2.3
-- certifi   2019.11.28
-- chardet   3.0.4
-- idna      2.8
-- pymongo   3.10.1
-- pytz      2019.3
-- requests  2.22.0
-- sqlparse  0.3.0
-- urllib3   1.25.8
-
 ## Run the Server
 
 - Active the virtual environment
@@ -49,3 +35,17 @@ Noteed that there are some difference between edge and chrome and edge which hav
    - "BinA": dataRub["BinA"]
    - "BinB": dataRub["BinB"]
    - "BinC": dataRub["BinC"]
+
+## Systems Requirements
+- Python    3.8.1 (32-bit)
+- Django    3.0.2
+- pip       20.0.2
+- asgiref   3.2.3
+- certifi   2019.11.28
+- chardet   3.0.4
+- idna      2.8
+- pymongo   3.10.1
+- pytz      2019.3
+- requests  2.22.0
+- sqlparse  0.3.0
+- urllib3   1.25.8
