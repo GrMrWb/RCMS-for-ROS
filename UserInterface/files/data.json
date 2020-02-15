@@ -1,0 +1,23 @@
+{
+    "v":"1",
+    "TriTrackDataMic":  { 
+        "PiStat":"1",
+        "Pi4procTi":"12",
+        "BrdStat":"6", 
+        "BrdProc":"30"
+    },
+    "TriTrackPowerBoard":   {
+        "Consumption":"1234", 
+        "CapA":"threequarter", 
+        "CapB":"half"
+    },
+    "Rubbish":  {
+        "totRub":"123",
+        "ColRub":"threequarter", 
+        "BinG":"12",
+        "BinA":"3" ,
+        "BinB":"3" ,
+        "BinC":"3"
+    }
+    
+}

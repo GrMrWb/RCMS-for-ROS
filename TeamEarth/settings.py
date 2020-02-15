@@ -121,3 +121,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_collected')
+
+MEDIA_URL = '/files/'
+
+MEDIA_ROOT= '/localhost:8000/files/'
