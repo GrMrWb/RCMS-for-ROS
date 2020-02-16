@@ -25,15 +25,13 @@ Noteed that there are some difference between edge and chrome and edge which hav
   - "Pi4procTri": StatBoard["Pi4procTi"],
   - "BrdStat": StatBoard["BrdStat"],
   - "BrdProc":StatBoard["BrdProc"],
-  
-  > StatBoard is a dictionary which is called by datasharing.mic() which is located at functions/data.py
+  > StatBoard is a dictionary which is called by <code>datasharing.mic()</code> which is located at <code>functions/data.py</code>
   
 - TriTrack PowerBoard
   - "Consumption": PowerBoard["Consumption"],
   - "CapA": PowerBoard["CapA"], 
   - "CapB": PowerBoard["CapB"],
-  
-  > PowerBoard is a dictionary which is called by datasharing.prb() which is located at functions/data.py
+  > PowerBoard is a dictionary which is called by <code>datasharing.prb()</code> which is located at <code>functions/data.py</code>
   
 - Rubbish Estimation
   - "totRub": Rubbish["totRub"],
@@ -41,8 +39,7 @@ Noteed that there are some difference between edge and chrome and edge which hav
   - "BinA": Rubbish["BinA"],
   - "BinB": Rubbish["BinB"],
   - "BinC": Rubbish["BinC"],
-  
-  > Rubbish is a dictionary which is called by datasharing.rub() which is located at functions/data.py
+  > Rubbish is a dictionary which is called by <code>datasharing.rub()</code> which is located at <code>functions/data.py</code>
   
 - Manual Operation
    - "Inputs" : serialized data for xbob  controller
