@@ -26,7 +26,7 @@
             <script text="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
             <script text="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
             <script text="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
-
+            <script text="javascript" src="{% static 'home/js/data.js' %}"></script>
         <!--Styles-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css">
@@ -102,15 +102,15 @@
                                                                             <div class="col-md-12">
                                                                                 <h5 style="color:rgba(241, 232, 232, 0.822); text-align: center;">RaspberyPi</h5>
                                                                                 <table class="table table-dark table-responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
-                                                                                    <tr><th>Status</th><td>{{PiStat}}</td></tr>
-                                                                                    <tr><th>Processing</th><td>{{ Pi4procTri }}</td></tr>
+                                                                                    <tr><th>Status</th><td id="PiStat">{{PiStat}}</td></tr>
+                                                                                    <tr><th>Processing</th><td id="Pi4procTri">{{ Pi4procTri }}</td></tr>
                                                                                 </table>
                                                                             </div>
                                                                             <div class="col-md-12" style="border-top: 1px solid #454d55; padding-top:5px;">
                                                                                 <h5 style="color:rgba(241, 232, 232, 0.822); text-align: center;"> Boarduino</h5>
                                                                                 <table class="table table-dark table-responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
-                                                                                    <tr><th>Status</th><td>{{ BrdStat }}</td></tr>
-                                                                                    <tr><th>Processing</th><td>{{ BrdProc }}%</td></tr>
+                                                                                    <tr><th>Status</th><td id="BrdStat">{{ BrdStat }}</td></tr>
+                                                                                    <tr><th>Processing</th><td id="BrdProc">{{ BrdProc }}%</td></tr>
                                                                                 </table>
                                                                             </div>
                                                                         </div>
@@ -125,19 +125,19 @@
                                                                             <div class="col-md-12">
                                                                                 <h5 style="color:rgba(241, 232, 232, 0.822); text-align: center;">RaspberyPi</h5>
                                                                                 <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
-                                                                                    <tr><th>Consumption</th><td>{{Consumption}} W</td></tr>
+                                                                                    <tr><th>Consumption</th><td id="Consumption">{{Consumption}} W</td></tr>
                                                                                 </table>
                                                                             </div>
                                                                             <div class="col-md-12" style="border-top: 1px solid #454d55; padding-top:5px;">
                                                                                 <h5 style="color:rgba(241, 232, 232, 0.822); text-align: center;">Battery 1</h5>
                                                                                 <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
-                                                                                    <tr><th>Capacity</th><td><img src="{% get_static_prefix %}home/src/{{ CapA }}.svg"></td></tr>
+                                                                                    <tr><th>Capacity</th><td id="CapA"><img src="{% get_static_prefix %}home/src/{{ CapA }}.svg"></td></tr>
                                                                                 </table>
                                                                             </div>
                                                                             <div class="col-md-12" style="border-top: 1px solid #454d55; padding-top:5px;">
                                                                                 <h5 style="color:rgba(241, 232, 232, 0.822); text-align: center;">Battery 2</h5>
                                                                                 <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
-                                                                                    <tr><th>Capacity</th><td><img src="{% get_static_prefix %}home/src/{{ CapB }}.svg"></tr>
+                                                                                    <tr><th>Capacity</th><td id="CapB"><img src="{% get_static_prefix %}home/src/{{ CapB }}.svg"></tr>
                                                                                 </table>
                                                                             </div>
                                                                         </div>
@@ -256,8 +256,8 @@
                                                         <div class="col-md-12" style="text-align:center;    width:100%">
                                                             <table class="table table-dark table-responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
                                                                 <tr>
-                                                                    <th>Estimated</th><td>NaN</td>
-                                                                    <th>Collected</th><td>NaN</td>
+                                                                    <th>Estimated</th><td id="totRub">{{totRub}}</td>
+                                                                    <th>Collected</th><td id="colRub">{{colRub}}</td>
                                                                     <th>Sorted</th><td>NaN</td>
                                                                 </tr>
                                                             </table>
@@ -270,7 +270,7 @@
                                                                 <!--Rounded Progress-->
                                                                 <div class="content-box">
                                                                     <table class="table table-dark table-responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
-                                                                        <tr><th>Amount</th><td>NaN</td></tr>
+                                                                        <tr><th>Amount</th><td id="BinA">{{BinA}}</td></tr>
                                                                         <tr><th>Trasnfer</th><td>NaN</td></tr>
                                                                     </table>
                                                                 </div>
@@ -285,7 +285,7 @@
                                                                 <div class="content-box">
                                                                     <table class="table table-dark"
                                                                         style="background-color: transparent; text-align:center;margin-bottom:0px;">
-                                                                        <tr><th>Amount</th><td>NaN</td></tr>
+                                                                        <tr><th>Amount</th><td id="BinB">{{BinB}}</td></tr>
                                                                         <tr><th>Waitinig</th><td>NaN</td></tr>
                                                                     </table>
                                                                 </div>
@@ -300,7 +300,7 @@
                                                                 <div class="content-box">
                                                                     <table class="table table-dark"
                                                                         style="background-color: transparent; text-align:center;margin-bottom:0px;">
-                                                                        <tr><th>Amount</th><td>NaN</td></tr>
+                                                                        <tr><th>Amount</th><td id="BinC">{{BinC}}</td></tr>
                                                                         <tr><th>Waiting</th> <td>NaN</td></tr>
                                                                     </table>
                                                                 </div>

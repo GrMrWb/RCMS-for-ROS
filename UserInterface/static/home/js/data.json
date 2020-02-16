@@ -1,22 +1,22 @@
 {
-    "v":"3",
+    "v":"10",
     "TriTrackDataMic":  { 
         "PiStat":"5",
-        "Pi4procTi":"2",
-        "BrdStat":"6", 
-        "BrdProc":"30"
+        "Pi4procTri":"2",
+        "BrdStat":"10", 
+        "BrdProc":"37"
     },
     "TriTrackPowerBoard":   {
-        "Consumption":"1234", 
+        "Consumption":"543", 
         "CapA":"threequarter", 
         "CapB":"half"
     },
     "Rubbish":  {
         "totRub":"123",
-        "ColRub":"threequarter", 
+        "ColRub":"1234", 
         "BinG":"12",
-        "BinA":"3" ,
-        "BinB":"3" ,
+        "BinA":"12" ,
+        "BinB":"4" ,
         "BinC":"3"
     }
     

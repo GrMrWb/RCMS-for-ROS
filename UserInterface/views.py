@@ -7,28 +7,27 @@ def home(request):
     datarecv=datasharing()
 
     StatBoard=datarecv.mic()
-    
-
-    PiBoard=3
-    if PiBoard==1:
-        PiStat="Operational"
-    elif PiBoard==2:
-        PiStat="Low Capacity"
-    elif PiBoard==3:
-        PiStat="INOP"
+    PowerBoard=datarecv.power()
+    Rubbish=datarecv.rub()
 
     return  render(
         request,
         'home/home.html',
         {
             # ===TriTrack Mic
-                "PiStat": PiStat,
-                "Pi4procTri": 12,
+                "PiStat": StatBoard["PiStat"],
+                "Pi4procTri": StatBoard["Pi4procTi"],
                 "BrdStat": StatBoard["BrdStat"],
-                "BrdProc":30,
+                "BrdProc":StatBoard["BrdProc"],
             # ===TriTrack PowerBoard
-                "Consumption": 1243,
-                "CapA":"threequarter",
-                "CapB":"half",
+                "Consumption": PowerBoard["Consumption"],
+                "CapA": PowerBoard["CapA"],
+                "CapB": PowerBoard["CapB"],
+            # ===Rubbish Estimation
+                "totRub": Rubbish["totRub"],
+                "colRub": Rubbish["ColRub"],
+                "BinA": Rubbish["BinA"],
+                "BinB": Rubbish["BinB"],
+                "BinC": Rubbish["BinC"],
         }
     )
