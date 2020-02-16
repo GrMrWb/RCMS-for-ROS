@@ -53,11 +53,13 @@ Noteed that there are some difference between edge and chrome and edge which hav
 
 ## Requirements.txt
 - Python    3.8.1 (32-bit)
-- Django    3.0.2
+- Django    3.0.3
 - pip       20.0.2
 - asgiref   3.2.3
+- astroid   2.3.3
 - certifi   2019.11.28
 - chardet   3.0.4
+- colorama  0.4.3
 - idna      2.8
 - pymongo   3.10.1
 - pytz      2019.3
