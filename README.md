@@ -20,22 +20,30 @@
 Noteed that there are some difference between edge and chrome and edge which have not been corrected
 
 ## Data on UI
-- TriTrack Microprocessors
-   - "PiStat": PiStat
-   - "Pi4procTri": 12
-   - "BrdStat":"Operational"
-   - "BrdProc":30
+- TriTrack Mic
+  - "PiStat": StatBoard["PiStat"],
+  - "Pi4procTri": StatBoard["Pi4procTi"],
+  - "BrdStat": StatBoard["BrdStat"],
+  - "BrdProc":StatBoard["BrdProc"],
+  
+  > StatBoard is a dictionary which is called by datasharing.mic() which is located at functions/data.py
+  
 - TriTrack PowerBoard
-   - "Consumption": 1243
-   - "CapA":"threequarter"
-   - "CapB":"half"
-- Rubbish
-   - "totRub": dataRub["totRub"]
-   - "colRub": dataRub["colRub"]
-   - "BinG": dataRub["BinG"]
-   - "BinA": dataRub["BinA"]
-   - "BinB": dataRub["BinB"]
-   - "BinC": dataRub["BinC"]
+  - "Consumption": PowerBoard["Consumption"],
+  - "CapA": PowerBoard["CapA"], 
+  - "CapB": PowerBoard["CapB"],
+  
+  > PowerBoard is a dictionary which is called by datasharing.prb() which is located at functions/data.py
+  
+- Rubbish Estimation
+  - "totRub": Rubbish["totRub"],
+  - "colRub": Rubbish["ColRub"],
+  - "BinA": Rubbish["BinA"],
+  - "BinB": Rubbish["BinB"],
+  - "BinC": Rubbish["BinC"],
+  
+  > Rubbish is a dictionary which is called by datasharing.rub() which is located at functions/data.py
+  
 - Manual Operation
    - "Inputs" : serialized data for xbob  controller
    - "Assigned Goal" : Coordinates from the Grid - Noot yet implimented on this version
