@@ -26,6 +26,7 @@ def home(request):
             # ===Rubbish Estimation
                 "totRub": Rubbish["totRub"],
                 "colRub": Rubbish["ColRub"],
+                "SortRub": Rubbish["SortRub"],
                 "BinA": Rubbish["BinA"],
                 "BinB": Rubbish["BinB"],
                 "BinC": Rubbish["BinC"],

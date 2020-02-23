@@ -1,23 +1,24 @@
 {
     "v":"3",
     "TriTrackDataMic":  { 
-        "PiStat":"5",
-        "Pi4procTi":"2",
-        "BrdStat":"6", 
-        "BrdProc":"30"
+        "PiStat":"Receiving...",
+        "Pi4procTi":"Receiving...",
+        "BrdStat":"Receiving...", 
+        "BrdProc":"Receiving..."
     },
     "TriTrackPowerBoard":   {
-        "Consumption":"1234", 
-        "CapA":"threequarter", 
-        "CapB":"half"
+        "Consumption":"Receiving...", 
+        "CapA":"Receiving...", 
+        "CapB":"Receiving..."
     },
     "Rubbish":  {
-        "totRub":"123",
-        "ColRub":"threequarter", 
-        "BinG":"12",
-        "BinA":"3" ,
-        "BinB":"3" ,
-        "BinC":"3"
+        "totRub":"Receiving...",
+        "ColRub":"Receiving...",
+        "SortRub":"Receiving...", 
+        "BinG":"Receiving...",
+        "BinA":"Receiving..." ,
+        "BinB":"Receiving..." ,
+        "BinC":"Receiving..."
     }
     
 }

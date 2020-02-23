@@ -1,5 +1,5 @@
 {
-    "v":"10",
+    "v":"5.2",
     "TriTrackDataMic":  { 
         "PiStat":"5",
         "Pi4procTri":"2",
@@ -15,8 +15,8 @@
         "totRub":"123",
         "ColRub":"1234", 
         "BinG":"12",
-        "BinA":"12" ,
-        "BinB":"4" ,
+        "BinA":"12",
+        "BinB":"4",
         "BinC":"3"
     }
     
