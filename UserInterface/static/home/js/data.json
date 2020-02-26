@@ -18,6 +18,10 @@
         "BinA":"12",
         "BinB":"4",
         "BinC":"3"
+    },
+    "Warning": {
+        "seagull": "1",
+        "tide": "0"
     }
     
 }

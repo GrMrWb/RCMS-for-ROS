@@ -19,6 +19,10 @@
         "BinA":"Receiving..." ,
         "BinB":"Receiving..." ,
         "BinC":"Receiving..."
+    },
+    "Warning": {
+        "seagull": "Receiving...",
+        "tide": "Receiving..."
     }
     
 }

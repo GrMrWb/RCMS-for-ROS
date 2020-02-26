@@ -1,0 +1,16 @@
+// Connect to it
+
+https://github.com/fp-robotics/myp_ros/wiki/Messages-and-Topics:-Communicating-between-nodes
+
+https://github.com/fp-robotics/myp_ros/wiki/Nodes:-Running-your-code
+
+https://github.com/fp-robotics/myp_ros/blob/master/examples/joy_control.py
+
+https://github.com/fp-robotics/myp_ros/blob/master/examples/standard_service_example.py
+
+
+//Msg from Ros 
+
+http://wiki.ros.org/rosmsg
+
+http://wiki.ros.org/rospy/Overview/Publishers%20and%20Subscribers
