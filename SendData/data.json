@@ -1,5 +1,5 @@
 {
-    "v":"5.2.1",
+    "v":"5.2",
     "Termination":"0",
     "TriTrackDataMic":  { 
         "PiStat":"5",
@@ -21,7 +21,7 @@
         "BinC":"3"
     },
     "Warning": {
-        "seagull": "0",
+        "seagull": "1",
         "tide": "0"
     }
     

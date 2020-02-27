@@ -9,9 +9,9 @@ function updateData(){
             document.getElementById("titled_warnenv").style.backgroundColor = data["Warning"]["seagull"]== "1" ? "orange" : "green";
 
             //TriTrack Data
-            document.getElementById("PiStat").innerText = data["TriTrackDataMic"]["PiStat"] == "1" ? "Not Available" : "Available for Processing";
+            document.getElementById("PiStat").innerText = data["TriTrackDataMic"]["PiStat"] == "1" ? "Not Available" : "Available Processing";
             document.getElementById("Pi4procTri").innerText = data["TriTrackDataMic"]["Pi4procTri"]+" %";
-            document.getElementById("BrdStat").innerText = data["TriTrackDataMic"]["BrdStat"]== "1" ? "Not Available" : "Available for Processing";
+            document.getElementById("BrdStat").innerText = data["TriTrackDataMic"]["BrdStat"]== "1" ? "Not Available" : "Available Processing";
             document.getElementById("BrdProc").innerText = data["TriTrackDataMic"]["BrdProc"]+" %";
 
             // PoweBoard
