@@ -1,6 +1,10 @@
 // progressbar.js@1.0.0 version is used
 // Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
 
+function chgManAuto(){
+  
+}
+
 var bar = new ProgressBar.Circle(circlebar,{
     color: '#aaa',
     // This has to be the same size as the maximum width to

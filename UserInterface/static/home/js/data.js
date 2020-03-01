@@ -5,7 +5,7 @@ function updateData(){
     $.getJSON("/static/home/js/data.json",function(data){
         if (data["v"]!=pastversion){
             //Environmental Data
-            document.getElementById("warnenv").innerText= data["Warning"]["seagull"]== "1" ? "SeaGulls in Vicinity" : "NoWarning";
+            document.getElementById("warnenv").innerText= data["Warning"]["seagull"]== "1" ? "SeaGulls in Vicinity" : "No Warning";
             document.getElementById("titled_warnenv").style.backgroundColor = data["Warning"]["seagull"]== "1" ? "orange" : "green";
 
             //TriTrack Data
@@ -28,6 +28,14 @@ function updateData(){
             document.getElementById("BinA").innerText = data["Rubbish"]["BinA"];
             document.getElementById("BinB").innerText = data["Rubbish"]["BinB"];
             document.getElementById("BinC").innerText = data["Rubbish"]["BinC"];
+
+            //Manual and Automatic Operation
+            
+            document.getElementById("titled_autoen").style.backgroundColor = data["Operation"]["Auto"]== "1" ? "green" : "red";
+            document.getElementById("autoen").innerText = data["Operation"]["Auto"] == "1" ? "Enabled" : "Disabled";
+            document.getElementById("titled_manen").style.backgroundColor = data["Operation"]["Man"] == "1" ? "green" : "red";
+            document.getElementById("manen").innerText = data["Operation"]["Man"] == "1" ? "Enabled" : "Disabled";
+
             pastversion=data["v"];
             delete data
         }

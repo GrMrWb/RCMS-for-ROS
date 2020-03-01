@@ -23,6 +23,10 @@
     "Warning": {
         "seagull": "Receiving...",
         "tide": "Receiving..."
+    },
+    "Operation": {
+        "Man": "Receiving...",
+        "Auto": "Receiving..."
     }
     
 }

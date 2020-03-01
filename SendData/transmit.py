@@ -4,38 +4,13 @@ import json
 # IP address of the compute
 v=1.0
 
-
-# Processing
-UDP_IP = "127.0.0.1"
-UDP_PORT = 2145
-procSock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-procSock.sendto((MESSAGE)(UDP_IP, UDP_PORT))
-
-# PowerBoard
-UDP_IP = "127.0.0.1"
-UDP_PORT = 2147
-prbSock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-prbSock.sendto((MESSAGE)(UDP_IP, UDP_PORT))
-
-# Bin Allocation
-UDP_IP = "127.0.0.1"
-UDP_PORT = 2146
-binSock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-binSock.sendto((MESSAGE)(UDP_IP, UDP_PORT))
-
-# Seagull
-UDP_IP = "127.0.0.1"
-UDP_PORT = 2148
-seaGullSock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-seaGullSock.sendto((MESSAGE)(UDP_IP, UDP_PORT))
-
 with open("UserInterface/static/home/js/data.json", "r") as f:
     dataf = json.load(f)
 f.close()
 
 dataf["v"]=v.__str__
 
-procdatanew=procdata.split(':'), i=0
+procdatanew = procdata.split(':'), i=0
 for x in procdatanew:
     if i==0:
         if dataf["TriTrackDataMic"]["PiStat"]!=x:
@@ -70,7 +45,7 @@ for x in prbdatanew:
             dataf["TriTrackPowerBoard"]["CapB"]=x
         i+=1
 
-bindatanew=bindata.split(':'), i=0
+bindatanew = bindata.split(':'), i=0
 for x in bindatanew:
     if i==0:
         if dataf["Rubbish"]["BinA"]!=x:
@@ -94,6 +69,30 @@ else:
 
 
 with open("UserInterface/static/home/js/data.json", "w+") as f:
-    f.write = json.dumps(f)
+    f.write = json.dumps(dataf)
 f.close()
- q
+
+# Processing
+UDP_IP = "127.0.0.1"
+UDP_PORT = 2145
+MESSAGE=""
+procSock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+procSock.sendto((MESSAGE)(UDP_IP, UDP_PORT))
+
+# PowerBoard
+UDP_IP = "127.0.0.1"
+UDP_PORT = 2147
+prbSock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+prbSock.sendto((MESSAGE)(UDP_IP, UDP_PORT))
+
+# Bin Allocation
+UDP_IP = "127.0.0.1"
+UDP_PORT = 2146
+binSock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+binSock.sendto((MESSAGE)(UDP_IP, UDP_PORT))
+
+# Seagull
+UDP_IP = "127.0.0.1"
+UDP_PORT = 2148
+seaGullSock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+seaGullSock.sendto((MESSAGE)(UDP_IP, UDP_PORT))

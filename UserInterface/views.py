@@ -9,6 +9,8 @@ def home(request):
     StatBoard=datarecv.mic()
     PowerBoard=datarecv.power()
     Rubbish=datarecv.rub()
+    Operation=datarecv.ops()
+    warning=datarecv.warn()
 
     return  render(
         request,
@@ -30,5 +32,10 @@ def home(request):
                 "BinA": Rubbish["BinA"],
                 "BinB": Rubbish["BinB"],
                 "BinC": Rubbish["BinC"],
+            # ===Operation
+                "autoen" : Operation["Auto"],
+                "manen" : Operation["Man"],
+            # ===Warning
+                "seagull" :warning["seagull"]
         }
     )

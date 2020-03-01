@@ -23,6 +23,9 @@
     "Warning": {
         "seagull": "0",
         "tide": "0"
+    },
+    "Operation": {
+        "Man":"1",
+        "Auto":"0"
     }
-    
 }
