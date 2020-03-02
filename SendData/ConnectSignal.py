@@ -2,7 +2,7 @@ import os
 import socket
 
 class ImpIrt:
-
+    
     def _init_(self, termination):
         termination = 0
 

@@ -3,6 +3,8 @@ import json
 import time
 from ConnectSignal import ImpIrt
 
+datre = ImpIrt(0)
+
 with open("UserInterface/static/home/js/data.json", "r") as f:
     dataf = json.load(f)
     termi = dataf["Termination"]
@@ -10,10 +12,10 @@ f.close()
 
 print("Give the IP of the server")
 a=input()
-b=input(".")
+b=input(".")    
 c=input(".")
 d=input(".")
-IP=ImpIrt.getIP(a,b,c,d)
+IP = datre.getIP(a,b,c,d)
 
 print("Give the port")
 port=input()
