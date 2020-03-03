@@ -57,6 +57,7 @@ while termi!="0":
 
     with open("UserInterface/static/home/js/data.json", "r") as f:
         dataf = json.load(f)
+        termi =dataf["Termination"]
     f.close()
 
     dataf["v"]=v.__str__

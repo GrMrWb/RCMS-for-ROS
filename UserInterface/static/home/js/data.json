@@ -27,5 +27,12 @@
     "Operation": {
         "Man":"1",
         "Auto":"0"
+    },
+    "Manual": {
+        "x-axis":"",
+        "y-axis":"",
+        "xbox":"",
+        "xx-axis":"",
+        "xy-axis":""
     }
 }
