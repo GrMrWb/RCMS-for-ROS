@@ -2,7 +2,7 @@ var pastversion="1";
 var data
 
 function updateData(){
-    $.getJSON("/static/home/js/data.json",function(data){
+    $.getJSON("files/data.json",function(data){
         if (data["v"]!=pastversion){
             //Environmental Data
             document.getElementById("warnenv").innerText= data["Warning"]["seagull"]== "1" ? "SeaGulls in Vicinity" : "No Warning";
