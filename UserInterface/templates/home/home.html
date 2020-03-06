@@ -93,7 +93,7 @@
                                                                 <div class="row" style="margin:0px">
                                                                     <div class="col-md-12">
                                                                         <div class="table-responsive-lg">
-                                                                            <table class="table table-dark table-responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                                                                            <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
                                                                                 <thead>
                                                                                     <tr>
                                                                                         <th style="width:33%; border-top: transparent">Module</th>
@@ -102,11 +102,11 @@
                                                                                     </tr>
                                                                                 </thead>
                                                                                 <tr>
-                                                                                    <th><h5 style="color:rgba(241, 232, 232, 0.822); text-align: center;">RaspberyPi</h5></th>
+                                                                                    <th style="color:rgba(241, 232, 232, 0.822); text-align: center;">RaspberyPi</th>
                                                                                     <td id="PiStat">{{ PiStat }}</td><td id="Pi4procTri">{{ Pi4procTri }}</td>
                                                                                 </tr>
                                                                                 <tr>
-                                                                                    <th><h5 style="color:rgba(241, 232, 232, 0.822); text-align: center;"> Boarduino</h6></th>
+                                                                                    <th style="color:rgba(241, 232, 232, 0.822); text-align: center;"> Boarduino</th>
                                                                                     <td id="BrdStat">{{ BrdStat }}</td><td id="BrdProc">{{ BrdProc }}</td>
                                                                                 </tr>
                                                                             </table>
@@ -120,12 +120,12 @@
                                                                 </div>
                                                                 <div class="row" style="margin:0px">
                                                                     <div class="col-md-12">
-                                                                        <table class="table table-dark table responsive table-borderless" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                                                                        <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
                                                                             <thead>
-                                                                                <td><h5 style="color:rgba(241, 232, 232, 0.822); text-align: center;">RaspberyPi</h5></td>
-                                                                                <td><h5 style="color:rgba(241, 232, 232, 0.822); text-align: center;">RaspberyPi</h5></td>
-                                                                                <td><h5 style="color:rgba(241, 232, 232, 0.822); text-align: center;">Battery 1</h5></td>
-                                                                                <td><h5 style="color:rgba(241, 232, 232, 0.822); text-align: center;">Battery 2</h5></td>
+                                                                                <th style="color:rgba(241, 232, 232, 0.822); text-align: center; border-top: transparent">RaspberyPi</th>
+                                                                                <th style="color:rgba(241, 232, 232, 0.822); text-align: center; border-top: transparent">Boarduino</th>
+                                                                                <th style="color:rgba(241, 232, 232, 0.822); text-align: center; border-top: transparent">Battery 1</th>
+                                                                                <th style="color:rgba(241, 232, 232, 0.822); text-align: center; border-top: transparent">Battery 2</th>
                                                                             </thead>
                                                                             <tr>
                                                                                 <td id="Consumption">{{Consumption}} W</td>
@@ -149,7 +149,7 @@
                                                 <div class="row" style="margin: 0px">
                                                     <div class="col-md-12" style="text-align:center; width:100%">
                                                         <div class="content-box">
-                                                            <table class="table table-dark table-responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                                                            <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
                                                                 <tr>
                                                                     <th>Estimated</th><td id="totRub">{{totRub}}</td>
                                                                     <th>Collected</th><td id="colRub">{{colRub}}</td>
@@ -159,7 +159,7 @@
                                                         </div>
                                                         <div class="box-container noneed">
                                                             <div class="content-box">
-                                                                <table class="table table-dark table-responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                                                                <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
                                                                     <thead>
                                                                         <tr>
                                                                             <th style="width:33%; border-top: transparent">Bin A</th>
@@ -168,8 +168,8 @@
                                                                         </tr>
                                                                     </thead>
                                                                 </table>
-                                                                <table class="table table-dark table-responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
-                                                                    <tr><th>Amount</th><td id="BinA">{{BinA}}</td><th>Amount</th><td id="BinB">{{ BinB }}</td><th>Amount</th><td id="BinC">{{ BinC }}</td></tr>
+                                                                <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                                                                    <tr><th>Amount</th><td id="BinA">{{ BinA }}</td><th>Amount</th><td id="BinB">{{ BinB }}</td><th>Amount</th><td id="BinC">{{ BinC }}</td></tr>
                                                                     <tr><th>Trasnfer</th><td>NaN</td><th>Waitinig</th><td>NaN</td><th>Waitinig</th><td>NaN</td></tr>
                                                                 </table>
                                                             </div>

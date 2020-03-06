@@ -32,9 +32,9 @@ function updateData(){
             //Manual and Automatic Operation
             
             document.getElementById("titled_autoen").style.backgroundColor = data["Operation"]["Auto"]== "1" ? "green" : "red";
-            document.getElementById("autoen").innerText = data["Operation"]["Auto"] == "1" ? "Enabled" : "Disabled";
+            document.getElementById("autoen").innerText = data["Operation"]["Auto"] == "1" &&  data["Operation"]["Man"] == "0" ? "Enabled" : "Disabled";
             document.getElementById("titled_manen").style.backgroundColor = data["Operation"]["Man"] == "1" ? "green" : "red";
-            document.getElementById("manen").innerText = data["Operation"]["Man"] == "1" ? "Enabled" : "Disabled";
+            document.getElementById("manen").innerText = data["Operation"]["Man"] == "1" &&  data["Operation"]["Auto"] == "0" ? "Enabled" : "Disabled";
 
             pastversion=data["v"];
             delete data
