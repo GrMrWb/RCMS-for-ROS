@@ -9,7 +9,7 @@ with open("data.json",r) as f:
     termi=term["termination"]
 
 try:
-    UDP_IP = "127.0.0.1"
+    UDP_IP = "192.168.0.100"
     UDP_PORT = 2150
     MESSAGE="READY"
     readySock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -17,7 +17,7 @@ try:
     readySock.close()
     time.sleep(20)
 except:
-    UDP_IP = "127.0.0.1"
+    UDP_IP = "192.168.0.100"
     UDP_PORT = 2150
     MESSAGE="READY"
     readySock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -28,28 +28,28 @@ readSock.close()
 
 while termi!="0":
     # Processing
-    UDP_IP = "127.0.0.1"
+    UDP_IP = "192.168.0.100"
     UDP_PORT = 2145
     procSock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     procSock.bind((UDP_IP, UDP_PORT))
     procdata, addr = procSock.recvfrom(16)
 
     # PowerBoard
-    UDP_IP = "127.0.0.1"
+    UDP_IP = "192.168.0.100"
     UDP_PORT = 2147
     prbSock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     prbSock.bind((UDP_IP, UDP_PORT))
     prbdata, addr = procSock.recvfrom(16)
 
     # Seagull
-    UDP_IP = "127.0.0.1"
+    UDP_IP = "192.168.0.100"
     UDP_PORT = 2149
     seaGullSock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     seaGullSock.bind((UDP_IP, UDP_PORT))
     seaGulldata, addr = seaGullSock.recvfrom(2)
 
     # Bin Allocation
-    UDP_IP = "127.0.0.1"
+    UDP_IP = "192.168.0.100"
     UDP_PORT = 2153
     binSock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     binSock.bind((UDP_IP, UDP_PORT))
