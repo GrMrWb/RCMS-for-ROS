@@ -203,6 +203,24 @@ body {
     /*transform: skewX(20deg);*/
 }
 
+/* 
+    GridMap
+*/
+#gridmaptb {
+    width:1000px;
+    height:570px; 
+    border: 5px black solid;
+    overflow: hidden;
+    background-color: #F2F2F2;
+    cursor: pointer;
+}
+
+#earthe{
+    position: relative;
+    left: 50px;
+    top: 50px;
+    transition: left .5s ease-in, top .5s ease-in;
+}
 /*
 
 ***Progress Bar**

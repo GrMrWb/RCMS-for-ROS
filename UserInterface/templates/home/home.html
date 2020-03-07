@@ -27,6 +27,7 @@
             <script text="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
             <script text="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
             <script text="javascript" src="{% static 'home/js/data.js' %}"></script>
+            <script text="javascript" src="{% static 'home/js/gridmap.js' %}"async></script>
         <!--Styles-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css">
@@ -42,8 +43,6 @@
         <!--Custom Scripts-->
         <!--javascript-->
         <script text="javascript" src="{% static custom.js %}"></script>
-        <script text="javascript" src="{% static progressbar.js %}"></script>
-        <script text="javascript" src="{% static progressbar.min.js %}"></script>
         <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
 
         <!--styles-->
@@ -309,11 +308,38 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="box-container" style="margin-top:0px;height:776px;">
-                                        <div id="titled">
-                                            <a>Live View</a>
-                                        </div>
                                         <div class="content-box">
-                                            <center><img src="192.168.0.100:8080/snapshot?topic=/top_cam/image_raw" style="height:570px;"></center><!--{% static 'home/src/liveview.jpg' %}-->
+                                            <ul class="nav nav-pills nav-justified">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#live">Eye in the Sky Live View</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#sortrig">Sorting Rig</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" data-toggle="tab" href="#gridmaptb">Grid Map of EarthE</a>
+                                                </li>
+                                            </ul>
+                                            <div class="row">
+                                                <div class="col-md-4"><div id="titled"><a class="nav-link" data-toggle="tab" href="#live">Eye in the Sky Live View</a></div></div>
+                                                <div class="col-md-4"><div id="titled"><a class="nav-link" data-toggle="tab" href="#sortrig">Sorting Rig</a></div></div>
+                                                <div class="col-md-4"><div id="titled"><a class="nav-link active" data-toggle="tab" href="#gridmaptb">Grid Map of EarthE</a></div></div>
+                                            </div>
+                                            <div class="tab-content">
+                                                <div class="tab-pane container fade" id="live">
+                                                    <center>
+                                                        <img src="192.168.0.100:8080/snapshot?topic=/top_cam/image_raw" style="height:570px;">
+                                                    </center><!--{% static 'home/src/liveview.jpg' %}-->
+                                                </div>
+                                                <div class="tab-pane container fade" id="sortrig">
+
+                                                </div>
+                                                <div class="tab-pane container active" id="gridmaptb">
+                                                    <div id="gridmap" onclick="getClickPosition()">
+                                                        <img id="earthe" src="{% static 'home/src/earthe.png' %}" style="height:50px">
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="box-container noneed" style="margin-top:10px">
                                                 <div class="content-box">
                                                     <div class="row" style="margin:0px">
@@ -340,17 +366,16 @@
                                                                     <button type="button" class="btn btn-outline-success" style="font-size:18px;">Contact Support</button>
                                                                 </li>
                                                                 <li class="nav-item" style="margin-left:5px">
-                                                                    <form action="man" method="POST">{% csrf_token %}  <button type="submit" class="btn btn-outline-danger" style="font-size:18px;">Automatic</button></form>
+                                                                    <form action="auto" method="POST">{% csrf_token %}  <button type="submit" class="btn btn-outline-danger" style="font-size:18px;">Automatic</button></form>
                                                                 </li>
                                                                 <li class="nav-item" style="margin-left:5px">
-                                                                    <form action="auto" method="POST">{% csrf_token %}  <button type="submit" class="btn btn-outline-warning" style="font-size:18px;">Manual</button></form>
+                                                                    <form action="man" method="POST">{% csrf_token %}  <button type="submit" class="btn btn-outline-warning" style="font-size:18px;">Manual</button></form>
                                                                 </li>
                                                             </ul>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
                                     <div class="row" style="margin-top:10px;color:white">
@@ -368,7 +393,7 @@
                                                 </div>
 
                                                 <div class="content-box">
-                                                    <div class="box-container noneed">
+                                                    <div class="box-container noneed" id="errorProc">
                                                         <p>Here will show the current state of the operation</p>
                                                         <p>Current state of the operation</p>
                                                     </div>
@@ -389,7 +414,7 @@
                                                 </div>
 
                                                 <div class="content-box">
-                                                    <div class="box-container noneed">
+                                                    <div class="box-container noneed"  id="errorProc">
                                                         <p>Select Funtion for Manual Control</p>
                                                         <p>Current state of the operation</p>
                                                     </div>

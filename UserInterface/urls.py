@@ -3,6 +3,6 @@ from UserInterface import views
 
 urlpatterns = [
     path('',views.home, name="home"),
-    path('auto', views.autotoman, name="home"),
-    path('man', views.mantoauto, name="home")
+    path('man', views.autotoman, name="home"),
+    path('auto', views.mantoauto, name="home")
 ]

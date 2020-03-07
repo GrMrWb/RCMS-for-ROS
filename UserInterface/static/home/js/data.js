@@ -36,9 +36,14 @@ function updateData(){
             document.getElementById("titled_manen").style.backgroundColor = data["Operation"]["Man"] == "1" ? "green" : "red";
             document.getElementById("manen").innerText = data["Operation"]["Man"] == "1" &&  data["Operation"]["Auto"] == "0" ? "Enabled" : "Disabled";
 
+            if (data["Operation"]["Man"]==data["Operation"]["Auto"]){
+                document.getElementById("errorProc").innerHTML='<p>ERROR IN THE PROCESS</p><p>Giving the following priority</p><ul><li>Controller</li><li>Autonomous</li><li>GridMap</li></ul>';
+            }
+
             pastversion=data["v"];
             delete data
         }
     })  
 }
 setInterval(updateData,2000);
+
