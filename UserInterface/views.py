@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from functions.data import datasharing
-import json
+from django.http import HttpResponse
+import json,os,random
 
 from .forms import AutoManual
 
@@ -148,3 +149,37 @@ def autotoman(request):
                 "seagull" :warning["seagull"]
         }
     )
+
+def instructJSON(request,xaxis,yaxis):
+    with open("UserInterface/static/home/js/data.json", "r") as f:
+        datafile = json.load(f)
+        datafile["Manual"]["ix-axis"]=xaxis
+        datafile["Manual"]["iy-axis"]=yaxis
+        f.close
+    
+    with open("UserInterface/static/home/js/data.json", "w+") as f:
+        json.dump(datafile,f)
+        f.close
+
+    return HttpResponse('<p>Thanks Earth-E</p>')
+
+def currentJSON(request,xaxis,yaxis):
+    with open("UserInterface/static/home/js/data.json", "r+") as f:
+        try:
+            datafile = json.load(f)
+        except:
+            f.seek(-1, os.SEEK_END)
+            f.truncate()
+            f.seek(0, 0)
+            datafile =json.load(f)
+        datafile["Manual"]["cx-axis"]=xaxis
+        datafile["Manual"]["cy-axis"]=yaxis
+        version=random.randint(1,101)
+        datafile["v"]=str(version)
+        f.close
+    
+    with open("UserInterface/static/home/js/data.json", "w+") as f:
+        json.dump(datafile,f)
+        f.close
+
+    return HttpResponse('<p>Thanks Earth-E</p>')
