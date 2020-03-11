@@ -151,20 +151,20 @@ def autotoman(request):
     )
 
 def instructJSON(request,xaxis,yaxis):
-    with open("UserInterface/static/home/js/data.json", "r") as f:
+    with open("UserInterface/static/home/js/manualoperation.json", "r") as f:
         datafile = json.load(f)
         datafile["Manual"]["ix-axis"]=xaxis
         datafile["Manual"]["iy-axis"]=yaxis
         f.close
     
-    with open("UserInterface/static/home/js/data.json", "w+") as f:
+    with open("UserInterface/static/home/js/manualoperation.json", "w+") as f:
         json.dump(datafile,f)
         f.close
 
     return HttpResponse('<p>Thanks Earth-E</p>')
 
 def currentJSON(request,xaxis,yaxis):
-    with open("UserInterface/static/home/js/data.json", "r+") as f:
+    with open("UserInterface/static/home/js/manualoperation.json", "r+") as f:
         try:
             datafile = json.load(f)
         except:
@@ -178,7 +178,7 @@ def currentJSON(request,xaxis,yaxis):
         datafile["v"]=str(version)
         f.close
     
-    with open("UserInterface/static/home/js/data.json", "w+") as f:
+    with open("UserInterface/static/home/js/manualoperation.json", "w+") as f:
         json.dump(datafile,f)
         f.close
 

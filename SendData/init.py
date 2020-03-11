@@ -1,46 +1,55 @@
 import socket
 import json
-import time
-from ConnectSignal import ImpIrt
+import time,os,requests
 
-datre = ImpIrt(0)
+## Determine whether to start
 
+seagull = requests.get("https://192.168.0.100:8080/topic=/SeaGull_Topic_Bool")
+
+seaGullMessage = seagull.text
+
+indexForMessage = seaGullMessage.find("</h1>")
+
+seaGullBool= seaGullMessage[indexForMessage:indexForMessage+4]
 with open("UserInterface/static/home/js/data.json", "r") as f:
-    dataf = json.load(f)
-    termi = dataf["Termination"]
-f.close()
+    datafile = json.load(f)
+    datafile["Warning"]["seagull"]= if seaGullBool=="True": "1" else: "0"
+    datafile["Warning"]["tide"]= if seaGullBool=="True": "1" else: "0"
+    f.close
 
-print("Give the IP of the server")
-a=input()
-b=input(".")    
-c=input(".")
-d=input(".")
-IP = datre.getIP(a,b,c,d)
+with open("UserInterface/static/home/js/data.json", "w+") as f:
+    json.dump(datafile,f)
+    f.close
+"""
+seaGullBool= seaGullMessage[indexForMessage:indexForMessage+4]
+with open("UserInterface/static/home/js/data.json", "r") as f:
+    datafile = json.load(f)
+    datafile["Warning"]["seagull"]= if seaGullBool=="True": "1" else: "0"
+    datafile["Warning"]["tide"]= if seaGullBool=="True": "1" else: "0"
+    f.close
 
-print("Give the port")
-port=input()
+with open("UserInterface/static/home/js/data.json", "w+") as f:
+    json.dump(datafile,f)
+    f.close
 
-while termi !="1":
-    UDP_IP = IP
-    UDP_PORT = port
-    MESSAGE = termi
+seaGullBool= seaGullMessage[indexForMessage:indexForMessage+4]
+with open("UserInterface/static/home/js/data.json", "r") as f:
+    datafile = json.load(f)
+    datafile["Warning"]["seagull"]= if seaGullBool=="True": "1" else: "0"
+    datafile["Warning"]["tide"]= if seaGullBool=="True": "1" else: "0"
+    f.close
 
-    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    sock.sendto(MESSAGE, (UDP_IP, UDP_PORT))
+with open("UserInterface/static/home/js/data.json", "w+") as f:
+    json.dump(datafile,f)
+    f.close
 
-    time.sleep(100)
+seaGullBool= seaGullMessage[indexForMessage:indexForMessage+4]
+with open("UserInterface/static/home/js/data.json", "r") as f:
+    datafile = json.load(f)
+    datafile["Warning"]["seagull"]= if seaGullBool=="True": "1" else: "0"
+    datafile["Warning"]["tide"]= if seaGullBool=="True": "1" else: "0"
+    f.close
 
-else:
-
-    termi = input("Ready to start")
-
-    while termi !="1":
-        UDP_IP = IP
-        UDP_PORT = port
-        MESSAGE = termi
-
-        sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        sock.sendto(MESSAGE, (UDP_IP, UDP_PORT))
-
-        time.sleep(100)
-
+with open("UserInterface/static/home/js/data.json", "w+") as f:
+    json.dump(datafile,f)
+    f.close"""
