@@ -311,13 +311,13 @@
                                         <div class="content-box">
                                             <ul class="nav nav-pills nav-justified">
                                                 <li class="nav-item">
-                                                    <a class="nav-link" data-toggle="tab" href="#live">Eye in the Sky Live View</a>
+                                                    <a class="nav-link active" data-toggle="tab" href="#live">Eye in the Sky Live View</a>
                                                 </li>
                                                 <li class="nav-item">
                                                     <a class="nav-link" data-toggle="tab" href="#sortrig">Sorting Rig</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link active" data-toggle="tab" href="#gridmaptb">Grid Map of EarthE</a>
+                                                    <a class="nav-link" data-toggle="tab" href="#gridmaptb">Grid Map of EarthE</a>
                                                 </li>
                                             </ul>
                                             <!--<div class="row">
@@ -326,16 +326,15 @@
                                                 <div class="col-md-4"><div id="titled"><a class="nav-link active" data-toggle="tab" href="#gridmaptb">Grid Map of EarthE</a></div></div>
                                             </div>-->
                                             <div class="tab-content">
-                                                <div class="tab-pane container fade" id="live">
+                                                <div class="tab-pane container active" id="live">
                                                     <center>
-                                                        <img src="192.168.0.100:8080/snapshot?topic=/top_cam/image_raw" style="height:570px;">
-                                                        <video id="video" src="192.168.0.100:8080/snapshot?topic=/top_cam/image_raw" autoplay="autoplay" width="videowidth" height="videoheight"></video>
+                                                        <img src="http://192.168.0.100:8080/stream?topic=/camera/rgb/image_raw" style="height:570px;margin:10px">
                                                     </center><!--{% static 'home/src/liveview.jpg' %}-->
                                                 </div>
                                                 <div class="tab-pane container fade" id="sortrig">
 
                                                 </div>
-                                                <div class="tab-pane container active" id="gridmaptb">
+                                                <div class="tab-pane container fade" id="gridmaptb">
                                                         <div id="gridmap" onclick="getClickPosition()">
                                                             <img id="instrearthe" src="{% static 'home/src/earthe.png' %}" style="height:50px">
                                                             <img id="curearthe" src="{% static 'home/src/earthe.png' %}" style="height:50px">
@@ -390,7 +389,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div id="titled_autoen" style="background-color: green;"><a id="autoen" style="text-align: center;">{{ manen }}</a></div>
+                                                        <div id="titled_autoen" style="background-color: green;"><a id="autoen" style="text-align: center;">{{ autoen }}</a></div>
                                                     </div>
                                                 </div>
 
@@ -411,7 +410,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <div id="titled_manen" style="background-color: red;"><a id="manen" style="text-align: center;">{{ autoen }}</a></div>
+                                                        <div id="titled_manen" style="background-color: red;"><a id="manen" style="text-align: center;">{{ manen }}</a></div>
                                                     </div>
                                                 </div>
 

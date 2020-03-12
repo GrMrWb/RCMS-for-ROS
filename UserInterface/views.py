@@ -163,6 +163,19 @@ def instructJSON(request,xaxis,yaxis):
 
     return HttpResponse('<p>Thanks Earth-E</p>')
 
+def warning(request,seagull,tide):
+    with open("UserInterface/static/home/js/warning.json", "r") as f:
+        datafile = json.load(f)
+        datafile["Warning"]["seagull"]=seagull
+        datafile["Warning"]["tide"]=tide
+        f.close
+    
+    with open("UserInterface/static/home/js/warning.json", "w+") as f:
+        json.dump(datafile,f)
+        f.close
+
+    return HttpResponse('<p>Thanks Earth-E</p>')
+
 def currentJSON(request,xaxis,yaxis):
     with open("UserInterface/static/home/js/manualoperation.json", "r+") as f:
         try:

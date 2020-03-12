@@ -2,12 +2,16 @@ var pastversion="1";
 var data
 
 function updateData(){
+    $.getJSON("/static/home/js/warning.json",function(data){
+        //Environmental Data
+        document.getElementById("warnenv").innerText= data["Warning"]["seagull"]== "True" ? "SeaGulls in Vicinity" : "No Warning";
+        document.getElementById("titled_warnenv").style.backgroundColor = data["Warning"]["seagull"]== "True" ? "orange" : "green";
+
+        delete data;
+    });
     $.getJSON("/static/home/js/data.json",function(data){
         if (data["v"]!=pastversion){
-            //Environmental Data
-            document.getElementById("warnenv").innerText= data["Warning"]["seagull"]== "1" ? "SeaGulls in Vicinity" : "No Warning";
-            document.getElementById("titled_warnenv").style.backgroundColor = data["Warning"]["seagull"]== "1" ? "orange" : "green";
-
+            
             //TriTrack Data
             document.getElementById("PiStat").innerText = data["TriTrackDataMic"]["PiStat"] == "1" ? "Not Available" : "Available Processing";
             document.getElementById("Pi4procTri").innerText = data["TriTrackDataMic"]["Pi4procTri"]+" %";
