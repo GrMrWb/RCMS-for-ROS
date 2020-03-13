@@ -3,6 +3,7 @@ body {
     background-color: #2b2b2b;
     padding-left:30px;
     padding-right:30px;
+    overflow:hidden;
 }
 
 #page-content-wrapper {
@@ -232,12 +233,11 @@ body {
 }
 
 #curearthe{
-    position: absolute;
+    position: relative;
     left: 50px;
-    top: 50px;
     transition: left .5s ease-in, top .5s ease-in;
     opacity: 0.8;
-    display: none;
+    display: block;
 }
 /*
 

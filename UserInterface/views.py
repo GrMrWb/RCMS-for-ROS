@@ -150,11 +150,26 @@ def autotoman(request):
         }
     )
 
-def instructJSON(request,xaxis,yaxis):
+def cordOnJSON(request,ixaxis,iyaxis,cxaxis,cyaxis):
     with open("UserInterface/static/home/js/manualoperation.json", "r") as f:
-        datafile = json.load(f)
-        datafile["Manual"]["ix-axis"]=xaxis
-        datafile["Manual"]["iy-axis"]=yaxis
+        try:
+            datafile = json.load(f)  
+        except:
+            f.close
+            with open("UserInterface/static/home/js/manualoperation.json", "a+") as f:
+                f.seek(0,2)
+                f.truncate()
+                f.seek(0, 0)
+                f.close
+            with open("UserInterface/static/home/js/manualoperation.json", "r") as f:
+                datafile =json.load(f)    
+
+        datafile["Manual"]["ix-axis"]=ixaxis
+        datafile["Manual"]["iy-axis"]=iyaxis
+        datafile["Manual"]["cx-axis"]=cxaxis
+        datafile["Manual"]["cy-axis"]=cyaxis
+        version=random.randint(1,101)
+        datafile["v"]=str(version)
         f.close
     
     with open("UserInterface/static/home/js/manualoperation.json", "w+") as f:
@@ -171,27 +186,6 @@ def warning(request,seagull,tide):
         f.close
     
     with open("UserInterface/static/home/js/warning.json", "w+") as f:
-        json.dump(datafile,f)
-        f.close
-
-    return HttpResponse('<p>Thanks Earth-E</p>')
-
-def currentJSON(request,xaxis,yaxis):
-    with open("UserInterface/static/home/js/manualoperation.json", "r+") as f:
-        try:
-            datafile = json.load(f)
-        except:
-            f.seek(-1, os.SEEK_END)
-            f.truncate()
-            f.seek(0, 0)
-            datafile =json.load(f)
-        datafile["Manual"]["cx-axis"]=xaxis
-        datafile["Manual"]["cy-axis"]=yaxis
-        version=random.randint(1,101)
-        datafile["v"]=str(version)
-        f.close
-    
-    with open("UserInterface/static/home/js/manualoperation.json", "w+") as f:
         json.dump(datafile,f)
         f.close
 

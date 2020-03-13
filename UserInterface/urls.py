@@ -6,6 +6,5 @@ urlpatterns = [
     path('man', views.autotoman, name="home"),
     path('auto', views.mantoauto, name="home"),
     path('warning/<str:seagull>/<str:tide>', views.warning),
-    path('instruction/<str:xaxis>/<str:yaxis>',views.instructJSON),
-    path('current/<str:xaxis>/<str:yaxis>',views.currentJSON)
+    path('cords/<str:ixaxis>/<str:iyaxis>/<str:cxaxis>/<str:cyaxis>',views.cordOnJSON)
 ]

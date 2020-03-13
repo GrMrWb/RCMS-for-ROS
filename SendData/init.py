@@ -13,7 +13,11 @@ indexForMessage = seaGullMessage.find("</h1>")
 seaGullBool= seaGullMessage[indexForMessage:indexForMessage+4]
 with open("UserInterface/static/home/js/data.json", "r") as f:
     datafile = json.load(f)
-    if seaGullBool=="True": datafile["Warning"]["seagull"]="1" else: datafile["Warning"]["seagull"]="0"
+    if seaGullBool=="True": 
+        datafile["Warning"]["seagull"]="1" 
+    else: 
+        datafile["Warning"]["seagull"]="0"
+        
     f.close
 
 with open("UserInterface/static/home/js/data.json", "w+") as f:

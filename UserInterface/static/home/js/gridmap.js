@@ -10,7 +10,8 @@ function getClickPosition(e) {
    
 //    data=$.getJSON("/static/home/js/data.json",function(data){
 //        if(data["Operation"]["Man"]=="1"){
-
+            
+            document.getElementById("curearthe").style.display= "none";
             prexPosition=xPosition;
             preyPosition=yPosition;
             var parentPosition = getPosition(e.currentTarget);
@@ -24,21 +25,18 @@ function getClickPosition(e) {
     
             xPosition = xPosition > 940 ? 940 : xPosition;
             yPosition = yPosition > 500 ? 500 : yPosition;
-    
-            var xmlhttp1 = new XMLHttpRequest();
-            xmlhttp1.open("GET", 'http://localhost:8000/instruction/'+ xPosition+'/'+ yPosition, true);
-            xmlhttp1.send();
-    
+
             theThing.style.left = xPosition + "px";
             theThing.style.top = yPosition + "px";
-    
-            document.getElementById("curearthe").style.left = prexPosition+ 100 + "px";
-            document.getElementById("curearthe").style.top= preyPosition + 50 + "px";
+
+            document.getElementById("curearthe").style.left = prexPosition + "px";
+            document.getElementById("curearthe").style.top= preyPosition - 50 + "px";
             document.getElementById("curearthe").style.display= "block";
     
             var xmlhttp = new XMLHttpRequest();
-            xmlhttp.open("GET", 'http://localhost:8000/current/'+ prexPosition+'/'+ preyPosition, true);
+            xmlhttp.open("GET", 'http://127.0.0.1:8000/cords/'+ xPosition + '/'+ yPosition + '/'+ prexPosition+'/'+ preyPosition, true);
             xmlhttp.send();
+            //xmlhttp.abort();
 //        }
 //    });
     
