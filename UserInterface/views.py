@@ -5,6 +5,12 @@ import json,os,random
 
 from .forms import AutoManual
 
+def testUI(request):
+    return render(
+        request,
+        'home/RCMSmrk2.html'
+    )
+
 def getInfo(data):
     datarecv=datasharing()
 
@@ -176,6 +182,9 @@ def cordOnJSON(request,ixaxis,iyaxis,cxaxis,cyaxis):
         json.dump(datafile,f)
         f.close
 
+    return HttpResponse('<p>Thanks Earth-E</p>')
+
+def infoOnJSON(request,procRasPi,procBoard,powerBoard, powerRasPi):
     return HttpResponse('<p>Thanks Earth-E</p>')
 
 def warning(request,seagull,tide):

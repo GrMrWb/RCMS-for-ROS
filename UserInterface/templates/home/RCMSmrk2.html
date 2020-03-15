@@ -1,0 +1,87 @@
+<div>
+
+    <head>
+        <title>Team Earth</title>
+        <!--Bootstrap-->
+        <!--javascript-->
+        {% load static %}
+            <script text="javascript" src="{% static 'home/js/bootstrap.bundle.js' %}"></script>
+            <script text="javascript" src="{% static 'home/js/bootstrap.bundle.min.js' %}"></script>
+            <script text="javascript" src="{% static 'home/js/bootstrap.js' %}"></script>
+            <script text="javascript" src="{% static 'home/js/bootstrap.min.js' %}"></script>
+            <!--Styles-->
+            <link rel="stylesheet" href="{% static 'home/css/bootstrap_grid.css' %}">
+            <link rel="stylesheet" href="{% static 'home/css/bootstrap_grid.min.css' %}">
+            <link rel="stylesheet" href="{% static 'home/css/bootstrap_reboot.css' %}">
+            <link rel="stylesheet" href="{% static 'home/css/bootstrap_reboot.min.css' %}">
+            <link rel="stylesheet" href="{% static 'home/css/bootstrap.css' %}">
+            <link rel="stylesheet" href="{% static 'home/css/bootstrap.min.css' %}"> 
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+        <!--Charts Source-->
+        <!--javascript-->
+            <script text="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+            <script text="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+            <script text="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+            <script text="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+            <script text="javascript" src="{% static 'home/js/data.js' %}"></script>
+            <script text="javascript" src="{% static 'home/js/gridmap.js' %}"async></script>
+        <!--Styles-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css">
+
+        <!--jQuery-->
+        <script src="{% static 'home/js/jquery/jquery.min.js' %}"></script>
+
+        <!--Font Awosome
+        <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+        <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+        <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">-->
+
+        <!--Custom Scripts-->
+        <!--javascript-->
+        <script text="javascript" src="{% static custom.js %}"></script>
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
+
+        <!--styles-->
+        <link rel="stylesheet" href="{% static 'home/css/customMrk2.css' %}">
+    </head>
+    <div>
+        <div class="d-flex" id="wrapper">
+            <div class="sidebar-menu">
+                <div class="sidebar-menu-image">
+
+                </div>
+                <div class="sidebar-menu-body">
+                    <div class="sidebar-menu-head">
+                        <a>test</a>
+                    </div>
+                    <div class="sidebar-menu-head">
+                        <a>test</a>
+                    </div>
+                    <div class="sidebar-menu-head">
+                        <a>test</a>
+                    </div>
+                    <div class="sidebar-menu-head">
+                        <a>test</a>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-submenu">
+
+            </div>
+        </div>
+        <script>
+            /*$("#menu-toggle").click(function(e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });*/
+            $('#pills-tab a').on('click', function (e) {
+                e.preventDefault()
+                $(this).tab('show')
+            })
+        </script>
+        </body>
+    </div>

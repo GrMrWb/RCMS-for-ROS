@@ -1,0 +1,326 @@
+body {
+    overflow-x: hidden;
+    background-color: #2b2b2b;
+    padding-right:30px;
+    overflow:hidden;
+}
+
+#page-content-wrapper {
+    min-width: 98vw;
+}
+
+#wrapper.toggled #page-content-wrapper{
+    min-width:85vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0rem;
+    background-color: #5f5f5f;
+}
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -12rem;
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
+    background-color: #5f5f5f !important;
+}
+
+#sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+    width: 15rem;
+    background-color: #5f5f5f;
+}
+
+.sidebar-menu{
+    width:20vw;
+    height:100vh;
+    overflow: hidden;
+    background-color: #3f3f3f; 
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
+    box-shadow: 6px 0px rgba(34, 34, 34, 0.596);
+    z-index:0;
+}
+
+.sidebar-submenu{
+    width:20vw;
+    height:100vh;
+    overflow: hidden;
+    background-color: #575757; 
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
+    box-shadow:6px 0px rgba(77, 77, 77, 0.445);
+}
+
+.sidebar-menu-body{
+    background-color: #5a5a5a;
+    padding-top:30px;
+    padding-bottom:30px;
+}
+
+.sidebar-menu-head {
+    height:50px;
+    font-size:20px;
+    padding:10px;
+    border-bottom: 1px solid rgba(161, 161, 161, 0.445);
+    margin-left:10px;
+    margin-right:10px;
+}
+
+.sidebar-menu-head a{
+    width:100%;
+    font-size:20px;
+    color:white;
+    padding:10px;
+}
+
+.sidebar-menu-image{
+    width: 100%;
+    height: 25vh;
+    background-color: #012c63;
+}
+
+#titled a {
+    padding:5px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    margin-left:5px;
+    text-align: center;
+    /*transform: skewX(20deg);*/
+}
+
+#titled a:hover {
+    color: #fffb00;
+    cursor: pointer;
+}
+
+.table .table-dark tr th {
+    border-color:none;
+}
+
+#titled {
+    border:1px solid #335aa1 ;
+    background-color: #335aa1;
+    padding: 5px 5px 5px 0px;
+    width:90%;
+    margin-top:1vh;
+    margin-bottom:1vh;
+    margin-left:5%;
+    margin-right:5;
+    border-radius:20px; 
+    /*transform: skewX(-20deg);*/
+    box-shadow: 6px 6px rgba(10, 6, 71, 0.445);
+}
+
+#titled_warnenv a {
+    padding:5px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    margin-left:5px;
+    text-align: center;
+    /*transform: skewX(20deg);*/
+}
+
+#titled_warnenv a:hover {
+    color: #fffb00;
+    cursor: pointer;
+}
+
+.table_warnenv .table-dark tr th {
+    border-color:none;
+}
+
+#titled_warnenv {
+    border:1px solid #335aa1 ;
+    background-color: #335aa1;
+    padding: 5px 5px 5px 0px;
+    width:90%;
+    margin-top:1vh;
+    margin-bottom:1vh;
+    margin-left:5%;
+    margin-right:5;
+    border-radius:20px; 
+    /*transform: skewX(-20deg);*/
+    box-shadow: 6px 6px rgba(10, 6, 71, 0.445);
+}
+
+#titled_autoen a {
+    padding:5px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    margin-left:5px;
+    text-align: center;
+    /*transform: skewX(20deg);*/
+}
+
+#titled_autoen a:hover {
+    color: #fffb00;
+    cursor: pointer;
+}
+
+.table_autoen .table-dark tr th {
+    border-color:none;
+}
+
+#titled_autoen {
+    border:1px solid #335aa1 ;
+    background-color: #335aa1;
+    padding: 5px 5px 5px 0px;
+    width:90%;
+    margin-top:1vh;
+    margin-bottom:1vh;
+    margin-left:5%;
+    margin-right:5;
+    border-radius:20px; 
+    /*transform: skewX(-20deg);*/
+    box-shadow: 6px 6px rgba(10, 6, 71, 0.445);
+}
+
+#titled_manen a {
+    padding:5px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    margin-left:5px;
+    text-align: center;
+    /*transform: skewX(20deg);*/
+}
+
+#titled_manen a:hover {
+    color: #fffb00;
+    cursor: pointer;
+}
+
+.table_automan .table-dark tr th {
+    border-color:none;
+}
+
+#titled_manen {
+    border:1px solid #335aa1 ;
+    background-color: #335aa1;
+    padding: 5px 5px 5px 0px;
+    width:90%;
+    margin-top:1vh;
+    margin-bottom:1vh;
+    margin-left:5%;
+    margin-right:5;
+    border-radius:20px; 
+    /*transform: skewX(-20deg);*/
+    box-shadow: 6px 6px rgba(10, 6, 71, 0.445);
+}
+
+.lead{
+    color:white;
+    text-align:center;
+}
+
+.box-container{
+    background-color: black;
+    box-shadow: 6px 6px rgba(17, 16, 85, 0.342);
+    padding: 10px 5px 10px 5px;
+    border-radius:20px;
+    /*transform: skewX(-20deg);*/
+    /*margin-left:30px;*/
+}
+
+.noneed{
+    background-color: #012c63;
+    margin-left:0px;
+    width:100%;
+}
+
+.content-box{
+    padding: 10px 5px 5px 12px;
+    /*transform: skewX(20deg);*/
+}
+
+/* 
+    GridMap
+*/
+#gridmaptb {
+    width:1200;
+    height:600px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#gridmap {
+    margin:5px;
+    width:1000px;
+    height:570px; 
+    border: 5px rgba(103, 110, 121, 0.685) solid;
+    overflow: hidden;
+    background-color: #2b2b2b;
+    cursor: pointer;
+    border-radius: 1%;;
+}
+
+#instrearthe{
+    position: relative;
+    left: 50px;
+    top: 50px;
+    transition: left .5s ease-in, top .5s ease-in;
+}
+
+#curearthe{
+    position: relative;
+    left: 50px;
+    transition: left .5s ease-in, top .5s ease-in;
+    opacity: 0.8;
+    display: block;
+}
+/*
+
+***Progress Bar**
+
+*/
+
+.progress {
+    background-color: #FFFFFF!important;
+    border-radius: 29px!important;
+    height: 24px!important;
+    margin-bottom: 24px!important;
+    overflow: hidden!important;
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2) inset!important;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2) inset!important;
+}
+.progress-bar {
+    font-size: 10px!important;
+    ;
+    line-height: 14px!important;
+    
+}
+.progress-bar-success {
+    background-color: #45B6B0!important;
+}
+.progress-bar-info {
+    background-color: #012c63!important;
+}
+.progress-bar-warning {
+    background-color: #FBB44C!important;
+}
+.progress-bar-danger {
+    background-color: #FF6B6B!important;
+}
