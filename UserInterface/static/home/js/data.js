@@ -43,15 +43,6 @@ function updateData(){
             if (data["Operation"]["Man"]==data["Operation"]["Auto"]){
                 document.getElementById("errorProc").innerHTML='<p>ERROR IN THE PROCESS</p><p>Giving the following priority</p><ul><li>Controller</li><li>Autonomous</li><li>GridMap</li></ul>';
             }
-            //var xPosition = data["Automatic"]["xPos"] > 940 ? 940 : data["Automatic"]["xPos"];
-            //var yPosition = data["Automatic"]["yPos"] > 500 ? 500 : data["Automatic"]["yPos"];
-
-            //var theThing = document.querySelector('#instrearthe');
-            //theThing.style.left = xPosition + "px";
-            //theThing.style.top = yPosition + "px";
-            //document.getElementById("curearthe").style.left = xPosition+ 100 + "px";
-            //document.getElementById("curearthe").style.top= yPosition + 50 + "px";
-            //document.getElementById("curearthe").style.display= "block";
 
             pastversion=data["v"];
             delete data

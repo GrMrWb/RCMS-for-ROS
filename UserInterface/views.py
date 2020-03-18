@@ -184,7 +184,33 @@ def cordOnJSON(request,ixaxis,iyaxis,cxaxis,cyaxis):
 
     return HttpResponse('<p>Thanks Earth-E</p>')
 
-def infoOnJSON(request,procRasPi,procBoard,powerBoard, powerRasPi):
+def infoOnJSON(request,processedData):
+    data=processedData.split(":")
+    with open("UserInterface/static/home/js/data.json", "r") as f:
+        try:
+            datafile = json.load(f)  
+        except:
+            f.close
+            with open("UserInterface/static/home/js/data.json", "a+") as f:
+                f.seek(0,2)
+                f.truncate()
+                f.seek(0, 0)
+                f.close
+            with open("UserInterface/static/home/js/data.json", "r") as f:
+                datafile =json.load(f)    
+
+        datafile["TriTrackDataMic"]["PiStat"]=data[0]
+        datafile["TriTrackDataMic"]["Pi4procTri"]=data[1]
+        datafile["TriTrackDataMic"]["BrdStat"]=data[2]
+        datafile["TriTrackDataMic"]["BrdProc"]=data[3]
+        version=random.randint(1,101)
+        datafile["v"]=str(version)
+        f.close
+    
+    with open("UserInterface/static/home/js/data.json", "w+") as f:
+        json.dump(datafile,f)
+        f.close
+
     return HttpResponse('<p>Thanks Earth-E</p>')
 
 def warning(request,seagull,tide):
@@ -195,6 +221,45 @@ def warning(request,seagull,tide):
         f.close
     
     with open("UserInterface/static/home/js/warning.json", "w+") as f:
+        json.dump(datafile,f)
+        f.close
+
+    return HttpResponse('<p>Thanks Earth-E</p>')
+
+def automation(request):
+    with open("UserInterface/static/home/js/data.json", "r") as f:
+        datafile = json.load(f)
+        f.close
+
+    if datafile["Operation"]["Man"]=="1":
+        textResponse="True"
+    else:
+        textResponse="False"
+    return HttpResponse(textResponse)
+
+def cordsFromRos(request,currentPosition):
+    newStr=currentPosition.split(":")
+    
+    with open("UserInterface/static/home/js/manualoperation.json", "r") as f:
+        try:
+            datafile = json.load(f)  
+        except:
+            f.close
+            with open("UserInterface/static/home/js/manualoperation.json", "a+") as f:
+                f.seek(0,2)
+                f.truncate()
+                f.seek(0, 0)
+                f.close
+            with open("UserInterface/static/home/js/manualoperation.json", "r") as f:
+                datafile =json.load(f)    
+
+        datafile["Manual"]["cx-axis"]=newStr[0]
+        datafile["Manual"]["cy-axis"]=newStr[1]
+        version=random.randint(1,101)
+        datafile["v"]=str(version)
+        f.close
+    
+    with open("UserInterface/static/home/js/manualoperation.json", "w+") as f:
         json.dump(datafile,f)
         f.close
 

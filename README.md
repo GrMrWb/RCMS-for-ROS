@@ -1,21 +1,24 @@
 ## Run the Server
 
-- Active the virtual environment
+- Make sure you have Pytho 3.8 installed on the 
+- Active the virtual environment (for windows only)
   <code>./env/scripts/activate</code>
   > BE AWARE EXECUTION POLICY MUST BE UNRESTRICTED
     - Open the PowerShell as an Administator and run the following command <code>Set-ExecutionPolciy Unrestricted</code>
     - Press Y after you have activated the env go back and set the Policy again restricted
     - This is only for running the server on localhost
- - To ensure everything is in place you must run the collect  static 
-  <code>python manage.py collectedstatic</code>
- - Now you are ready to run the server
-  <code>python manage.py runserver</code>
+- To ensure everything is in place you must run the collect  static 
+<code>python manage.py collectedstatic</code>
+- Now you are ready to run the server
+<code>python manage.py runserver</code>
 
 ## To view the User Interface
 
+In order to run the User Interface on a specific IP and Port and connect to it remotely from another pc on the network you can run the following   
+
 - Chrome: https://127.0.0.1:8000/
 - Edge: https://localhost:8000/
-- Firefox & Opera: Not Tested
+- Firefox & Opera: https://127.0.0.1:8000/
 
 Noteed that there are some difference between edge and chrome and edge which have not been corrected
 
@@ -41,15 +44,17 @@ Noteed that there are some difference between edge and chrome and edge which hav
   - "BinC": Rubbish["BinC"],
   > Rubbish is a dictionary which is called by <code>datasharing.rub()</code> which is located at <code>functions/data.py</code>
   
-- Manual Operation
-   - "Inputs" : serialized data for xbob  controller
-   - "Assigned Goal" : Coordinates from the Grid - Noot yet implimented on this version
-- Automatic Operatin
-   - Not yet decided what data needs to be represented their, mostly information and warnings regarding the environment
-   
+- Operation
+  - "autoen" : Operation ["Auto"]
+  - "manen" : Operation ["Manual"]
+  > report to the ROS that the user is using either the Automatic or Manual Operation
+
+- Warnings
+  - "seagull" : warning["seagull"]
+  - "tide" : warning["tide"]
+  
 ## Things to be followed
 - Sorting Rig interface
-- Live Streaming
 
 ## Requirements.txt
 - Python    3.8.1 (32-bit)

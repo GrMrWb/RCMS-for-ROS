@@ -6,7 +6,9 @@ urlpatterns = [
     path('test/',views.testUI),
     path('man', views.autotoman, name="home"),
     path('auto', views.mantoauto, name="home"),
+    path('automation/',views.automation),
     path('warning/<str:seagull>/<str:tide>', views.warning),
+    path('cordsFromRos/<str:currentPosition>', views.cordsFromRos),
     path('cords/<str:ixaxis>/<str:iyaxis>/<str:cxaxis>/<str:cyaxis>',views.cordOnJSON),
-    path('data/<str:procRasPi>/<str:procBoard>/<str:powerRasPi>/<str:powerBoard>',views.infoOnJSON),
+    path('data/<str:processedData>',views.infoOnJSON),
 ]
