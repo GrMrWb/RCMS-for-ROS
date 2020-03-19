@@ -2,6 +2,8 @@ var theThing = document.querySelector('#instrearthe');
 var container = document.querySelector('#gridmap');
 var xPosition = 50+(theThing.clientWidth / 2);
 var yPosition = 50+(theThing.clientHeight / 2);
+var prexPosition=xPosition;
+var preyPosition=yPosition;
 var data
 
 container.addEventListener("click",getClickPosition,false);
@@ -12,8 +14,6 @@ function getClickPosition(e) {
 //        if(data["Operation"]["Man"]=="1"){
             
             document.getElementById("curearthe").style.display= "none";
-            prexPosition=xPosition;
-            preyPosition=yPosition;
             var parentPosition = getPosition(e.currentTarget);
 
             xPosition = e.clientX - parentPosition.x - (theThing.clientWidth / 2);
@@ -29,20 +29,30 @@ function getClickPosition(e) {
             theThing.style.left = xPosition + "px";
             theThing.style.top = yPosition + "px";
 
-            document.getElementById("curearthe").style.left = prexPosition + "px";
-            document.getElementById("curearthe").style.top= preyPosition - 50 + "px";
             document.getElementById("curearthe").style.display= "block";
-    
+            if (document.getElementById("curearthe").style.left == prexPosition){
+                document.getElementById("curearthe").style.left = prexPosition + "px";
+                document.getElementById("curearthe").style.top= preyPosition - 50 + "px";
+                document.getElementById("curearthe").style.display= "block";
+                console.log(prexPosition,preyPosition);
+            }
+
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.open("GET", 'http://127.0.0.1:8000/cords/'+ xPosition + '/'+ yPosition + '/'+ prexPosition+'/'+ preyPosition, true);
             xmlhttp.send();
             //xmlhttp.abort();
 //        }
 //    });
-    
-
 }
- 
+
+function moveObject(){
+    prexPosition = prexPosition + (xPosition - prexPosition)/10
+    preyPosition = preyPosition + (yPosition - preyPosition)/10
+    document.getElementById("curearthe").style.left = prexPosition + "px";
+    document.getElementById("curearthe").style.top= preyPosition - 50 + "px";
+}
+setInterval(moveObject,200)
+
 // Helper function to get an element's exact position
 function getPosition(el) {
     var xPos = 0;
