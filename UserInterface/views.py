@@ -6,9 +6,17 @@ import json,os,random
 from .forms import AutoManual
 
 def testUI(request):
+    
+    StatBoard=getInfo("Stat")
     return render(
         request,
-        'home/RCMSmrk2.html'
+        'home/RCMSmrk2.html',
+        {
+            "PiStat": StatBoard["PiStat"],
+            "Pi4procTri": StatBoard["Pi4procTi"],
+            "BrdStat": StatBoard["BrdStat"],
+            "BrdProc":StatBoard["BrdProc"],
+        }
     )
 
 def getInfo(data):

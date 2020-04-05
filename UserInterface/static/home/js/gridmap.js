@@ -38,7 +38,7 @@ function getClickPosition(e) {
             }
 
             var xmlhttp = new XMLHttpRequest();
-            xmlhttp.open("GET", 'http://127.0.0.1:8000/cords/'+ xPosition + '/'+ yPosition + '/'+ prexPosition+'/'+ preyPosition, true);
+            xmlhttp.open(   , 'http://127.0.0.1:8000/cords/'+ xPosition + '/'+ yPosition + '/'+ prexPosition+'/'+ preyPosition, true);
             xmlhttp.send();
             //xmlhttp.abort();
 //        }

@@ -1,38 +1,27 @@
-// progressbar.js@1.0.0 version is used
-// Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
+//clock
+var monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]; 
+var dayNames= ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
 
-function chgManAuto(){
-  
-}
 
-var bar = new ProgressBar.Circle(circlebar,{
-    color: '#aaa',
-    // This has to be the same size as the maximum width to
-    // prevent clipping
-    strokeWidth: 4,
-    trailWidth: 1,
-    easing: 'easeInOut',
-    duration: 1400,
-    text: {
-      autoStyleContainer: false
-    },
-    from: { color: '#aaa', width: 1 },
-    to: { color: '#333', width: 4 },
-    // Set default step function for all animate calls
-    step: function(state, circle) {
-      circle.path.setAttribute('stroke', state.color);
-      circle.path.setAttribute('stroke-width', state.width);
-  
-      var value = Math.round(circle.value() * 100);
-      if (value === 0) {
-        circle.setText('');
-      } else {
-        circle.setText(value);
-      }
-  
-    }
-  });
-  bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
-  bar.text.style.fontSize = '2rem';
-  
-  bar.animate(1.0);  // Number from 0.0 to 1.0
+var newDate = new Date();
+newDate.setDate(newDate.getUTCDate()); 
+$('#date').html(monthNames[newDate.getUTCMonth()]);
+$("#day").html(newDate.getUTCDate);
+
+setInterval( function() {
+    var seconds = new Date().getUTCSeconds();
+    $("#sec").html(( seconds < 10 ? "0" : "" ) + seconds);
+},1000);
+
+setInterval( function() {
+    var minutes = new Date().getUTCMinutes();
+    var hours = new Date().getUTCHours();
+    $("#hours").html(( hours < 10 ? "0" : "" ) + hours + ':' + minutes);
+    $("#timeOclock").html("ZULU");
+}, 1000);
+
+$("#dateOclock").click(function(){
+    hours = new Date().getHours();
+    $("#hours").html(( hours < 10 ? "0" : "" ) + hours);
+    $("#timeOclock").html("LOCAL");
+});
