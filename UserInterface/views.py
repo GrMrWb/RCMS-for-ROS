@@ -5,20 +5,6 @@ import json,os,random
 
 from .forms import AutoManual
 
-def testUI(request):
-    
-    StatBoard=getInfo("Stat")
-    return render(
-        request,
-        'home/RCMSmrk2.html',
-        {
-            "PiStat": StatBoard["PiStat"],
-            "Pi4procTri": StatBoard["Pi4procTi"],
-            "BrdStat": StatBoard["BrdStat"],
-            "BrdProc":StatBoard["BrdProc"],
-        }
-    )
-
 def getInfo(data):
     datarecv=datasharing()
 
@@ -31,9 +17,105 @@ def getInfo(data):
     elif data=="ops":
         datasend= datarecv.ops()
     elif data=="warn":
-        datasend= datarecv.warn()
+        datasend= datarecv.warn()   
+    elif data=="auto":
+        datasend= datarecv.auto()
+    elif data=="man":
+        datasend= datarecv.auto()
+    else:
+        datasend={'No data'}
 
     return datasend
+
+def testLayout(request):
+
+    StatBoard=getInfo("Stat")
+    autocords=getInfo("auto")
+
+    return render(
+        request,
+        'home/mrk2Layout.html',
+        {
+            "PiStat": StatBoard["PiStat"],
+            "Pi4procTri": StatBoard["Pi4procTi"],
+            "BrdStat": StatBoard["BrdStat"],
+            "BrdProc":StatBoard["BrdProc"],
+            "aXaxis":autocords["xPos"],
+            "aYaxis":autocords["yPos"]
+        }
+    )
+
+def testUI(request):
+
+    StatBoard=getInfo("Stat")
+    autocords=getInfo("man")
+
+    with open("UserInterface/static/home/js/data.json", "r") as f:
+        datafile = json.load(f)
+        auto=datafile["Operation"]["Auto"]
+        man=datafile["Operation"]["Man"]
+        f.close()
+
+    if auto=="1":
+        return render(
+            request,
+            'home/mrk2Auto.html',    
+            {
+                "PiStat": StatBoard["PiStat"],
+                "Pi4procTri": StatBoard["Pi4procTi"],
+                "BrdStat": StatBoard["BrdStat"],
+                "BrdProc":StatBoard["BrdProc"],
+                "aXaxis":autocords["xPos"],
+                "aYaxis":autocords["yPos"]
+            }
+        )  
+    elif man=="1":
+        return render(
+            request,
+            'home/mrk2Manual.html',
+            {
+                "PiStat": StatBoard["PiStat"],
+                "Pi4procTri": StatBoard["Pi4procTi"],
+                "BrdStat": StatBoard["BrdStat"],
+                "BrdProc":StatBoard["BrdProc"],
+                "aXaxis":autocords["xPos"],
+                "aYaxis":autocords["yPos"]
+            }
+        )
+
+def testUIauto(request):
+    
+    StatBoard=getInfo("Stat")
+    autocords=getInfo("auto")
+    return render(
+        request,
+        'home/mrk2Auto.html',
+        {
+            "PiStat": StatBoard["PiStat"],
+            "Pi4procTri": StatBoard["Pi4procTi"],
+            "BrdStat": StatBoard["BrdStat"],
+            "BrdProc":StatBoard["BrdProc"],
+            "aXaxis":autocords["xPos"],
+            "aYaxis":autocords["yPos"]
+        }
+    )
+
+def testUIman(request):
+    
+    StatBoard=getInfo("Stat")
+    autocords=getInfo("auto")
+    return render(
+        request,
+        'home/mrk2Manual.html',
+        {
+            "PiStat": StatBoard["PiStat"],
+            "Pi4procTri": StatBoard["Pi4procTi"],
+            "BrdStat": StatBoard["BrdStat"],
+            "BrdProc":StatBoard["BrdProc"],
+            "aXaxis":autocords["xPos"],
+            "aYaxis":autocords["yPos"]
+        }
+    )
 
 def home(request):
     StatBoard=getInfo("Stat")

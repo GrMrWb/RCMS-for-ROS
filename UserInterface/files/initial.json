@@ -27,6 +27,10 @@
     "Operation": {
         "Man": "Receiving...",
         "Auto": "Receiving..."
+    },
+    "Automation": {
+        "xPos": "Receiving...", 
+        "yPos": "Receiving..."
     }
     
 }

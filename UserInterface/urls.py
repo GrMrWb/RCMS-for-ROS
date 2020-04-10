@@ -3,7 +3,9 @@ from UserInterface import views
 
 urlpatterns = [
     path('',views.home, name="home"),
-    path('test/',views.testUI),
+    path('test/',views.testLayout),
+    path('test/man', views.testUIman, name="test"),
+    path('test/auto', views.testUIauto, name="test"),
     path('man', views.autotoman, name="home"),
     path('auto', views.mantoauto, name="home"),
     path('automation/',views.automation),

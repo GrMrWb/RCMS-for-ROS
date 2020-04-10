@@ -328,22 +328,6 @@
   }
 }
 
-@keyframes blinker {
-  75% {
-    opacity: 0.5;
-  }
-}
-
-@keyframes move_power { from { margin-left: 0%; } to { margin-left: 100%; }  }
-
-.powerTo{
-  height:1px;
-  width:10px;
-  background-color: transparent;
-  animation: 5s linear 0s infinite alternate move_power;
-  box-shadow: 0px 0px 30px 5px rgba(150, 255, 255, 0.5), inset 0px 1px 50px 15px rgba(21, 211, 233, 0.3);
-}
-
 .boxframe1{
   border: 1px solid rgba(150, 255, 255, 0.5);
   width:400px;
@@ -381,12 +365,11 @@
   width:340px;
   height:1px;
   position: fixed;
-  top:266px;
-  left: 1016px;
-  transform: rotate(135deg);
+  top:220px;
+  left: 620px;
+  transform: rotate(-122deg);
   box-shadow: 0px 0px 10px 2px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
   animation: 0.5s ease-in;
-  z-index: -1;
 }
 
 .lineofboxframeView-bottom{
@@ -395,73 +378,53 @@
   width:120px;
   height:1px;
   position: fixed;
-  top:455px;
-  left: 1110px;
-  transform: rotate(-12.5deg);
+  top:390px;
+  left: 710px;
+  transform: rotate(30deg);
   box-shadow: 0px 0px 10px 2px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
   animation: 0.5s ease-in;
-  z-index: -1;
 }
 
 .lineofboxframeGridMap-top{
   border: 1px solid rgba(150, 255, 255, 0.5);
   background-color: rgba(150, 255, 255, 0.5);
-  width:120px;
+  width:340px;
   height:1px;
   position: fixed;
-  top:535px;
-  left: 1110px;
-  transform: rotate(12.5deg);
+  top:220px;
+  left: 975px;
+  transform: rotate(122deg);
   box-shadow: 0px 0px 10px 2px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
   animation: 0.5s ease-in;
-  z-index: -1;
 }
 
 .lineofboxframeGridMap-bottom{
   border: 1px solid rgba(150, 255, 255, 0.5);
   background-color: rgba(150, 255, 255, 0.5);
-  width:340px;
+  width:120px;
   height:1px;
   position: fixed;
-  top:739px;
-  left: 1016px;
-  transform: rotate(-135deg);
+  top:390px;
+  left: 1090px;
+  transform: rotate(-30deg);
   box-shadow: 0px 0px 10px 2px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
   animation: 0.5s ease-in;
-  z-index: -1;
 }
 
 .lineofReactorView-1{
-  border: 1px solid rgba(150, 255, 255, 0.5);
-  background-color: rgba(150, 255, 255, 0.5);
-  width:25px;
-  height:1px;
-  position: fixed;
-  top:380px;
-  left: 832px;
-  transform: rotate(45deg);
-  box-shadow: 0px 0px 10px 2px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
-  animation: 0.5s ease-in;
-  z-index: -1;
-}
-
-.lineofReactorView-2{
-  border: 1px solid rgba(150, 255, 255, 0.5);
-  background-color: rgba(150, 255, 255, 0.5);
+  border: .5px solid rgba(150, 255, 255, 0.5);
   width:28px;
   height:1px;
   position: fixed;
-  top:436px;
+  top:446px;
   left: 789px;
   transform: rotate(20deg);
   box-shadow: 0px 0px 10px 2px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
   animation: 0.5s ease-in;
-  z-index: -1;
 }
 
-.lineofReactorView-3{
-  border: 1px solid rgba(150, 255, 255, 0.5);
-  background-color: rgba(150, 255, 255, 0.5);
+.lineofReactorView-2{
+  border: .7px solid rgba(150, 255, 255, 0.5);
   width:30px;
   height:1px;
   position: fixed;
@@ -469,107 +432,73 @@
   left: 772px;
   box-shadow: 0px 0px 10px 2px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
   animation: 0.5s ease-in;
-  z-index: -1;
 }
 
-.lineofReactorView-4{
-  border: 1px solid rgba(150, 255, 255, 0.5);
-  background-color: rgba(150, 255, 255, 0.5);
+.lineofReactorView-3{
+  border: .5px solid rgba(150, 255, 255, 0.5);
   width:29px;
   height:1px;
   position: fixed;
-  top:565px;
+  top:555px;
   left: 783px;
   transform: rotate(-20deg);
   box-shadow: 0px 0px 10px 2px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
   animation: 0.5s ease-in;
-  z-index: -1;
+}
+
+.lineofReactorView-4{
+  border: .6px solid rgba(150, 255, 255, 0.5);
+  width:39px;
+  height:1px;
+  position: fixed;
+  top:651px;
+  left: 1030px;
+  transform: rotate(60deg);
+  box-shadow: 0px 0px 10px 2px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
+  animation: 0.5s ease-in;
 }
 
 .lineofReactorView-5{
-  border: 1px solid rgba(150, 255, 255, 0.5);
-  background-color: rgba(150, 255, 255, 0.5);
-  width:25px;
+  border: .5px solid rgba(150, 255, 255, 0.5);
+  width:39px;
   height:1px;
   position: fixed;
-  top:620px;
-  left: 827px;
-  transform: rotate(-45deg);
+  top:652px;
+  left: 859px;
+  transform: rotate(-60deg);
   box-shadow: 0px 0px 10px 2px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
   animation: 0.5s ease-in;
-  z-index: -1;
-}
-
-.lineofLinksToCapacity{
-  border: 1px solid rgba(150, 255, 255, 0.5);
-  background-color: rgba(150, 255, 255, 0.5);
-  width:20px;
-  height:1px;
-  position: fixed;
-  top:431px;
-  left: 590px;
-  box-shadow: 0px 0px 10px 2px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
-  animation: 0.5s ease-in;
-  z-index: -1;
-}
-
-.lineofLinksToConsumption{
-  border: 1px solid rgba(150, 255, 255, 0.5);
-  background-color: rgba(150, 255, 255, 0.5);
-  width:84px;
-  height:1px;
-  position: fixed;
-  top:539px;
-  left: 566px;
-  transform: rotate(-65deg);
-  box-shadow: 0px 0px 10px 2px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
-  animation: 0.5s ease-in;
-  z-index: -1;
-}
-
-.lineofLinksToPerformance{
-  border: 1px solid rgba(150, 255, 255, 0.5);
-  background-color: rgba(150, 255, 255, 0.5);
-  width:185px;
-  height:1px;
-  position: fixed;
-  top:339px;
-  left: 541px;
-  transform: rotate(20deg);
-  box-shadow: 0px 0px 10px 2px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
-  animation: 0.5s ease-in;
-  z-index: -1;
 }
 
 /* === BoxFrame === */
 
 .boxframeView{
-  width:640px;
-  height:480px;
+  width:480px;
+  height:360px;
   position: fixed;
   top:10px;
-  left:1225px;
+  left:320px;
   box-shadow: 0px 0px 40px 5px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
 }
 
 .boxframeGridMap{
-  width:640px;
-  height:480px;
+  width:736px;
+  height:552px;
   position: fixed;
-  top:510px;
-  left:1225px;
+  top:10px;
+  left:1150px;
   box-shadow: 0px 0px 40px 5px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
 }
 
 .boxframe-performance{
-  width:450px;
+  width:420px;
+  height:250px;
   position: fixed;
-  top:40px;
+  top:700px;
   left:315px;
   border-radius:15%;
   /*border: 1px transparent rgba(150, 255, 255, 0.3);*/
-  padding:5px;
-  border-bottom:3px solid rgba(150, 255, 255, 0.7); 
+  padding-top:0px;
   box-shadow: 0px 0px 40px 1px rgba(150, 255, 255, 0.1), inset 0px 1px 300px 1px rgba(21, 211, 233, 0.1);
 }
 
@@ -586,72 +515,47 @@
   width:640px;
   /*height:240px;*/
   position: fixed;
-  top:700px;
-  left: 400px;
+  top:712px;
+  left: 1200px;
   border-radius:15%;
-  padding:20px;
-  padding-bottom: 0px;
+  padding:20px 20px 0px 20px;
   box-shadow: 0px 0px 40px 1px rgba(150, 255, 255, 0.1), inset 0px 1px 300px 1px rgba(21, 211, 233, 0.1);
 }
 
 .boxframe-consumption{
-  width:275px;
+  width:175px;
   position: fixed;
-  top:375px;
-  left:315px;
+  top:750px;
+  left:770px;
   border-radius:15%;  
-  border-right:3px solid rgba(150, 255, 255, 0.7); 
   box-shadow: 0px 0px 40px 1px rgba(150, 255, 255, 0.1), inset 0px 1px 300px 1px rgba(21, 211, 233, 0.1);
 }
 
 .boxframe-capacity{
-  width:275px;
+  width:175px;
   position: fixed;
-  top:525px;
-  left:315px;
-  border-radius:15%; 
-  border-right:3px solid rgba(150, 255, 255, 0.7); 
+  top:750px;
+  left:980px;
+  border-radius:15%;  
   box-shadow: 0px 0px 40px 1px rgba(150, 255, 255, 0.1), inset 0px 1px 300px 1px rgba(21, 211, 233, 0.1);
 }
 
-.boxframe-warnenv{
-  width:250px;
+.boxframe-warning-1{
+  width:325px;
   position: fixed;
-  top:230px;
-  left:830px;
-  border-radius:15%; 
-  border-bottom:3px solid rgba(150, 255, 255, 0.7);
+  top:590px;
+  left:1160px;
+  border-radius:15%;  
   box-shadow: 0px 0px 40px 1px rgba(150, 255, 255, 0.1), inset 0px 1px 300px 1px rgba(21, 211, 233, 0.1);
 }
 
-#warnToggle{
-  animation: none;
-}
-
-#warnenv{
-  text-align: center;
-  margin:15px 0px 15px 0px;
-  font-size: 32px;
-}
-
-.boxframe-tideenv{
-  width:250px;
+.boxframe-warning-2{
+  width:325px;
   position: fixed;
-  top:130px;
-  left:830px;
-  border-radius:15%; 
-  border-bottom:3px solid rgba(150, 255, 255, 0.7);
+  top:590px;
+  left:1545px;
+  border-radius:15%;  
   box-shadow: 0px 0px 40px 1px rgba(150, 255, 255, 0.1), inset 0px 1px 300px 1px rgba(21, 211, 233, 0.1);
-}
-
-#tideToggle{
-  animation: none;
-}
-
-#tideenv{
-  text-align: center;
-  margin:15px 0px 15px 0px;
-  font-size: 32px;
 }
 
 .throttle{
@@ -663,33 +567,26 @@
   background-color: rgba(150, 255, 255, 0.171);
 }
 
-#percentageL{
+.percentage{
   height: 40%;
   background-color: black;
   border-bottom: 3px solid rgba(150, 255, 255, 0.7);
-  transition: 1s linear;
-}
 
-#percentageR{
-  height: 40%;
-  background-color: black;
-  border-bottom: 3px solid rgba(150, 255, 255, 0.7);
-  transition: 1s linear;
 }
 
 /* 
     GridMap
 */
 #gridmaptb {
-  width:580px;
-  height:400px;
+  width:736px;
+  height:432px;
   overflow: hidden;
   cursor: pointer;
 }
 
 #gridmap {
-  width:640px;
-  height:480px; 
+  width:736px;
+  height:552px; 
   border: 5px rgba(103, 110, 121, 0.685) solid;
   overflow: hidden;
   background-color: #2b2b2b;

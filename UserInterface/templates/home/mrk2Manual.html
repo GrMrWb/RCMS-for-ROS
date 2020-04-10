@@ -1,5 +1,6 @@
 <!doctype html>
     <head>
+        <meta name='viewport' content="maximum-scale=1.0 user-scalable=no">
         <title>Team Earth</title>
         <!--Bootstrap-->
         <!--javascript-->
@@ -30,8 +31,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css">
 
         <!--jQuery-->
-        <script src="{% static 'home/js/jquery/jquery.min.js' %}"></script>
         <script src="{% static 'home/js/data.js' %}"></script>
+        <script src="{% static 'home/js/jquery/jquery.min.js' %}"></script>
 
         <!--Font Awosome
         <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
@@ -89,14 +90,18 @@
                         <a class="caption nav-link active" data-toggle="tab" href="#system" style="padding-left: 0px;">System Monitor</a>
                     </li>
                     <li class="nav-item menuitem">
-                        <a class="caption nav-link" data-toggle="tab" href="#earth-e" style="padding-left: 0px;">Earth-E</a>
+                        <a class="caption nav-link" data-toggle="tab" href="#earth-e" style="padding-left: 0px;" >Earth-E</a>
                     </li>
                     <li class="nav-item menuitem    ">
                         <a class="caption nav-link" data-toggle="tab" href="#sortrig" style="padding-left: 0px;">Sorting Rig</a>
                     </li>
                 </ul>
             </div>
-        
+            <p class="title">Shortcuts</p>
+            <div class="hline title_underline"></div> 
+            <div class="menu">
+                
+            </div>
                 <!--Menu Choice for Shortcuts-->
             <p class="title">Shortcuts</p>
             <div class="hline title_underline"></div> 
@@ -117,9 +122,9 @@
         </div>-->
         
         <div class="tab-content">
-            <div class="tab-pane container active" id="system">
+            <!---------System Monitor-------->
+            <div class="tab-pane container fade" role="tabpanel" id="system">
                 <div class="boxframe1">
-                    
                     <p class="title" style="text-align: center; margin-top: -35px;">Earth-E</p>
                 </div>
                 <div class="boxframe2">
@@ -130,95 +135,188 @@
                     <p class="title" style="text-align: center; margin-top: -35px;">Eye-in-the-Sky</p>
                 </div>
             </div>
-            <div class="tab-pane container fade" id="earth-e">
-                <div class="boxframe-left-top">
-                    <div class="tab-content">
-                        <div class="tab-pane container active" id="system">
-                            <p class="title" style="margin-top:0px">Performance</p>
-                            <div class="hline title_underline" style=" margin-left: 120px;"></div>
-                            <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
-                                <thead>
-                                    <tr>
-                                        <th style="width:30%; border-top: transparent">Module</th>
-                                        <th style="width:40%; border-top: transparent">Status</th>
-                                        <th style="width:30%; border-top: transparent">Processing</th>
-                                    </tr>
-                                </thead>
-                                <tr>
-                                    <th style="color:rgba(241, 232, 232, 0.822); text-align: center;">RaspberyPi</th>
-                                    <td id="PiStat">{{ PiStat }}</td><td id="Pi4procTri">{{ Pi4procTri }}</td>
-                                </tr>
-                                <tr>
-                                    <th style="color:rgba(241, 232, 232, 0.822); text-align: center;"> Boarduino</th>
-                                    <td id="BrdStat">{{ BrdStat }}</td><td id="BrdProc">{{ BrdProc }}</td>
-                                </tr>
-                                <tr>
-                                    <th style="color:rgba(241, 232, 232, 0.822); text-align: center;"> ROS</th>
-                                    <td id="BrdStat">{{ BrdStat }}</td><td id="BrdProc">{{ BrdProc }}</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="tab-pane container active" id="system">
-                        </div>
-                    </div>
-                </div>
-                <div class="boxframe-left-middle">
-                    <div class="menu" style="float:right;margin-left:-10px;">
-                        <ul class="nav">
-                            <li class="nav-item menuitem" style="margin: 5px 0px 5px 0px;">
-                                <a style="margin: 0px 0px 0px -100px; text-decoration:underline; font-size: 30px;" class="caption nav-link active" data-toggle="tab" href="#system" style="padding-left: 0px;">Performance</a>
+            <!--------Earth-E Monitor-------->
+            <div class="tab-pane container active" role="tabpanel" id="earth-e">
+                <!---------Line from Reactor-------->
+                <div class="lineofReactorView-1"><div class="powerTo"></div></div>
+                <div class="lineofReactorView-2"><div class="powerTo"></div></div>
+                <div class="lineofReactorView-3"><div class="powerTo"></div></div>
+                <div class="lineofReactorView-4"><div class="powerTo"></div></div>
+                <div class="lineofReactorView-5"><div class="powerTo"></div></div>
+                <div class="lineofLinksToConsumption"><div class="powerTo"></div></div>
+                <div class="lineofLinksToCapacity"><div class="powerTo"></div></div>
+                <div class="lineofLinksToPerformance"><div class="powerTo"></div></div>
+                <!------------Links----------->
+                <div class="boxframe-links">
+                    <div class="menu" style="float:right;margin-left:-10px;padding-top: 35px;padding-right: 10px;">
+                        <ul class="nav" role="tablist">
+                            <li class="nav-item menuitem" style="margin: 0px 0px 5px 0px;">
+                                <a style="margin: 0px 0px 0px -70px; font-size: 28px;text-decoration: underline;" class="caption nav-link active" data-toggle="tab" href="#perform" style="padding-left: 0px;">Performance</a>
+                            </li>
+                            <li class="nav-item menuitem" style="margin: 15px 0px 20px 0px;">
+                                <a style="margin: 0px 0px 0px -180px; font-size: 28px;text-decoration: underline;" class="caption nav-link" data-toggle="tab" href="#test" style="padding-left: 0px;">Energy Consumption</a>
+                            </li>
+                            <li class="nav-item menuitem" style="margin: 10px 0px 15px 0px;">
+                                <a style="margin: 0px 0px 0px -165px; font-size: 28px;text-decoration: underline;" class="caption nav-link" data-toggle="tab" href="#test" style="padding-left: 0px;">Battery Capacity</a>
+                            </li>
+                            <li class="nav-item menuitem" style="margin: 10px 0px 15px 0px;">
+                                <form action="auto" method="POST">{% csrf_token %}  <div class="form-group"><button type="submit" class="btn btn-outline-success" style="font-size: 28px; padding:0px; padding-left:5px; padding-right:5px; margin-left:-80px; border:transparent; text-decoration: underline;" href="#auto">Automatic</button></div></form>
+                                
                             </li>
                             <li class="nav-item menuitem" style="margin: 5px 0px 5px 0px;">
-                                <a style="margin: 0px 0px 0px -150px; text-decoration:underline; font-size: 30px;" class="caption nav-link" data-toggle="tab" href="#earth-e" style="padding-left: 0px;">Energy Capacity</a>
-                            </li>
-                            <li class="nav-item menuitem" style="margin: 5px 0px 5px 0px;">
-                                <a style="margin: 0px 0px 0px -120px; text-decoration:underline; font-size: 30px;" class="caption nav-link" data-toggle="tab" href="#sortrig" style="padding-left: 0px;">Sorting Rig</a>
-                            </li>
-                            <li class="nav-item" style="margin: 5px 0px 5px 0px;">
-                                <form action="auto" method="POST">{% csrf_token %}  <div class="form-group"><button type="submit" class="btn btn-outline-success" style="font-size:18px; padding:0px; padding-left:5px; padding-right:5px; margin-left:-70px; font-size: 24px;" href="#auto">Automatic</button></div></form>
-                            </li>
-                            <li class="nav-item" style="margin: 5px 0px 5px 0px;">
-                                <form action="man" method="POST">{% csrf_token %}  <div class="form-group"><button type="submit" class="btn btn-outline-danger" style="font-size:18px; padding:0px; padding-left:5px; padding-right:5px; margin-top:50px; margin-left:-50px; font-size: 24px;" href="#manual">Manual</button></div></form>
+                                <form action="man" method="POST">{% csrf_token %}  <div class="form-group"><button type="submit" class="btn btn-outline-danger" style=" font-size: 28px; padding:0px; padding-left:5px; padding-right:5px; margin-left:-5px; border:transparent; text-decoration: underline;" href="#manual">Manual</button></div></form>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <div class="boxframe-left-bottom">
-                    <p class="title" style="margin-top:0px">Energy Capacity</p>
-                    <div class="hline title_underline" style=" margin-left: 190px;"></div>
+                <!---------Environmental Warning-------->
+                <div class="boxframe-tideenv" id="tideToggle">
+                    <div id="tideenv"></div>
+                </div>
+                <!---------Environmental Warning-------->
+                <div class="boxframe-warnenv" id="warnToggle">
+                    <div id="warnenv"></div>
+                </div>
+                <!---------Performance-------->
+                <div class="boxframe-performance">
+                    <p class="title" style="margin-top:0px">Performance</p>
+                    <div class="hline title_underline" style=" margin-left: 120px;"></div>
                     <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
                         <thead>
-                            <th style="text-align: center; border-top: transparent">Consumption</th>
-                            <th style="text-align: center; border-top: transparent">Battery Capacity</th>
+                            <tr>
+                                <th style="width:25%; border-top: transparent">Module</th>
+                                <th style="width:50%; border-top: transparent">Status</th>
+                                <th style="width:25%; border-top: transparent">Processing</th>
+                            </tr>
                         </thead>
-                    </table>
-                    <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
                         <tr>
-                            <th>RaspberyPi</th>
-                            <td id="Consumption">{{Consumption}} W</td>
-                            <th>Battery 1</th>
-                            <td id="CapA">{{CapA}}</td>
+                            <th style="color:rgba(241, 232, 232, 0.822); text-align: center;">RaspberryPi</th>
+                            <td id="PiStat">{{ PiStat }}</td><td id="Pi4procTri">{{ Pi4procTri }}</td>
                         </tr>
                         <tr>
-                            <td>Boarduino</th>
-                            <td id="Consumptiona">{{Consumption}} W</td>
-                            <th>Battery 2</th>
-                            <td id="CapB">{{CapB}}</td>
+                            <th style="color:rgba(241, 232, 232, 0.822); text-align: center;"> Boarduino</th>
+                            <td id="BrdStat">{{ BrdStat }}</td><td id="BrdProc">{{ BrdProc }}</td>
+                        </tr>
+                        <tr>
+                            <th style="color:rgba(241, 232, 232, 0.822); text-align: center;"> ROS</th>
+                            <td id="BrdStat">{{ BrdStat }}</td><td id="BrdProc">{{ BrdProc }}</td>
                         </tr>
                     </table>
                 </div>
-                <div class="boxframe4">
-                    <p class="title" style="text-align: center; margin-top: -35px;">Earth-E</p>
+                <!---------Consumption-------->
+                <div class="boxframe-consumption">
+                    <div class="tab-content">
+                        <div class="tab-pane container active" id="system">
+                            <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                                <tr>
+                                    <th style="text-align: center; border-top: transparent">RaspberyPi</th>
+                                    <td id="Consumption" style="text-align: center; border-top: transparent">{{Consumption}} W</td>
+                                </tr>
+                                <tr>
+                                    <td >Boarduino</th>
+                                    <td id="Consumptiona">{{Consumption}} W</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="tab-pane container fade" id="system">
+
+                        </div>
+                    </div>
+                </div>
+                <!---------Capacity-------->
+                <div class="boxframe-capacity">
+                    <div class="tab-content">
+                        <div class="tab-pane container active" id="system">
+                            <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                                <tr>
+                                    <th style="text-align: center; border-top: transparent" > Battery 1</th>
+                                    <td id="CapA"style="text-align: center; border-top: transparent">{{CapA}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Battery 2</th>
+                                    <td id="CapB">{{CapB}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="tab-pane container fade" id="system">
+
+                        </div>
+                    </div>
+                </div>
+                <!---------Automatic Manual-------->
+                <div class="boxframe-automan">
+                    <p class="title" style="margin-top:0px">Manual</p>
+                    <div class="hline title_underline" style=" margin-left: 190px; margin-bottom: 10px;"></div>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <div class="table-responsive" style="width:90%; margin-top: 10px; margin-left: 20px; margin-right: 20px;">
+                                <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                                    <tr style="border-top: none;">
+                                        <th style="border-top: none;">Location</th>
+                                        <td id=""style="border-top: none;">X-axis: &nbsp; {{ aXaxis }} &nbsp; Y-Axis: &nbsp; {{ aYaxis }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Phase</th>
+                                        <td id="">Collecting Rubbish</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Target</th>
+                                        <td id="">Avoiding Obstacles</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <center><p class="caption" style="color:#02feff; font-size:25px; text-decoration: underline;">Throttle</p></center>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="throttle">
+                                        <div id="percentageL"></div>
+                                    </div>
+                                    <center>
+                                        <p style="font-size: 24px;">L</p>
+                                    </center>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="throttle">
+                                        <div id="percentageR"></div>
+                                    </div>
+                                    <center>
+                                        <p style="font-size: 24px;">R</p>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!---------Lines to Live View-------->
+                <div class="lineofboxframeView-top"><div class="powerTo"></div></div>
+                <div class="lineofboxframeView-bottom"><div class="powerTo"></div></div>
+                <!-------------Live View------------->
+                <div class="boxframeView">
                     <img src="{% static '\home\src\sortingrig.PNG' %}" style="height:480px">
+                </div>   
+                <!---------Lines to GridMap-------->
+                <div class="lineofboxframeGridMap-top"><div class="powerTo"></div></div>
+                <div class="lineofboxframeGridMap-bottom"><div class="powerTo"></div></div>
+                <!-------------Grid Map------------>
+                <div class="boxframeGridMap">
+                    <div id="gridmap" onclick="getClickPosition()">
+                        <img id="instrearthe" src="{% static 'home/src/earthe.png' %}" style="height:50px">
+                        <img id="curearthe" src="{% static 'home/src/earthe.png' %}" style="height:50px">
+                    </div>
+                    <script src="{% static 'home/js/gridmap.js' %}"></script>
                 </div>
+                 
+                
             </div>
-            <div class="tab-pane container fade" id="sortrig">
-                <div class="boxframe4">
+            <!--------Sorting-Rig Monitor-------->
+            <div class="tab-pane container fade" role="tabpanel" id="sortrig">
+                <div class="boxframeView">
                     <p class="title" style="text-align: center; margin-top: -35px;">Sorting Rig</p>
                     <img src="{% static '\home\src\sortingrig.PNG' %}" style="height:480px">
                 </div>
-            </div>
-            
+            </div>  
         </div>
 
         <div id="arc_container">

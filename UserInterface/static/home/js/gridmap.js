@@ -2,12 +2,12 @@ var theThing = document.querySelector('#instrearthe');
 var container = document.querySelector('#gridmap');
 var xPosition = 50+(theThing.clientWidth / 2);
 var yPosition = 50+(theThing.clientHeight / 2);
-var prexPosition=xPosition;
-var preyPosition=yPosition;
+var prexPosition = xPosition;
+var preyPosition = yPosition;
 var data
 
 container.addEventListener("click",getClickPosition,false);
- 
+
 function getClickPosition(e) {
    
 //    data=$.getJSON("/static/home/js/data.json",function(data){
@@ -23,8 +23,9 @@ function getClickPosition(e) {
             xPosition = xPosition < 0 ? 0 : xPosition;
             yPosition = yPosition < 0 ? 0 : yPosition;
     
-            xPosition = xPosition > 940 ? 940 : xPosition;
-            yPosition = yPosition > 500 ? 500 : yPosition;
+            xPosition = xPosition > 590 ? 580 : xPosition;
+            yPosition = yPosition > 420 ? 420 : yPosition;
+            console.log(yPosition);
 
             theThing.style.left = xPosition + "px";
             theThing.style.top = yPosition + "px";
@@ -38,7 +39,7 @@ function getClickPosition(e) {
             }
 
             var xmlhttp = new XMLHttpRequest();
-            xmlhttp.open(   , 'http://127.0.0.1:8000/cords/'+ xPosition + '/'+ yPosition + '/'+ prexPosition+'/'+ preyPosition, true);
+            xmlhttp.open( 'GET'  , 'http://127.0.0.1:8000/cords/'+ xPosition + '/'+ yPosition + '/'+ prexPosition+'/'+ preyPosition, true);
             xmlhttp.send();
             //xmlhttp.abort();
 //        }

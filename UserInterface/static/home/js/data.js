@@ -5,7 +5,10 @@ function updateData(){
     $.getJSON("/static/home/js/warning.json",function(data){
         //Environmental Data
         document.getElementById("warnenv").innerText= data["Warning"]["seagull"]== "True" ? "SeaGulls in Vicinity" : "No Warning";
-        document.getElementById("titled_warnenv").style.backgroundColor = data["Warning"]["seagull"]== "True" ? "orange" : "green";
+        document.getElementById("warnToggle").style.animation = data["Warning"]["seagull"]== "True" ? "blinker 3s infinite 0s" : "none";
+        document.getElementById("tideenv").innerText= data["Warning"]["tide"]== "True" ? "Less than 1 metre" : "More than 1 metre";
+        document.getElementById("tideToggle").style.animation = data["Warning"]["tide"]== "True" ? "blinker 3s infinite 0s" : "none";
+
 
         delete data;
     });
@@ -66,3 +69,11 @@ setInterval(updateData,2000);
     }
 
 }*/
+
+function throttleAuto(){
+    test= parseInt(Math.random()*100) +"%";
+    document.getElementById("percentageL").style.height= test;
+    document.getElementById("percentageR").style.height= test;
+}
+
+setInterval(throttleAuto,500);
