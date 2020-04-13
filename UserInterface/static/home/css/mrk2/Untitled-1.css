@@ -346,31 +346,115 @@
 
 .boxframe1{
   border: 1px solid rgba(150, 255, 255, 0.5);
-  width:400px;
-  height:300px;
+  width:480px;
+  height:360px;
   position: fixed;
   top:50px;
-  left:340px;
+  left:315px;
   box-shadow: 0px 0px 40px 5px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
 }
 
-.boxframe2{
-  width:400px;
-  height:300px;
+.lineofboxframe1-top{
+  border: 1px solid rgba(150, 255, 255, 0.5);
+  background-color: rgba(150, 255, 255, 0.5);
+  width:170px;
+  height:1px;
   position: fixed;
-  top:325px;
-  left:1050px;
+  top:308px;
+  left: 740px;
+  transform: rotate(-125deg);
+  box-shadow: 0px 0px 10px 2px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
+  animation: 0.5s ease-in;
+  z-index: -1;
+}
+
+.lineofboxframe1-bottom{
+  border: 1px solid rgba(150, 255, 255, 0.5);
+  background-color: rgba(150, 255, 255, 0.5);
+  width:200px;
+  height:1px;
+  position: fixed;
+  top:425px;
+  left: 620px;
+  transform: rotate(17.5deg);
+  box-shadow: 0px 0px 10px 2px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
+  animation: 0.5s ease-in;
+  z-index: -1;
+}
+
+.boxframe2{
+  width:640px;
+  height:480px;
+  position: fixed;
+  top:265px;
+  left:1175px;
   box-shadow: 0px 0px 40px 5px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
+}
+
+.lineofboxframe2-top{
+  border: 1px solid rgba(150, 255, 255, 0.5);
+  background-color: rgba(150, 255, 255, 0.5);
+  width:200px;
+  height:1px;
+  position: fixed;
+  top:580px;
+  left: 620px;
+  transform: rotate(-17.5deg);
+  box-shadow: 0px 0px 10px 2px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
+  animation: 0.5s ease-in;
+  z-index: -1;
+}
+
+.lineofboxframe2-bottom{
+  border: 1px solid rgba(150, 255, 255, 0.5);
+  background-color: rgba(150, 255, 255, 0.5);
+  width:170px;
+  height:1px;
+  position: fixed;
+  top:696px;
+  left: 740px;
+  transform: rotate(125deg);
+  box-shadow: 0px 0px 10px 2px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
+  animation: 0.5s ease-in;
+  z-index: -1;
 }
 
 .boxframe3{
   border: 1px solid rgba(150, 255, 255, 0.5);
-  width:400px;
-  height:300px;
+  width:480px;
+  height:360px;
   position: fixed;
-  top:580px;
-  left:340px;
+  top:600px;
+  left:315px;
   box-shadow: 0px 0px 40px 5px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
+}
+
+.lineofboxframe3-top{
+  border: 1px solid rgba(150, 255, 255, 0.5);
+  background-color: rgba(150, 255, 255, 0.5);
+  width:100px;
+  height:1px;
+  position: fixed;
+  top:421px;
+  left: 1100px;
+  transform: rotate(-22.5deg);
+  box-shadow: 0px 0px 10px 2px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
+  animation: 0.5s ease-in;
+  z-index: -1;
+}
+
+.lineofboxframe3-bottom{
+  border: 1px solid rgba(150, 255, 255, 0.5);
+  background-color: rgba(150, 255, 255, 0.5);
+  width:100px;
+  height:1px;
+  position: fixed;
+  top:584px;
+  left: 1100px;
+  transform: rotate(22.5deg);
+  box-shadow: 0px 0px 10px 2px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
+  animation: 0.5s ease-in;
+  z-index: -1;
 }
 
 /*Line from the Reactor*/
@@ -541,6 +625,77 @@
   z-index: -1;
 }
 
+
+
+.lineofLinksToPerformanceSortRig{
+  border: 1px solid rgba(150, 255, 255, 0.5);
+  background-color: rgba(150, 255, 255, 0.5);
+  width:185px;
+  height:1px;
+  position: fixed;
+  top:360px;
+  left: 667px;
+  transform: rotate(34.5deg);
+  box-shadow: 0px 0px 10px 2px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
+  animation: 0.5s ease-in;
+  z-index: -1;
+}
+
+.lineofLinksToBinsTop{
+  border: 1px solid rgba(150, 255, 255, 0.5);
+  background-color: rgba(150, 255, 255, 0.5);
+  width:120px;
+  height:1px;
+  position: fixed;
+  top:417px;
+  left: 705px;
+  transform: rotate(22deg);
+  box-shadow: 0px 0px 10px 2px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
+  animation: 0.5s ease-in;
+  z-index: -1;
+}
+
+.lineofLinksToBinsBottom{
+  border: 1px solid rgba(150, 255, 255, 0.5);
+  background-color: rgba(150, 255, 255, 0.5);
+  width:100px;
+  height:1px;
+  position: fixed;
+  top:552.5px;
+  left: 708px;
+  transform: rotate(167.5deg);
+  box-shadow: 0px 0px 10px 2px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
+  animation: 0.5s ease-in;
+  z-index: -1;
+}
+
+.lineofLinksToRubbishLeft{
+  border: 1px solid rgba(150, 255, 255, 0.5);
+  background-color: rgba(150, 255, 255, 0.5);
+  width:55px;
+  height:1px;
+  position: fixed;
+  top:332px;
+  left: 878px;
+  transform: rotate(72deg);
+  box-shadow: 0px 0px 10px 2px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
+  animation: 0.5s ease-in;
+  z-index: -1;
+}
+
+.lineofLinksToRubbishRight{
+  border: 1px solid rgba(150, 255, 255, 0.5);
+  background-color: rgba(150, 255, 255, 0.5);
+  width:55px;
+  height:1px;
+  position: fixed;
+  top:332px;
+  left: 988px;
+  transform: rotate(-72deg);
+  box-shadow: 0px 0px 10px 2px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
+  animation: 0.5s ease-in;
+  z-index: -1;
+}
 /* === BoxFrame === */
 
 .boxframeView{
@@ -624,6 +779,122 @@
   box-shadow: 0px 0px 40px 1px rgba(150, 255, 255, 0.1), inset 0px 1px 300px 1px rgba(21, 211, 233, 0.1);
 }
 
+.boxframe-bins{
+  width:400px;
+  position: fixed;
+  top:340px;
+  left:315px;
+  border-radius:15%;
+  /*border: 1px transparent rgba(150, 255, 255, 0.3);*/
+  padding:0px 5px 5px 5px;
+  border-bottom:3px solid rgba(150, 255, 255, 0.7); 
+  box-shadow: 0px 0px 40px 1px rgba(150, 255, 255, 0.1), inset 0px 1px 300px 1px rgba(21, 211, 233, 0.1);
+}
+
+.boxframe-rubbish{
+  width:250px;
+  position: fixed;
+  top:94px;
+  left:830px;
+  border-radius:15%;
+  /*border: 1px transparent rgba(150, 255, 255, 0.3);*/
+  padding:5px;
+  border-bottom:3px solid rgba(150, 255, 255, 0.7); 
+  box-shadow: 0px 0px 40px 1px rgba(150, 255, 255, 0.1), inset 0px 1px 300px 1px rgba(21, 211, 233, 0.1);
+}
+
+.boxframe-ident{
+  width:750px;
+  position: fixed;
+  top:600px;
+  left:1130px;
+  border-radius:15%;
+  /*border: 1px transparent rgba(150, 255, 255, 0.3);*/
+  padding:5px;
+  border-bottom:3px solid rgba(150, 255, 255, 0.7); 
+  box-shadow: 0px 0px 40px 1px rgba(150, 255, 255, 0.1), inset 0px 1px 300px 1px rgba(21, 211, 233, 0.1);
+}
+
+.tableIdent{
+  margin-left: 40px;
+}
+
+.Plastic{
+  margin:-2px 0px 1rem 0px;
+  height:25px;
+  width:180px;
+  border: 1px solid rgba(150, 255, 255, 0.3);
+  background-color: rgba(150, 255, 255, 0.171);
+}
+
+#percentagePlastic{
+  position: relative;
+  float:right;
+  top:0;
+  height:23px;
+  width: 40%;
+  background-color: black;
+  border-left: 3px solid rgba(150, 255, 255, 0.7);
+  transition: 1s linear;
+}
+
+.Metal{
+  margin:-2px 0px 1rem 0px;
+  height:25px;
+  width:180px;
+  border: 1px solid rgba(150, 255, 255, 0.3);
+  background-color: rgba(150, 255, 255, 0.171);
+}
+
+#percentageMetal{
+  position: relative;
+  float:right;
+  top:0;
+  height:23px;
+  width: 40%;
+  background-color: black;
+  border-left: 3px solid rgba(150, 255, 255, 0.7);
+  transition: 1s linear;
+}
+
+.Paper{
+  margin:0px 0px 1rem 0px;
+  height:25px;
+  width:180px;
+  border: 1px solid rgba(150, 255, 255, 0.3);
+  background-color: rgba(150, 255, 255, 0.171);
+}
+
+#percentagePaper{
+  position: relative;
+  float:right;
+  top:0;
+  height:23px;
+  width: 40%;
+  background-color: black;
+  border-left: 3px solid rgba(150, 255, 255, 0.7);
+  transition: 1s linear;
+}
+
+.Unable{
+  margin:0px 0px 1rem 0px;
+  height:25px;
+  width:180px;
+  border: 1px solid rgba(150, 255, 255, 0.3);
+  background-color: rgba(150, 255, 255, 0.171);
+}
+
+#percentageUnable{
+  position: relative;
+  float:right;
+  top:0;
+  height:23px;
+  width: 40%;
+  background-color: black;
+  border-left: 3px solid rgba(150, 255, 255, 0.7);
+  transition: 1s linear;
+}
+
 #warnToggle{
   animation: none;
 }
@@ -677,6 +948,68 @@
   transition: 1s linear;
 }
 
+/*Rubbish*/
+#BinA{
+  border-right:1px solid #454d55;
+  border-bottom:1px solid #454d55;
+  text-align: center;
+}
+
+#BinB{
+  border-bottom:1px solid #454d55;
+  text-align: center;
+}
+
+#BinC{
+  border-right:1px solid #454d55;
+  text-align: center;
+}
+
+#BinD{
+  text-align: center;
+}
+
+#BinAtfr{
+  border-right:1px solid #454d55;
+  border-bottom:3px solid #454d55;
+  text-align: center;
+}
+
+#BinBtfr{
+  border-bottom:3px solid #454d55;
+  text-align: center;
+}
+
+#BinCtfr{
+  border-right:1px solid #454d55;
+  text-align: center;
+}
+
+#BinDtfr{
+  text-align: center;
+}
+
+#totRub{
+  border-top:1px solid transparent;
+  border-bottom:1px solid #454d55;
+  text-align: center;
+  width:16.667%;
+}
+
+#colRub{
+  border-top:1px solid transparent;
+  border-bottom:1px solid #454d55;
+  text-align: center;
+  width:16.667%;
+}
+
+#SortRub{
+  border-top:1px solid transparent;
+  text-align: center;
+  width:16.667%;
+}
+
+
 /* 
     GridMap
 */
@@ -717,8 +1050,8 @@
 
 #demotests{
   width:640px;
-  height:480px; 
-  z-index: 1000;
+  height:480px;
+  position:fixed;
 }
 
 /*

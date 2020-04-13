@@ -6,15 +6,21 @@ function updateData(){
         //Environmental Data
         document.getElementById("warnenv").innerText= data["Warning"]["seagull"]== "True" ? "SeaGulls in Vicinity" : "No Warning";
         document.getElementById("warnToggle").style.animation = data["Warning"]["seagull"]== "True" ? "blinker 3s infinite 0s" : "none";
-        document.getElementById("tideenv").innerText= data["Warning"]["tide"]== "True" ? "Less than 1 metre" : "More than 1 metre";
-        document.getElementById("tideToggle").style.animation = data["Warning"]["tide"]== "True" ? "blinker 3s infinite 0s" : "none";
-
-
         delete data;
     });
+
     $.getJSON("/static/home/js/data.json",function(data){
         if (data["v"]!=pastversion){
-            
+            if (data["Operation"]["Auto"]=="1"){
+                $.getJSON("/static/home/js/warning.json",function(data){
+                    //Environmental Data
+                    document.getElementById("warnenv").innerText= data["Warning"]["seagull"]== "True" ? "SeaGulls in Vicinity" : "No Warning";
+                    document.getElementById("warnToggle").style.animation = data["Warning"]["seagull"]== "True" ? "blinker 3s infinite 0s" : "none";
+                    document.getElementById("tideenv").innerText= data["Warning"]["tide"]== "True" ? "Less than 1 metre" : "More than 1 metre";
+                    document.getElementById("tideToggle").style.animation = data["Warning"]["tide"]== "True" ? "blinker 3s infinite 0s" : "none";           
+                    delete data;
+                });
+            }
             //TriTrack Data
             document.getElementById("PiStat").innerText = data["TriTrackDataMic"]["PiStat"] == "1" ? "Not Available" : "Available Processing";
             document.getElementById("Pi4procTri").innerText = data["TriTrackDataMic"]["Pi4procTri"]+" %";
@@ -30,18 +36,11 @@ function updateData(){
             //Rubbish
             tot=parseInt(data["Rubbish"]["BinA"])+parseInt(data["Rubbish"]["BinB"])+parseInt(data["Rubbish"]["BinC"])
             document.getElementById("totRub").innerText = data["Rubbish"]["totRub"];
-            document.getElementById("colRub").innerText = parseInt(data["Rubbish"]["ColRub"])==tot ? data["Rubbish"]["ColRub"] : "Error";
+            document.getElementById("colRub").innerText = data["Rubbish"]["ColRub"];
             document.getElementById("SortRub").innerText = tot;
             document.getElementById("BinA").innerText = data["Rubbish"]["BinA"];
             document.getElementById("BinB").innerText = data["Rubbish"]["BinB"];
             document.getElementById("BinC").innerText = data["Rubbish"]["BinC"];
-
-            //Manual and Automatic Operation
-            
-            document.getElementById("titled_autoen").style.backgroundColor = data["Operation"]["Auto"]== "1" ? "green" : "red";
-            document.getElementById("autoen").innerText = data["Operation"]["Auto"] == "1" &&  data["Operation"]["Man"] == "0" ? "Enabled" : "Disabled";
-            document.getElementById("titled_manen").style.backgroundColor = data["Operation"]["Man"] == "1" ? "green" : "red";
-            document.getElementById("manen").innerText = data["Operation"]["Man"] == "1" &&  data["Operation"]["Auto"] == "0" ? "Enabled" : "Disabled";
 
             if (data["Operation"]["Man"]==data["Operation"]["Auto"]){
                 document.getElementById("errorProc").innerHTML='<p>ERROR IN THE PROCESS</p><p>Giving the following priority</p><ul><li>Controller</li><li>Autonomous</li><li>GridMap</li></ul>';
@@ -76,4 +75,17 @@ function throttleAuto(){
     document.getElementById("percentageR").style.height= test;
 }
 
-setInterval(throttleAuto,500);
+//setInterval(throttleAuto,500);
+
+function trashAuto(){
+    test= parseInt(Math.random()*100) +"%";
+    document.getElementById("percentagePlastic").style.width= test;
+    test= parseInt(Math.random()*100) +"%";
+    document.getElementById("percentageMetal").style.width= test;
+    test= parseInt(Math.random()*100) +"%";
+    document.getElementById("percentagePaper").style.width= test;
+    test= parseInt(Math.random()*100) +"%";
+    document.getElementById("percentageUnable").style.width= test;
+}
+
+setInterval(trashAuto,500);

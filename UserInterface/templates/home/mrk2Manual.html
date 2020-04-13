@@ -124,19 +124,27 @@
         <div class="tab-content">
             <!---------System Monitor-------->
             <div class="tab-pane container fade" role="tabpanel" id="system">
+                <div class="lineofboxframe1-top"><div class="powerTo"></div></div>
+                <div class="lineofboxframe1-bottom"><div class="powerTo"></div></div>
                 <div class="boxframe1">
                     <p class="title" style="text-align: center; margin-top: -35px;">Earth-E</p>
+                    <img src="{% static '\home\src\sortingrig.PNG' %}" style="height:360px">
                 </div>
+                <div class="lineofboxframe2-top"><div class="powerTo"></div></div>
+                <div class="lineofboxframe2-bottom"><div class="powerTo"></div></div>
                 <div class="boxframe2">
                     <p class="title" style="text-align: center; margin-top: -35px;">Sorting Rig</p>
-                    <img src="{% static '\home\src\sortingrig.PNG' %}" style="height:300px">
+                    <img src="{% static '\home\src\sortingrig.PNG' %}" style="height:480px">
                 </div>
+                <div class="lineofboxframe3-top"><div class="powerTo"></div></div>
+                <div class="lineofboxframe3-bottom"><div class="powerTo"></div></div>
                 <div class="boxframe3">
                     <p class="title" style="text-align: center; margin-top: -35px;">Eye-in-the-Sky</p>
+                    <img src="{% static '\home\src\sortingrig.PNG' %}" style="height:360px">
                 </div>
             </div>
             <!--------Earth-E Monitor-------->
-            <div class="tab-pane container active" role="tabpanel" id="earth-e">
+            <div class="tab-pane container fade" role="tabpanel" id="earth-e">
                 <!---------Line from Reactor-------->
                 <div class="lineofReactorView-1"><div class="powerTo"></div></div>
                 <div class="lineofReactorView-2"><div class="powerTo"></div></div>
@@ -171,11 +179,11 @@
                 </div>
                 <!---------Environmental Warning-------->
                 <div class="boxframe-tideenv" id="tideToggle">
-                    <div id="tideenv"></div>
+                    <div id="tideenv">Receiving...</div>
                 </div>
                 <!---------Environmental Warning-------->
                 <div class="boxframe-warnenv" id="warnToggle">
-                    <div id="warnenv"></div>
+                    <div id="warnenv">Receiving...</div>
                 </div>
                 <!---------Performance-------->
                 <div class="boxframe-performance">
@@ -190,15 +198,15 @@
                             </tr>
                         </thead>
                         <tr>
-                            <th style="color:rgba(241, 232, 232, 0.822); text-align: center;">RaspberryPi</th>
+                            <th style="color:rgba(241, 232, 232, 0.822); text-align: center;"><b>RaspberryPi</b></th>
                             <td id="PiStat">{{ PiStat }}</td><td id="Pi4procTri">{{ Pi4procTri }}</td>
                         </tr>
                         <tr>
-                            <th style="color:rgba(241, 232, 232, 0.822); text-align: center;"> Boarduino</th>
+                            <th style="color:rgba(241, 232, 232, 0.822); text-align: center;"><b>Boarduino</b></th>
                             <td id="BrdStat">{{ BrdStat }}</td><td id="BrdProc">{{ BrdProc }}</td>
                         </tr>
                         <tr>
-                            <th style="color:rgba(241, 232, 232, 0.822); text-align: center;"> ROS</th>
+                            <th style="color:rgba(241, 232, 232, 0.822); text-align: center;"><b>ROS</b></th>
                             <td id="BrdStat">{{ BrdStat }}</td><td id="BrdProc">{{ BrdProc }}</td>
                         </tr>
                     </table>
@@ -253,7 +261,7 @@
                                 <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
                                     <tr style="border-top: none;">
                                         <th style="border-top: none;">Location</th>
-                                        <td id=""style="border-top: none;">X-axis: &nbsp; {{ aXaxis }} &nbsp; Y-Axis: &nbsp; {{ aYaxis }}</td>
+                                        <td id="test" style="border-top: none;">X-axis: &nbsp; {{ aXaxis }} &nbsp; Y-Axis: &nbsp; {{ aYaxis }}</td>
                                     </tr>
                                     <tr>
                                         <td>Phase</th>
@@ -302,19 +310,160 @@
                 <!-------------Grid Map------------>
                 <div class="boxframeGridMap">
                     <div id="gridmap" onclick="getClickPosition()">
+                        <svg height="480" width="640" style="position:fixed">
+                            <path d="M 500 0 q -30 230 127 230 q 0 0 0 -640" stroke="blue" stroke-width="5" fill="blue" />
+                        </svg>
                         <img id="instrearthe" src="{% static 'home/src/earthe.png' %}" style="height:50px">
                         <img id="curearthe" src="{% static 'home/src/earthe.png' %}" style="height:50px">
                     </div>
                     <script src="{% static 'home/js/gridmap.js' %}"></script>
+                    <script src="{% static 'home/js/eartheDemo.js' %}"></script>
                 </div>
                  
                 
             </div>
             <!--------Sorting-Rig Monitor-------->
-            <div class="tab-pane container fade" role="tabpanel" id="sortrig">
+            <div class="tab-pane container active" role="tabpanel" id="sortrig">
+                <!---------Line from Reactor-------->
+                <div class="lineofLinksToPerformanceSortRig"><div class="powerTo"></div></div>
+                <div class="lineofLinksToBinsTop"><div class="powerTo"></div></div>
+                <div class="lineofLinksToBinsBottom"><div class="powerTo"></div></div>
+                <div class="lineofLinksToRubbishRight"><div class="powerTo"></div></div>
+                <div class="lineofLinksToRubbishLeft"><div class="powerTo"></div></div>
+                <!---------Performance-------->
+                <div class="boxframe-performance">
+                    <p class="title" style="margin-top:0px">Performance</p>
+                    <div class="hline title_underline" style=" margin-left: 120px;"></div>
+                    <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                        <thead>
+                            <tr>
+                                <th style="width:25%; border-top: transparent">Module</th>
+                                <th style="width:50%; border-top: transparent">Status</th>
+                                <th style="width:25%; border-top: transparent">Processing</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <th style="text-align: center;"><b>RaspberryPi</b></th>
+                            <td id="PiStat">{{ PiStat }}</td><td id="Pi4procTri">{{ Pi4procTri }}</td>
+                        </tr>
+                        <tr>
+                            <th style="text-align: center;"><b>Arduino</b></th>
+                            <td id="BrdStat">{{ BrdStat }}</td><td id="BrdProc">{{ BrdProc }}</td>
+                        </tr>
+                        <tr>
+                            <th style="text-align: center;"><b>PowerBoard</b></th>
+                            <td id="BrdStat">{{ BrdStat }}</td><td id="BrdProc">{{ BrdProc }}</td>
+                        </tr>
+                    </table>
+                </div>
+                <!-------------Live View------------->
+                <div class="lineofboxframeView-top"><div class="powerTo"></div></div>
+                <div class="lineofboxframeView-bottom"><div class="powerTo"></div></div>
                 <div class="boxframeView">
                     <p class="title" style="text-align: center; margin-top: -35px;">Sorting Rig</p>
                     <img src="{% static '\home\src\sortingrig.PNG' %}" style="height:480px">
+                </div>
+                <!-------Trash Identification-------->
+                <div class="boxframe-bins">
+
+                    <div class="table-responsive">                        
+                        <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                            <thead>
+                                <tr>
+                                    <th style="width:33%; border-top: transparent; border-bottom-color: rgba(150, 255, 255, 0.5);"><b>Bin A - Plastic</b></th>
+                                    <th style="width:33%; border-top: transparent; border-bottom-color: rgba(150, 255, 255, 0.5);"><b>Bin B - Metal</b></th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <table class="table table-dark table responsive" style="background-color: transparent; text-align:left;margin-bottom:0px;">
+                            <tr><th>Amount</th><td id="BinA">{{ BinA }}</td><th>Amount</th><td id="BinB">{{ BinB }}</td></tr>
+                            <tr><th style="border-bottom:3px solid #454d55;">Trasnfer</th><td id="BinAtfr">NaN</td><th style="border-bottom:3px solid #454d55;">Waitinig</th><td id="BinBtfr">NaN</td></tr>
+                        </table>                       
+                        <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                            <thead>
+                                <tr>
+                                    <th style="width:33%; border-top: transparent; border-bottom-color: rgba(150, 255, 255, 0.5);"><b>Bin C - Paper</b></th>
+                                    <th style="width:33%; border-top: transparent; border-bottom-color: rgba(150, 255, 255, 0.5);"><b>Bin D - General Waste</b></th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <table class="table table-dark table responsive" style="background-color: transparent; text-align:left;margin-bottom:0px;">
+                            <tr><th>Amount</th><td id="BinC">{{ BinA }}</td><th>Amount</th><td id="BinD">{{ BinB }}</td></tr>
+                            <tr><th>Trasnfer</th><td id="BinCtfr">NaN</td><th>Waitinig</th><td id="BinDtfr">NaN</td></tr>
+                        </table>
+                    </div>
+                </div>
+                <!-------Trash Identification-------->
+                <div class="boxframe-rubbish">
+                    <p class="title" style="margin-top:0px; text-align: center; margin-left: 0px;">Rubbish</p>
+                    <div class="hline title_underline" style=" margin-left: 45px; width:150px"></div>
+                    <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                        <tr><th style="border-top:1px solid transparent; width:70%; border-bottom:1px solid #454d55; text-align: center;"><b>Estimated</b></th><td id="totRub" style="width:30%;">{{totRub}}</td></tr>
+                        <tr><th style="border-top:1px solid transparent; width:70%; border-bottom:1px solid #454d55; text-align: center;"><b>Collected</b></th><td id="colRub" style="width:30%;">{{colRub}}</td></tr>
+                        <tr><th style="border-top:1px solid transparent; width:70%; text-align: center;"><b>Sorted</b></th><td id="SortRub" style="width:30%;">{{SortRub}}</td></tr>
+                    </table>
+                </div>
+                <div class="boxframe-ident">
+                    <p class="title">Trash Identification</p>
+                    <div class="row" style="margin-top: 10px;">
+                        <div class="col-md-6">
+                            <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                                <tr>
+                                    <th style="text-align: center; border-top: transparent; color: #02feff; padding-left: 20px;">Processing</th>
+                                    <td id="CapA"style="text-align: center; border-top: transparent">Curently Unavailable</td>
+                                </tr>
+                            </table>
+                            <div class="row">
+                                <div class="col-md-4" style="margin-top: 10px;">
+                                    <div class="tableIdent">
+                                        <p>Plastic</p>
+                                        <p>Metal</p>
+                                        <p>Paper</p>
+                                        <p>Unable</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-8" style="margin-top: 10px;">
+                                    <div class="tableIdent">
+                                        <div class="Plastic">
+                                            <div id="percentagePlastic"></div>
+                                        </div>
+                                        <div class="Metal">
+                                            <div id="percentageMetal"></div>
+                                        </div>
+                                        <div class="Paper">
+                                            <div id="percentagePaper"></div>
+                                        </div>
+                                        <div class="Unable">
+                                            <div id="percentageUnable"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" style="margin-top: 20px;">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <center><img src="{% static '\home\src\Plastic-Bottle.PNG' %}" style="height:200px" class="img-fluid"" alt="..."></center>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <center><img src="{% static '\home\src\silver-ring-pull-end.png' %}" style="height:200px" class="img-fluid" alt="..."></center>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <center><img src="{% static '\home\src\sortingrig.PNG' %}" style="height:200px" class="img-fluid" alt="..."></center>
+                                    </div>
+                                </div>
+                                <!--<a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>-->
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>  
         </div>
@@ -422,7 +571,6 @@
           <div id="particle1_3">
             > > > >
           </div>
-          
           <div id="particle3" class="vline"/>
           <div id="particle4" class="vline"/>
           <div id="particle5" class="vline"/>
@@ -430,7 +578,7 @@
           <div id="particle7" class="vline"/>
           <div id="particle8" class="vline"/>
           <div id="particle9" class="vline"/>
-        
+          
           <!-- Arc Reactor -->
         <script>
           //clock

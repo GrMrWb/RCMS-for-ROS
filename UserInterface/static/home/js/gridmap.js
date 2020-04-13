@@ -25,8 +25,20 @@ function getClickPosition(e) {
     
             xPosition = xPosition > 590 ? 580 : xPosition;
             yPosition = yPosition > 420 ? 420 : yPosition;
-            console.log(yPosition);
 
+            if (xPosition > 430 && yPosition<230){
+                xPosition=430;
+                yPosition-230;
+            }
+            if (xPosition>390 && yPosition<260){
+                document.getElementById("tideenv").innerText= "Less than 1 metre";
+                document.getElementById("tideToggle").style.animation = "blinker 3s infinite 0s";
+
+            } else{
+                document.getElementById("tideenv").innerText= "More than 1 metre";
+                document.getElementById("tideToggle").style.animation = "none";
+
+            }
             theThing.style.left = xPosition + "px";
             theThing.style.top = yPosition + "px";
 
@@ -38,6 +50,8 @@ function getClickPosition(e) {
                 console.log(prexPosition,preyPosition);
             }
 
+            document.getElementById("test").innerText="X-axis: " + theThing.style.left + " Y-Axis: " + theThing.style.top;
+
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.open( 'GET'  , 'http://127.0.0.1:8000/cords/'+ xPosition + '/'+ yPosition + '/'+ prexPosition+'/'+ preyPosition, true);
             xmlhttp.send();
@@ -47,11 +61,24 @@ function getClickPosition(e) {
 }
 
 function moveObject(){
-    prexPosition = prexPosition + (xPosition - prexPosition)/10
-    preyPosition = preyPosition + (yPosition - preyPosition)/10
+    throttle= (xPosition - prexPosition) > 0 ? xPosition - prexPosition : prexPosition - xPosition;
+    throttle= 100 - (1.5*throttle);
+    console.log(throttle);
+    test= parseInt(throttle) +"%";
+
+    prexPosition = prexPosition + (xPosition - prexPosition)/10;
+    preyPosition = preyPosition + (yPosition - preyPosition)/10;
+
     document.getElementById("curearthe").style.left = prexPosition + "px";
     document.getElementById("curearthe").style.top= preyPosition - 50 + "px";
+    
+    document.getElementById("percentageL").style.height= test;
+    document.getElementById("percentageR").style.height= test;
+
+    //Adding Location
+    document.getElementById("test").innerText="X-axis: " + parseInt(prexPosition) + " Y-Axis: " + parseInt(preyPosition);
 }
+
 setInterval(moveObject,200)
 
 // Helper function to get an element's exact position

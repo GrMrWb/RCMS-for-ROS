@@ -84,7 +84,18 @@ def testUI(request):
         )
 
 def testUIauto(request):
+
+    with open("UserInterface/static/home/js/data.json", "r+") as f:
+        datafile = json.load(f)
+        datafile["Operation"]["Auto"]="1"
+        datafile["Operation"]["Man"]="0"
+        datafile["v"]=str(float(datafile["v"]) + 0.1)
+        f.close
     
+    with open("UserInterface/static/home/js/data.json", "w+") as f:
+        json.dump(datafile,f)
+        f.close
+
     StatBoard=getInfo("Stat")
     autocords=getInfo("auto")
     return render(
@@ -101,7 +112,18 @@ def testUIauto(request):
     )
 
 def testUIman(request):
+
+    with open("UserInterface/static/home/js/data.json", "r+") as f:
+        datafile = json.load(f)
+        datafile["Operation"]["Auto"]="0"
+        datafile["Operation"]["Man"]="1"
+        datafile["v"]=str(float(datafile["v"])+0.1)
+        f.close
     
+    with open("UserInterface/static/home/js/data.json", "w+") as f:
+        json.dump(datafile,f)
+        f.close
+
     StatBoard=getInfo("Stat")
     autocords=getInfo("auto")
     return render(
