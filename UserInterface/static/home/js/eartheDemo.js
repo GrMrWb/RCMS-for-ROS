@@ -3,17 +3,31 @@ var ycordsDemo =[50, 50 , 50, 75, 90, 100, 100 , 125 , 140, 140, 140, 140 , 140 
 var theThing = document.querySelector('#instrearthe');
 var i=0;
 
+for(var j=0; j < ycordsDemo.length;j++){
+    xcordsDemo[j] = xcordsDemo[j] + parseInt(Math.random()*100);
+}
 function moveEarhte(){
     data=$.getJSON("/static/home/js/data.json",function(data){
         if(data["Operation"]["Auto"]=="1"){
             i++;
             theThing.style.left = xcordsDemo[i] + "px";
             theThing.style.top = ycordsDemo[i] + "px";
-            i = i==xcordsDemo.length ? -1 : i;
             
-            console.log(i)
+            //console.log(i)
+            if( xcordsDemo[i]>300 && ycordsDemo[i] < 250){
+                document.getElementById("tideenv").innerText= "Less than 1 metre";
+                document.getElementById("tideToggle").style.animation = "blinker 3s infinite 0s";
 
-            document.getElementById("test").innerText="X-axis: " + xcordsDemo[i] + " Y-Axis: " + xcordsDemo[i];
+            } else{
+                document.getElementById("tideenv").innerText= "More than 1 metre";
+                document.getElementById("tideToggle").style.animation = "none";
+
+            }
+
+            document.getElementById("locEarthe").innerText="X-axis: " + xcordsDemo[i] + " Y-Axis: " + ycordsDemo[i];
+            document.getElementById("TlocEarthe").innerText="X-axis: " + xcordsDemo[i] + " Y-Axis: " + ycordsDemo[i];
+
+            i = i==xcordsDemo.length ? -1 : i;
         
         }
         
@@ -22,21 +36,5 @@ function moveEarhte(){
 
 setInterval(moveEarhte,700)
 
-for(var j=0; j < ycordsDemo.length;j++){
-    signRand=Math.random()*4;
-    if (signRand > 3){
-        xcordsDemo[j] = xcordsDemo[j] + parseInt(Math.random()*20);
-        ycordsDemo[j] = ycordsDemo[j] - parseInt(Math.random()*20);
-    } else if(signRand > 2) {
-        xcordsDemo[j] = xcordsDemo[j] - parseInt(Math.random()*20);
-        ycordsDemo[j] = ycordsDemo[j] + parseInt(Math.random()*20);
-    } else if(signRand > 1) {
-        xcordsDemo[j] = xcordsDemo[j] - parseInt(Math.random()*20);
-        ycordsDemo[j] = ycordsDemo[j] - parseInt(Math.random()*20);
-    } else {
-        xcordsDemo[j] = xcordsDemo[j] - parseInt(Math.random()*20);
-        ycordsDemo[j] = ycordsDemo[j] - parseInt(Math.random()*20);
-    }
-}
 
 // 

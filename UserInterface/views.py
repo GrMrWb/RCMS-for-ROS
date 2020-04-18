@@ -14,6 +14,8 @@ def getInfo(data):
         datasend= datarecv.power()
     elif data=="rub":
         datasend= datarecv.rub()
+    elif data=="sort":
+        datasend= datarecv.sort()
     elif data=="ops":
         datasend= datarecv.ops()
     elif data=="warn":
@@ -28,27 +30,49 @@ def getInfo(data):
     return datasend
 
 def testLayout(request):
-
+    # === Read Data from the JSON file
     StatBoard=getInfo("Stat")
     autocords=getInfo("auto")
+    SortStat=getInfo("sort")
 
     return render(
         request,
-        'home/mrk2Layout.html',
+        'home/mrk2Auto.html',    
         {
+            # === EarthE Stats
             "PiStat": StatBoard["PiStat"],
-            "Pi4procTri": StatBoard["Pi4procTi"],
+            "Pi4procTri": StatBoard["Pi4procTri"],
             "BrdStat": StatBoard["BrdStat"],
             "BrdProc":StatBoard["BrdProc"],
+            "RosStat": StatBoard["RosStat"],
+            "ROSproc":StatBoard["ROSproc"],
             "aXaxis":autocords["xPos"],
-            "aYaxis":autocords["yPos"]
+            "aYaxis":autocords["yPos"],
+            # === SortRig Stats
+            "PiStatSort": SortStat["PiStat"],
+            "Pi4procTriSor": SortStat["Pi4procTri"],
+            "ArdStat": SortStat["ArdStat"],
+            "ArdProc":SortStat["ArdProc"],
+            "PrbStat": SortStat["PrbStat"],
+            "PrbProc":SortStat["PrbProc"],
+            # === Rubbish Stats
+            "totRub": Rubbish["totRub"],
+            "colRub": Rubbish["ColRub"],
+            "SortRub": Rubbish["SortRub"],
+            "BinA": Rubbish["BinA"],
+            "BinB": Rubbish["BinB"],
+            "BinC": Rubbish["BinC"],
         }
     )
 
 def testUI(request):
 
+    # === Read Data from the JSON file
+
     StatBoard=getInfo("Stat")
     autocords=getInfo("man")
+    SortStat=getInfo("sort")
+    Rubbish=getInfo("rub")
 
     with open("UserInterface/static/home/js/data.json", "r") as f:
         datafile = json.load(f)
@@ -61,12 +85,29 @@ def testUI(request):
             request,
             'home/mrk2Auto.html',    
             {
+                # === EarthE Stats
                 "PiStat": StatBoard["PiStat"],
-                "Pi4procTri": StatBoard["Pi4procTi"],
+                "Pi4procTri": StatBoard["Pi4procTri"],
                 "BrdStat": StatBoard["BrdStat"],
                 "BrdProc":StatBoard["BrdProc"],
+                "RosStat": StatBoard["RosStat"],
+                "ROSproc":StatBoard["ROSproc"],
                 "aXaxis":autocords["xPos"],
-                "aYaxis":autocords["yPos"]
+                "aYaxis":autocords["yPos"],
+                # === SortRig Stats
+                "PiStatSort": SortStat["PiStat"],
+                "Pi4procTriSor": SortStat["Pi4procTri"],
+                "ArdStat": SortStat["ArdStat"],
+                "ArdProc":SortStat["ArdProc"],
+                "PrbStat": SortStat["PrbStat"],
+                "PrbProc":SortStat["PrbProc"],
+                # === Rubbish Stats
+                "totRub": Rubbish["totRub"],
+                "colRub": Rubbish["ColRub"],
+                "SortRub": Rubbish["SortRub"],
+                "BinA": Rubbish["BinA"],
+                "BinB": Rubbish["BinB"],
+                "BinC": Rubbish["BinC"],
             }
         )  
     elif man=="1":
@@ -74,12 +115,29 @@ def testUI(request):
             request,
             'home/mrk2Manual.html',
             {
+                # === EarthE Stats
                 "PiStat": StatBoard["PiStat"],
-                "Pi4procTri": StatBoard["Pi4procTi"],
+                "Pi4procTri": StatBoard["Pi4procTri"],
                 "BrdStat": StatBoard["BrdStat"],
                 "BrdProc":StatBoard["BrdProc"],
+                "RosStat": StatBoard["RosStat"],
+                "ROSproc":StatBoard["ROSproc"],
                 "aXaxis":autocords["xPos"],
-                "aYaxis":autocords["yPos"]
+                "aYaxis":autocords["yPos"],
+                # === SortRig Stats
+                "PiStatSort": SortStat["PiStat"],
+                "Pi4procTriSor": SortStat["Pi4procTri"],
+                "ArdStat": SortStat["ArdStat"],
+                "ArdProc":SortStat["ArdProc"],
+                "PrbStat": SortStat["PrbStat"],
+                "PrbProc":SortStat["PrbProc"],
+                # === Rubbish Stats
+                "totRub": Rubbish["totRub"],
+                "colRub": Rubbish["ColRub"],
+                "SortRub": Rubbish["SortRub"],
+                "BinA": Rubbish["BinA"],
+                "BinB": Rubbish["BinB"],
+                "BinC": Rubbish["BinC"],
             }
         )
 
@@ -98,16 +156,36 @@ def testUIauto(request):
 
     StatBoard=getInfo("Stat")
     autocords=getInfo("auto")
+    SortStat=getInfo("sort")
+    Rubbish=getInfo("rub")
+
     return render(
         request,
         'home/mrk2Auto.html',
         {
+            # === EarthE Stats
             "PiStat": StatBoard["PiStat"],
-            "Pi4procTri": StatBoard["Pi4procTi"],
+            "Pi4procTri": StatBoard["Pi4procTri"],
             "BrdStat": StatBoard["BrdStat"],
             "BrdProc":StatBoard["BrdProc"],
+            "RosStat": StatBoard["RosStat"],
+            "ROSproc":StatBoard["ROSproc"],
             "aXaxis":autocords["xPos"],
-            "aYaxis":autocords["yPos"]
+            "aYaxis":autocords["yPos"],
+            # === SortRig Stats
+            "PiStatSort": SortStat["PiStat"],
+            "Pi4procTriSor": SortStat["Pi4procTri"],
+            "ArdStat": SortStat["ArdStat"],
+            "ArdProc":SortStat["ArdProc"],
+            "PrbStat": SortStat["PrbStat"],
+            "PrbProc":SortStat["PrbProc"],
+            # === Rubbish Stats
+            "totRub": Rubbish["totRub"],
+            "colRub": Rubbish["ColRub"],
+            "SortRub": Rubbish["SortRub"],
+            "BinA": Rubbish["BinA"],
+            "BinB": Rubbish["BinB"],
+            "BinC": Rubbish["BinC"],
         }
     )
 
@@ -126,16 +204,36 @@ def testUIman(request):
 
     StatBoard=getInfo("Stat")
     autocords=getInfo("auto")
+    SortStat=getInfo("sort")
+    Rubbish=getInfo("rub")
+
     return render(
         request,
         'home/mrk2Manual.html',
         {
+            # === EarthE Stats
             "PiStat": StatBoard["PiStat"],
-            "Pi4procTri": StatBoard["Pi4procTi"],
+            "Pi4procTri": StatBoard["Pi4procTri"],
             "BrdStat": StatBoard["BrdStat"],
             "BrdProc":StatBoard["BrdProc"],
+            "RosStat": StatBoard["RosStat"],
+            "ROSproc":StatBoard["ROSproc"],
             "aXaxis":autocords["xPos"],
-            "aYaxis":autocords["yPos"]
+            "aYaxis":autocords["yPos"],
+            # === SortRig Stats
+            "PiStatSort": SortStat["PiStat"],
+            "Pi4procTriSor": SortStat["Pi4procTri"],
+            "ArdStat": SortStat["ArdStat"],
+            "ArdProc":SortStat["ArdProc"],
+            "PrbStat": SortStat["PrbStat"],
+            "PrbProc":SortStat["PrbProc"],
+            # === Rubbish Stats
+            "totRub": Rubbish["totRub"],
+            "colRub": Rubbish["ColRub"],
+            "SortRub": Rubbish["SortRub"],
+            "BinA": Rubbish["BinA"],
+            "BinB": Rubbish["BinB"],
+            "BinC": Rubbish["BinC"],
         }
     )
 
@@ -152,7 +250,7 @@ def home(request):
         {
             # ===TriTrack Mic
                 "PiStat": StatBoard["PiStat"],
-                "Pi4procTri": StatBoard["Pi4procTi"],
+                "Pi4procTri": StatBoard["Pi4procTri"],
                 "BrdStat": StatBoard["BrdStat"],
                 "BrdProc":StatBoard["BrdProc"],
             # ===TriTrack PowerBoard
@@ -199,7 +297,7 @@ def mantoauto(request):
         {
             # ===TriTrack Mic
                 "PiStat": StatBoard["PiStat"],
-                "Pi4procTri": StatBoard["Pi4procTi"],
+                "Pi4procTri": StatBoard["Pi4procTri"],
                 "BrdStat": StatBoard["BrdStat"],
                 "BrdProc":StatBoard["BrdProc"],
             # ===TriTrack PowerBoard
@@ -246,7 +344,7 @@ def autotoman(request):
         {
             # ===TriTrack Mic
                 "PiStat": StatBoard["PiStat"],
-                "Pi4procTri": StatBoard["Pi4procTi"],
+                "Pi4procTri": StatBoard["Pi4procTr  i"],
                 "BrdStat": StatBoard["BrdStat"],
                 "BrdProc":StatBoard["BrdProc"],
             # ===TriTrack PowerBoard

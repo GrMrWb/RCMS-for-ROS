@@ -1,3 +1,9 @@
+@media screen and (min-height: 1080px) {
+  body {
+    margin-top:20px;
+  }
+}
+
 .core {
   background: #cedce0;
   width: 100px;
@@ -399,7 +405,7 @@
   position: fixed;
   top:580px;
   left: 620px;
-  transform: rotate(-17.5deg);
+  transform: rotate(162.5deg);
   box-shadow: 0px 0px 10px 2px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
   animation: 0.5s ease-in;
   z-index: -1;
@@ -413,7 +419,7 @@
   position: fixed;
   top:696px;
   left: 740px;
-  transform: rotate(125deg);
+  transform: rotate(-65deg);
   box-shadow: 0px 0px 10px 2px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
   animation: 0.5s ease-in;
   z-index: -1;
@@ -437,7 +443,7 @@
   position: fixed;
   top:421px;
   left: 1100px;
-  transform: rotate(-22.5deg);
+  transform: rotate(157.5deg);
   box-shadow: 0px 0px 10px 2px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
   animation: 0.5s ease-in;
   z-index: -1;
@@ -632,7 +638,7 @@
   background-color: rgba(150, 255, 255, 0.5);
   width:185px;
   height:1px;
-  position: fixed;
+  position: absolute;
   top:360px;
   left: 667px;
   transform: rotate(34.5deg);
@@ -644,12 +650,12 @@
 .lineofLinksToBinsTop{
   border: 1px solid rgba(150, 255, 255, 0.5);
   background-color: rgba(150, 255, 255, 0.5);
-  width:120px;
+  width:119px;
   height:1px;
   position: fixed;
-  top:417px;
+  top:427px;
   left: 705px;
-  transform: rotate(22deg);
+  transform: rotate(-158deg);
   box-shadow: 0px 0px 10px 2px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
   animation: 0.5s ease-in;
   z-index: -1;
@@ -661,9 +667,9 @@
   width:100px;
   height:1px;
   position: fixed;
-  top:552.5px;
+  top:562px;
   left: 708px;
-  transform: rotate(167.5deg);
+  transform: rotate(-12.5deg);
   box-shadow: 0px 0px 10px 2px rgba(150, 255, 255, 0.3), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
   animation: 0.5s ease-in;
   z-index: -1;
@@ -782,7 +788,7 @@
 .boxframe-bins{
   width:400px;
   position: fixed;
-  top:340px;
+  top:350px;
   left:315px;
   border-radius:15%;
   /*border: 1px transparent rgba(150, 255, 255, 0.3);*/
@@ -804,10 +810,23 @@
 }
 
 .boxframe-ident{
-  width:750px;
+  width:600px;
   position: fixed;
-  top:600px;
-  left:1130px;
+  top:715px;
+  left:650px;
+  border-radius:15%;
+  /*border: 1px transparent rgba(150, 255, 255, 0.3);*/
+  padding:5px;
+  border-bottom:3px solid rgba(150, 255, 255, 0.7); 
+  box-shadow: 0px 0px 40px 1px rgba(150, 255, 255, 0.1), inset 0px 1px 300px 1px rgba(21, 211, 233, 0.1);
+}
+
+.boxframe-ControlSortRig{
+  width:650px;
+  height:150px;
+  position: fixed;
+  top:550px;
+  left:1220px;
   border-radius:15%;
   /*border: 1px transparent rgba(150, 255, 255, 0.3);*/
   padding:5px;
@@ -816,7 +835,7 @@
 }
 
 .tableIdent{
-  margin-left: 40px;
+  margin-left: 20px;
 }
 
 .Plastic{
@@ -1054,7 +1073,42 @@
   position:fixed;
 }
 
-/*
+/* Toast*/
+
+#Tearthe{
+  background-color: transparent;
+  box-shadow: 0px 0px 40px 1px rgba(150,255,255,0.1), inset 0px 1px 300px 1px rgba(21,211,233,0.1);
+  color: rgba(2, 254, 255, 0.8);
+  margin-bottom: 0px;
+  margin-right: 10px;
+}
+
+#TsortRig{
+  background-color: transparent;
+  box-shadow: 0px 0px 40px 1px rgba(150,255,255,0.1), inset 0px 1px 300px 1px rgba(21,211,233,0.1);
+  color: rgba(2, 254, 255, 0.8);
+  margin-bottom: 0px;
+  margin-right: 10px;
+}
+
+#TRubb{
+  background-color: transparent;
+  box-shadow: 0px 0px 40px 1px rgba(150,255,255,0.1), inset 0px 1px 300px 1px rgba(21,211,233,0.1);
+  color: rgba(2, 254, 255, 0.8);
+  margin-bottom: 0px;
+}
+
+#toastHead{
+  background-color: transparent;
+  box-shadow: 0px 0px 40px 1px rgba(150,255,255,0.1), inset 0px 1px 300px 1px rgba(21,211,233,0.1);
+  color: rgba(2, 254, 255, 0.8);
+}
+
+#toastBody{
+  background-color: rgba(20, 20, 20, 0.643);
+  box-shadow: 0px 0px 40px 1px rgba(150,255,255,0.1), inset 0px 1px 300px 1px rgba(21,211,233,0.1);
+  color: rgba(2, 254, 255, 0.8);
+}
 
 /* Font / Universal Properties */
 @import url(http://weloveiconfonts.com/api/?family=entypo);

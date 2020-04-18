@@ -1,36 +1,45 @@
 {
-    "v":"3",
-    "TriTrackDataMic":  { 
-        "PiStat":"Receiving...",
-        "Pi4procTi":"Receiving...",
-        "BrdStat":"Receiving...", 
-        "BrdProc":"Receiving..."
+    "v": "1", 
+    "Termination": "0", 
+    "TriTrackDataMic": {
+        "PiStat": "Receiving...", 
+        "Pi4procTri": "Receiving...", 
+        "BrdStat": "Receiving...", 
+        "BrdProc": "Receiving...",
+        "RosStat": "Receiving...", 
+        "ROSproc": "Receiving..."
+    }, 
+    "TriTrackPowerBoard": {
+        "Consumption": "Receiving...",
+        "CapA": "Receiving...", 
+        "CapB": "Receiving..."
     },
-    "TriTrackPowerBoard":   {
-        "Consumption":"Receiving...", 
-        "CapA":"Receiving...", 
-        "CapB":"Receiving..."
+    "SortRigPerform": {
+        "PiStat": "Receiving...", 
+        "Pi4procTri": "Receiving...", 
+        "ArdStat": "Receiving...", 
+        "ArdProc": "Receiving...",
+        "PrbStat": "Receiving...", 
+        "PrbProc": "Receiving..."
     },
-    "Rubbish":  {
-        "totRub":"Receiving...",
-        "ColRub":"Receiving...",
-        "SortRub":"Receiving...", 
-        "BinG":"Receiving...",
-        "BinA":"Receiving..." ,
-        "BinB":"Receiving..." ,
-        "BinC":"Receiving..."
-    },
+    "Rubbish": {
+        "totRub": "Receiving...", 
+        "ColRub": "Receiving...",  
+        "SortRub": "Receiving...", 
+        "BinA": "Receiving...", 
+        "BinB": "Receiving...", 
+        "BinC": "Receiving...", 
+        "BinD": "Receiving..."
+    },  
     "Warning": {
-        "seagull": "Receiving...",
+        "seagull": "Receiving...", 
         "tide": "Receiving..."
-    },
+    }, 
     "Operation": {
-        "Man": "Receiving...",
+        "Man": "Receiving...", 
         "Auto": "Receiving..."
-    },
+    }, 
     "Automation": {
-        "xPos": "Receiving...", 
-        "yPos": "Receiving..."
+        "xPos": "Receiving...", "yPos": "Receiving..."
     }
-    
 }

@@ -5,6 +5,9 @@
         <!--Bootstrap-->
         <!--javascript-->
         {% load static %}
+            <script src="{% static 'home/js/jquery/jquery.min.js' %}"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            
             <script text="javascript" src="{% static 'home/js/bootstrap.bundle.js' %}"></script>
             <script text="javascript" src="{% static 'home/js/bootstrap.bundle.min.js' %}"></script>
             <script text="javascript" src="{% static 'home/js/bootstrap.js' %}"></script>
@@ -17,22 +20,10 @@
             <link rel="stylesheet" href="{% static 'home/css/bootstrap.css' %}">
             <link rel="stylesheet" href="{% static 'home/css/bootstrap.min.css' %}"> 
 
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
-        <!--Charts Source-->
-        <!--javascript-->
-            <script text="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
-            <script text="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
-            <script text="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
-            <script text="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
-        <!--Styles-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css">
 
         <!--jQuery-->
         <script src="{% static 'home/js/data.js' %}"></script>
-        <script src="{% static 'home/js/jquery/jquery.min.js' %}"></script>
 
         <!--Font Awosome
         <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
@@ -106,9 +97,9 @@
             <p class="title">Shortcuts</p>
             <div class="hline title_underline"></div> 
             <div class="menu">
-              <button class="menuitem"><span class="entypo-right-open"/><a class="caption" >Status of Earth-E</a></button>
-              <button class="menuitem"><span class="entypo-right-open"/><a class="caption">Status of SortRig</a></button>
-              <button class="menuitem"><span class="entypo-right-open"/><a class="caption">Status of Rubbish</a></button>
+              <button class="menuitem"><span class="entypo-right-open"/><a class="caption" id="statEarthe">Status of Earth-E</a></button>
+              <button class="menuitem"><span class="entypo-right-open"/><a class="caption" id="statSortRig">Status of SortRig</a></button>
+              <button class="menuitem"><span class="entypo-right-open"/><a class="caption" id="statRubbish">Status of Rubbish</a></button>
             </div>    
         </div>
         
@@ -123,20 +114,28 @@
         
         <div class="tab-content">
             <!---------System Monitor-------->
-            <div class="tab-pane container fade" role="tabpanel" id="system">
+            <div class="tab-pane container active" role="tabpanel" id="system">
+                <div class="lineofboxframe1-top"><div class="powerTo"></div></div>
+                <div class="lineofboxframe1-bottom"><div class="powerTo"></div></div>
                 <div class="boxframe1">
                     <p class="title" style="text-align: center; margin-top: -35px;">Earth-E</p>
+                    <img src="{% static '\home\src\sortingrig.PNG' %}" style="height:360px">
                 </div>
+                <div class="lineofboxframe2-top"><div class="powerTo"></div></div>
+                <div class="lineofboxframe2-bottom"><div class="powerTo"></div></div>
                 <div class="boxframe2">
                     <p class="title" style="text-align: center; margin-top: -35px;">Sorting Rig</p>
-                    <img src="{% static '\home\src\sortingrig.PNG' %}" style="height:300px">
+                    <img src="{% static '\home\src\sortingrig.PNG' %}" style="height:480px">
                 </div>
+                <div class="lineofboxframe3-top"><div class="powerTo"></div></div>
+                <div class="lineofboxframe3-bottom"><div class="powerTo"></div></div>
                 <div class="boxframe3">
                     <p class="title" style="text-align: center; margin-top: -35px;">Eye-in-the-Sky</p>
+                    <img src="{% static '\home\src\sortingrig.PNG' %}" style="height:360px">
                 </div>
             </div>
             <!--------Earth-E Monitor-------->
-            <div class="tab-pane container active" role="tabpanel" id="earth-e">
+            <div class="tab-pane container fade" role="tabpanel" id="earth-e">
                 <!---------Line from Reactor-------->
                 <div class="lineofReactorView-1"><div class="powerTo"></div></div>
                 <div class="lineofReactorView-2"><div class="powerTo"></div></div>
@@ -170,7 +169,7 @@
                     </div>
                 </div>
                 <!---------Environmental Warning-------->
-                <div class="boxframe-tideenv" id="tideToggle">
+                <div class="boxframe-tideenv" id="tideToggle">  
                     <div id="tideenv">Receiving...</div>
                 </div>
                 <!---------Environmental Warning-------->
@@ -190,16 +189,16 @@
                             </tr>
                         </thead>
                         <tr>
-                            <th style="color:rgba(241, 232, 232, 0.822); text-align: center;">RaspberryPi</th>
+                            <th style="color:rgba(241, 232, 232, 0.822); text-align: center;"><b>RaspberryPi</b></th>
                             <td id="PiStat">{{ PiStat }}</td><td id="Pi4procTri">{{ Pi4procTri }}</td>
                         </tr>
                         <tr>
-                            <th style="color:rgba(241, 232, 232, 0.822); text-align: center;"> Boarduino</th>
+                            <th style="color:rgba(241, 232, 232, 0.822); text-align: center;"><b>Boarduino</b></th>
                             <td id="BrdStat">{{ BrdStat }}</td><td id="BrdProc">{{ BrdProc }}</td>
                         </tr>
                         <tr>
-                            <th style="color:rgba(241, 232, 232, 0.822); text-align: center;"> ROS</th>
-                            <td id="BrdStat">{{ BrdStat }}</td><td id="BrdProc">{{ BrdProc }}</td>
+                            <th style="color:rgba(241, 232, 232, 0.822); text-align: center;"><b>ROS</b></th>
+                            <td id="RosStat">{{ RosStat }}</td><td id="ROSproc">{{ ROSproc }}</td>
                         </tr>
                     </table>
                 </div>
@@ -253,7 +252,7 @@
                                 <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
                                     <tr style="border-top: none;">
                                         <th style="border-top: none;">Location</th>
-                                        <td id="test"style="border-top: none;">X-axis: &nbsp; {{ aXaxis }} &nbsp; Y-Axis: &nbsp; {{ aYaxis }}</td>
+                                        <td id="locEarthe"style="border-top: none;">X-axis: &nbsp; {{ aXaxis }} &nbsp; Y-Axis: &nbsp; {{ aYaxis }}</td>
                                     </tr>
                                     <tr>
                                         <td>Phase</th>
@@ -305,11 +304,8 @@
                         <svg height="480" width="640" style="position:fixed">
                             <path d="M 500 0 q -30 230 127 230 q 0 0 0 -640" stroke="blue" stroke-width="5" fill="blue" />
                         </svg>
-                        <svg height="480" width="640" style="position:fixed">
-                            <path d="M50 50 L50 50 L75 50 L100 50 L120 75 L140 90 L120 100 L90 100 L80 125 L100 140 L130 140 L160 140 L190 140 L240 140 L280 140 L315 140 L335 155 L350 175 L315 200 L300 220 L280 200 L280 175 L280 150 L280 120 L280 100 L280 75 L266 100 L100 400 L75 360 L60 300 L50 100" stroke="blue" stroke-width="5" fill="none" />
-                        </svg>
-                        <img id="instrearthe" src="{% static 'home/src/earthe.png' %}" style="margin-left:-25px; margin-top:-25px; height:50px">
-                        <!--<img id="curearthe" src="{% static 'home/src/earthe.png' %}" style="height:50px">-->
+                        <img id="instrearthe" src="{% static 'home/src/earthe.png' %}" style="height:50px">
+                        <img id="curearthe" src="{% static 'home/src/earthe.png' %}" style="height:50px; display:none">
                     </div>
                     <script src="{% static 'home/js/gridmap.js' %}"></script>
                     <script src="{% static 'home/js/eartheDemo.js' %}"></script>
@@ -319,125 +315,366 @@
             </div>
             <!--------Sorting-Rig Monitor-------->
             <div class="tab-pane container fade" role="tabpanel" id="sortrig">
+                <!---------Line from Reactor-------->
+                <div class="lineofLinksToPerformanceSortRig"><div class="powerTo"></div></div>
+                <div class="lineofLinksToBinsTop"><div class="powerTo"></div></div>
+                <div class="lineofLinksToBinsBottom"><div class="powerTo"></div></div>
+                <div class="lineofLinksToRubbishRight"><div class="powerTo"></div></div>
+                <div class="lineofLinksToRubbishLeft"><div class="powerTo"></div></div>
+                <!---------Performance-------->
+                <div class="boxframe-performance">
+                    <p class="title" style="margin-top:0px">Performance</p>
+                    <div class="hline title_underline" style=" margin-left: 120px;"></div>
+                    <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                        <thead>
+                            <tr>
+                                <th style="width:25%; border-top: transparent">Module</th>
+                                <th style="width:50%; border-top: transparent">Status</th>
+                                <th style="width:25%; border-top: transparent">Processing</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <th style="text-align: center;"><b>RaspberryPi</b></th>
+                            <td id="PiStatSort">{{ PiStatSort }}</td><td id="Pi4procTriSor">{{ Pi4procTriSor }}</td>
+                        </tr>
+                        <tr>
+                            <th style="text-align: center;"><b>Arduino</b></th>
+                            <td id="ArdStat">{{ ArdStat }}</td><td id="ArdProc">{{ ArdProc }}</td>
+                        </tr>
+                        <tr>
+                            <th style="text-align: center;"><b>PowerBoard</b></th>
+                            <td id="PrdStat">{{ PrbStat }}</td><td id="PrbProc">{{ PrbProc }}</td>
+                        </tr>
+                    </table>
+                </div>
+                <!-------------Live View------------->
+                <div class="lineofboxframeView-top"><div class="powerTo"></div></div>
+                <div class="lineofboxframeView-bottom"><div class="powerTo"></div></div>
                 <div class="boxframeView">
                     <p class="title" style="text-align: center; margin-top: -35px;">Sorting Rig</p>
                     <img src="{% static '\home\src\sortingrig.PNG' %}" style="height:480px">
+                </div>
+                <div class="boxframe-ControlSortRig">
+                    <p class="title" style="margin-top:0px">Control the Rig</p>
+                </div>
+                <!-------Rubbish at Bins-------->
+                <div class="boxframe-bins">
+
+                    <div class="table-responsive">
+                        <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                            <thead>
+                                <tr>
+                                    <th style="width:33%; border-top: transparent; border-bottom-color: rgba(150, 255, 255, 0.5);"><b>Bin A - Plastic</b></th>
+                                    <th style="width:33%; border-top: transparent; border-bottom-color: rgba(150, 255, 255, 0.5);"><b>Bin B - Metal</b></th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <table class="table table-dark table responsive" style="background-color: transparent; text-align:left;margin-bottom:0px;">
+                            <tr><th>Amount</th><td id="BinA">{{ BinA }}</td><th>Amount</th><td id="BinB">{{ BinB }}</td></tr>
+                            <tr><th style="border-bottom:3px solid #454d55;">Trasnfer</th><td id="BinAtfr">NaN</td><th style="border-bottom:3px solid #454d55;">Waitinig</th><td id="BinBtfr">NaN</td></tr>
+                        </table>                       
+                        <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                            <thead>
+                                <tr>
+                                    <th style="width:33%; border-top: transparent; border-bottom-color: rgba(150, 255, 255, 0.5);"><b>Bin C - Paper</b></th>
+                                    <th style="width:33%; border-top: transparent; border-bottom-color: rgba(150, 255, 255, 0.5);"><b>Bin D - General Waste</b></th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <table class="table table-dark table responsive" style="background-color: transparent; text-align:left;margin-bottom:0px;">
+                            <tr><th>Amount</th><td id="BinC">{{ BinA }}</td><th>Amount</th><td id="BinD">{{ BinB }}</td></tr>
+                            <tr><th>Trasnfer</th><td id="BinCtfr">NaN</td><th>Waitinig</th><td id="BinDtfr">NaN</td></tr>
+                        </table>
+                    </div>
+                </div>
+                <!-------Trash Identification-------->
+                <div class="boxframe-rubbish">
+                    <p class="title" style="margin-top:0px; text-align: center; margin-left: 0px;">Rubbish</p>
+                    <div class="hline title_underline" style=" margin-left: 45px; width:150px"></div>
+                    <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                        <tr><th style="border-top:1px solid transparent; width:70%; border-bottom:1px solid #454d55; text-align: center;"><b>Estimated</b></th><td id="totRub" style="width:30%;">{{totRub}}</td></tr>
+                        <tr><th style="border-top:1px solid transparent; width:70%; border-bottom:1px solid #454d55; text-align: center;"><b>Collected</b></th><td id="colRub" style="width:30%;">{{colRub}}</td></tr>
+                        <tr><th style="border-top:1px solid transparent; width:70%; text-align: center;"><b>Sorted</b></th><td id="SortRub" style="width:30%;">{{SortRub}}</td></tr>
+                    </table>
+                </div>
+                <div class="boxframe-ident">
+                    <div class="row" style="margin-top: 10px;">
+                        <div class="col-md-6">
+                            <p class="title">Trash Identification</p>
+                           <!-- <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                                <tr>
+                                    <th style="text-align: center; border-top: transparent; color: #02feff; padding-left: 20px;">Processing</th>
+                                    <td id="CapA"style="text-align: center; border-top: transparent">Curently Unavailable</td>
+                                </tr>
+                            </table>-->
+                            <div class="row">
+                                <div class="col-md-4" style="margin-top: 10px;">
+                                    <div class="tableIdent">
+                                        <p>Plastic</p>
+                                        <p>Metal</p>
+                                        <p>Paper</p>
+                                        <p>Unable</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-8" style="margin-top: 10px;">
+                                    <div class="tableIdent">
+                                        <div class="Plastic">
+                                            <div id="percentagePlastic"></div>
+                                        </div>
+                                        <div class="Metal">
+                                            <div id="percentageMetal"></div>
+                                        </div>
+                                        <div class="Paper">
+                                            <div id="percentagePaper"></div>
+                                        </div>
+                                        <div class="Unable">
+                                            <div id="percentageUnable"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" style="margin-top: 20px;">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <center><img src="{% static '\home\src\Plastic-Bottle.PNG' %}" style="height:200px" class="img-fluid"" alt="..."></center>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <center><img src="{% static '\home\src\silver-ring-pull-end.png' %}" style="height:200px" class="img-fluid" alt="..."></center>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <center><img src="{% static '\home\src\sortingrig.PNG' %}" style="height:200px" class="img-fluid" alt="..."></center>
+                                    </div>
+                                </div>
+                                <!--<a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>-->
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>  
         </div>
 
         <div id="arc_container">
-        <div class="arc_reactor">
-            <div class="case_container">
-            <div class="e7" style="margin-left: 7.5px;">
-                <div class="semi_arc_3 e5_1">
-                <div class="semi_arc_3 e5_2">
-                    <div class="semi_arc_3 e5_3">
-                    <div class="semi_arc_3 e5_4"></div>
+            <div class="arc_reactor">
+                <div class="case_container">
+                    <div class="e7" style="margin-left: 7.5px;">
+                        <div class="semi_arc_3 e5_1">
+                            <div class="semi_arc_3 e5_2">
+                                <div class="semi_arc_3 e5_3">
+                                    <div class="semi_arc_3 e5_4"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="core2"></div>
+                    </div>
+                    <ul class="marks">
+                        <li></li><li></li><li></li><li></li><li></li><li></li>
+                        <li></li><li></li><li></li><li></li><li></li><li></li>
+                        <li></li><li></li><li></li><li></li><li></li><li></li>
+                        <li></li><li></li><li></li><li></li><li></li><li></li>
+                        <li></li><li></li><li></li><li></li><li></li><li></li>
+                        <li></li><li></li><li></li><li></li><li></li><li></li>
+                        <li></li><li></li><li></li><li></li><li></li><li></li>
+                        <li></li><li></li><li></li><li></li><li></li><li></li>
+                        <li></li><li></li><li></li><li></li><li></li><li></li>
+                        <li></li><li></li><li></li><li></li><li></li><li></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div aria-live="polite" aria-atomic="true" style="position: fixed; min-height: 200px;">
+            <!-- Position it -->
+            <div style="position: fixed; top: 10px; right: 0;">
+                <div class="row">
+                    <!-- Then put toasts within -->
+                    <div id="Tearthe" class="toast" role="alert" aria-live="assertive" aria-atomic="true" class="toast" aria-live="assertive" data-autohide="false" aria-atomic="true" style="position: relative; right: 20px; width: auto; min-width:250px">
+                        <div class="toast-header" id="toastHead">
+                            <strong class="mr-auto">Status of Earth-E</strong>
+                            <small class="text-muted" id="timee"></small>
+                            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="toast-body" id="toastBody">
+                            <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                                <tr style="border-top: none;">
+                                    <th style="border-top: none;">Location</th>
+                                    <td id="TlocEarthe" style="border-top: none;">X-axis: &nbsp; {{ aXaxis }} &nbsp; Y-Axis: &nbsp; {{ aYaxis }}</td>
+                                </tr>
+                            </table>
+                            <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                                <tr>
+                                    <th style="text-align: center;" > Batt 1</th>
+                                    <td id="TCapA"style="text-align: center;">{{CapA}}</td>
+                                    <th>Batt 2</th>
+                                    <td id="TCapB">{{CapB}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div id="TsortRig" class="toast" role="alert" aria-live="assertive" aria-atomic="true" class="toast" aria-live="assertive" data-autohide="false" aria-atomic="true" style="position: relative; right: 20px; width: auto; min-width:250px">
+                        <div class="toast-header" id="toastHead">
+                            <strong class="mr-auto">Status of Sorting Rig</strong>
+                            <small class="text-muted" id="timeS"></small>
+                            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="toast-body" id="toastBody">
+                                <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                                    <tr>
+                                        <th style="border-top:1px solid transparent; width:70%; border-bottom:1px solid #454d55; text-align: center;"><b>Collected</b></th>
+                                        <td id="TcolRub" style="width:30%; border-top:1px solid transparent;">{{colRub}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th style="border-top:1px solid transparent; width:70%; text-align: center;"><b>Sorted</b></th>
+                                        <td id="TSortRub" style="width:30%;">{{SortRub}}</td>
+                                    </tr>
+                                </table>
+                        </div>
+                    </div>
+
+                    <div id="TRubb" class="toast" role="alert" aria-live="assertive" aria-atomic="true" class="toast" aria-live="assertive" data-autohide="false" aria-atomic="true" style="position: relative; right: 20px; width: auto; min-width:250px">
+                        <div class="toast-header" id="toastHead">
+                            <strong class="mr-auto">Status of Rubbish</strong>
+                            <small class="text-muted" id="timeS"></small>
+                            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                <span aria-hidden="true" style="color:white">&times;</span>
+                            </button>
+                        </div>
+                        <div class="toast-body" id="toastBody">               
+                            <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                                <thead>
+                                    <tr>
+                                        <td style="width:25%; border-top:transparent;"><b>Bin A</b></td><td style="width:25%; border-top:transparent;" id="TBinA">{{ BinA }}</td>
+                                        <td style="width:25%; border-top:transparent;"><b>Bin B</b></td><td style="width:25%; border-top:transparent;" id="TBinB">{{ BinB }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th style="width:25%; border-bottom:transparent;"><b>Bin C</b></th><td id="TBinC" style="width:25%; border-bottom:transparent;">{{ BinA }}</td>
+                                        <th style="width:25%; border-bottom:transparent;"><b>Bin D</b></th><td id="TBinD" style="width:25%; border-bottom:transparent;">{{ BinB }}</td>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
                     </div>
                 </div>
-                </div>
-                <div class="core2"></div>
-            </div>
-            <ul class="marks">
-                <li></li><li></li><li></li><li></li><li></li><li></li>
-                <li></li><li></li><li></li><li></li><li></li><li></li>
-                <li></li><li></li><li></li><li></li><li></li><li></li>
-                <li></li><li></li><li></li><li></li><li></li><li></li>
-                <li></li><li></li><li></li><li></li><li></li><li></li>
-                <li></li><li></li><li></li><li></li><li></li><li></li>
-                <li></li><li></li><li></li><li></li><li></li><li></li>
-                <li></li><li></li><li></li><li></li><li></li><li></li>
-                <li></li><li></li><li></li><li></li><li></li><li></li>
-                <li></li><li></li><li></li><li></li><li></li><li></li>
-            </ul>
             </div>
         </div>
-        </div>
+
+        <script>
+            $('#statEarthe').on("click",function(){
+                $('#Tearthe').toast('show')
+
+                var minutes = new Date().getUTCMinutes();
+                var hours = new Date().getUTCHours();
+                $('#timee').html(hours + ' : ' + minutes);
+            })
+            $('#statSortRig').on("click",function(){
+                $('#TsortRig').toast('show')
+                var minutes = new Date().getUTCMinutes();
+                var hours = new Date().getUTCHours();
+                $('#timeS').html(hours + ' : ' + minutes);
+            })
+            $('#statRubbish').on("click",function(){
+                $('#TRubb').toast('show')
+                var minutes = new Date().getUTCMinutes();
+                var hours = new Date().getUTCHours();
+                $('#timeR').html(hours + ' : ' + minutes);
+            })
+        </script>
         
-          <!-- Particles -->
-          <!-- Left Menu Particles -->
-          <canvas id="particle1" width="20" height="500"></canvas>
-            <script>
-                var canvas = document.getElementById('particle1');
-                var context = canvas.getContext('2d');
-                
-                context.beginPath();
-                context.moveTo(0, 0);
-                context.lineTo(0, 70);
-                context.lineTo(10, 85);
-                context.lineTo(10, 135);
-                context.lineTo(0, 150);
-                context.lineTo(0, 480);
-                context.lineTo(5, 490);
-                context.lineTo(10, 490);
-                context.lineTo(20, 490);
-                context.lineTo(20, 250);
-                context.lineTo(10, 235);
-                context.lineTo(10, 185);
-                context.lineTo(20, 170);
-                context.lineTo(20, 40);
-                context.lineTo(10, 30);
-                context.lineTo(10, 20);
-                
-                context.closePath();
-                context.lineWidth = 1;
-                context.fillStyle = 'rgba(2,254,255,0.3)';
-                context.fill();
-                context.strokeStyle = 'transparent';
-                context.stroke();
-            </script>
-          <canvas id="particle1_1" width="40" height="510"></canvas>
-            <script>
-                var canvas = document.getElementById('particle1_1');
-                var context = canvas.getContext('2d');
-                
-                context.beginPath();
-                context.lineTo(0, 0);
-                context.lineTo(10, 15);
-                context.lineTo(10, 65);
-                context.lineTo(0, 80);
-                context.lineTo(0, 0);
-                
-                context.closePath();
-                context.lineWidth = 1;
-                context.fillStyle = 'rgba(2,254,255,0.3)';
-                context.fill();
-                context.strokeStyle = 'transparent';
-                context.stroke();
-            </script>
-          <canvas id="particle1_2" width="40" height="510"></canvas>
-            <script>
-              var canvas = document.getElementById('particle1_2');
-              var context = canvas.getContext('2d');
-              
-              context.beginPath();
-              context.lineTo(10, 80);
-              context.lineTo(0, 65);
-              context.lineTo(0, 15);
-              context.lineTo(10, 0);
-              context.lineTo(10, 80);
-              
-              context.closePath();
-              context.lineWidth = 1;  
-              context.fillStyle = 'rgba(2,254,255,0.3)';
-              context.fill();
-              context.strokeStyle = 'transparent';
-              context.stroke();
-            </script>
-          
-          <div id="particle1_3">
-            > > > >
-          </div>
-          <div id="particle3" class="vline"/>
-          <div id="particle4" class="vline"/>
-          <div id="particle5" class="vline"/>
-          <div id="particle6" class="vline"/>
-          <div id="particle7" class="vline"/>
-          <div id="particle8" class="vline"/>
-          <div id="particle9" class="vline"/>
-          
-          <!-- Arc Reactor -->
+        <!-- Particles -->
+        <!-- Left Menu Particles -->
+        <canvas id="particle1" width="20" height="500"></canvas>
+        <script>
+            var canvas = document.getElementById('particle1');
+            var context = canvas.getContext('2d');
+            
+            context.beginPath();
+            context.moveTo(0, 0);
+            context.lineTo(0, 70);
+            context.lineTo(10, 85);
+            context.lineTo(10, 135);
+            context.lineTo(0, 150);
+            context.lineTo(0, 480);
+            context.lineTo(5, 490);
+            context.lineTo(10, 490);
+            context.lineTo(20, 490);
+            context.lineTo(20, 250);
+            context.lineTo(10, 235);
+            context.lineTo(10, 185);
+            context.lineTo(20, 170);
+            context.lineTo(20, 40);
+            context.lineTo(10, 30);
+            context.lineTo(10, 20);
+            
+            context.closePath();
+            context.lineWidth = 1;
+            context.fillStyle = 'rgba(2,254,255,0.3)';
+            context.fill();
+            context.strokeStyle = 'transparent';
+            context.stroke();
+        </script>
+        <canvas id="particle1_1" width="40" height="510"></canvas>
+        <script>
+            var canvas = document.getElementById('particle1_1');
+            var context = canvas.getContext('2d');
+            
+            context.beginPath();
+            context.lineTo(0, 0);
+            context.lineTo(10, 15);
+            context.lineTo(10, 65);
+            context.lineTo(0, 80);
+            context.lineTo(0, 0);
+            
+            context.closePath();
+            context.lineWidth = 1;
+            context.fillStyle = 'rgba(2,254,255,0.3)';
+            context.fill();
+            context.strokeStyle = 'transparent';
+            context.stroke();
+        </script>
+        <canvas id="particle1_2" width="40" height="510"></canvas>
+        <script>
+            var canvas = document.getElementById('particle1_2');
+            var context = canvas.getContext('2d');
+            
+            context.beginPath();
+            context.lineTo(10, 80);
+            context.lineTo(0, 65);
+            context.lineTo(0, 15);
+            context.lineTo(10, 0);
+            context.lineTo(10, 80);
+            
+            context.closePath();
+            context.lineWidth = 1;  
+            context.fillStyle = 'rgba(2,254,255,0.3)';
+            context.fill();
+            context.strokeStyle = 'transparent';
+            context.stroke();
+        </script>
+        <div id="particle1_3">
+        > > > >
+        </div>
+        <div id="particle3" class="vline"/>
+        <div id="particle4" class="vline"/>
+        <div id="particle5" class="vline"/>
+        <div id="particle6" class="vline"/>
+        <div id="particle7" class="vline"/>
+        <div id="particle8" class="vline"/>
+        <div id="particle9" class="vline"/>
+
+        
+        <!-- Arc Reactor -->
         <script>
           //clock
           var monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]; 
