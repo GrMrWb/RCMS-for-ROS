@@ -4,7 +4,7 @@ var data
 function updateData(){
     $.getJSON("/static/home/js/warning.json",function(data){
         //Environmental Data
-        document.getElementById("warnenv").innerText= data["Warning"]["seagull"]== "True" ? "SeaGulls in Vicinity" : "No Warning";
+        document.getElementById("warnenv").innerText= data["Warning"]["seagull"]== "True" ? "SeaGulls in Vicinity" : "No Env Warning";
         document.getElementById("warnToggle").style.animation = data["Warning"]["seagull"]== "True" ? "blinker 3s infinite 0s" : "none";
         delete data;
     });
@@ -14,9 +14,9 @@ function updateData(){
             if (data["Operation"]["Auto"]=="1"){
                 $.getJSON("/static/home/js/warning.json",function(data){
                     //Environmental Data
-                    document.getElementById("warnenv").innerText= data["Warning"]["seagull"]== "True" ? "SeaGulls in Vicinity" : "No Warning";
+                    document.getElementById("warnenv").innerText= data["Warning"]["seagull"]== "True" ? "SeaGulls in Vicinity" : "No Env Warning";
                     document.getElementById("warnToggle").style.animation = data["Warning"]["seagull"]== "True" ? "blinker 3s infinite 0s" : "none";
-                    document.getElementById("tideenv").innerText= data["Warning"]["tide"]== "True" ? "Less than 1 metre" : "More than 1 metre";
+                    document.getElementById("tideenv").innerText= data["Warning"]["tide"]== "True" ? "Tide Less than 1 metre" : "Tide More than 1 metre";
                     document.getElementById("tideToggle").style.animation = data["Warning"]["tide"]== "True" ? "blinker 3s infinite 0s" : "none";           
                     delete data;
                 });
@@ -28,6 +28,7 @@ function updateData(){
             document.getElementById("BrdProc").innerText = data["TriTrackDataMic"]["BrdProc"]+" %";
             document.getElementById("RosStat").innerText = data["TriTrackDataMic"]["RosStat"]== "1" ? "Not Available" : "Available Processing";
             document.getElementById("ROSproc").innerText = data["TriTrackDataMic"]["ROSproc"]+" %";
+            document.getElementById("Opeartion").innerText = data["Opeartion"]["Auto"]== "1" ? "Automatic" : "Manual";
 
             // PoweBoard
             document.getElementById("Consumption").innerText = data["TriTrackPowerBoard"]["Consumption"] + ' W';
