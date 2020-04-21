@@ -7,34 +7,37 @@ for(var j=0; j < ycordsDemo.length;j++){
     xcordsDemo[j] = xcordsDemo[j] + parseInt(Math.random()*100);
 }
 function moveEarhte(){
-    data=$.getJSON("/static/home/js/data.json",function(data){
-        if(data["Operation"]["Auto"]=="1"){
-            i++;
-            theThing.style.left = xcordsDemo[i] + "px";
-            theThing.style.top = ycordsDemo[i] + "px";
+    if (document.getElementById("earth-e").style.display=="block"){
+        data=$.getJSON("/static/home/js/data.json",function(data){
+            if(data["Operation"]["Auto"]=="1"){
+                i++;
+                theThing.style.left = xcordsDemo[i] + "px";
+                theThing.style.top = ycordsDemo[i] + "px";
+                
+                //console.log(i)
+                if( xcordsDemo[i]>300 && ycordsDemo[i] < 250){
+                    document.getElementById("tideenv").innerText= "Less than 1 metre";
+                    document.getElementById("tideToggle").style.animation = "blinker 3s infinite 0s";
+
+                } else{
+                    document.getElementById("tideenv").innerText= "More than 1 metre";
+                    document.getElementById("tideToggle").style.animation = "none";
+
+                }
+
+                document.getElementById("locEarthe").innerText="X-axis: " + xcordsDemo[i] + " Y-Axis: " + ycordsDemo[i];
+                document.getElementById("TlocEarthe").innerText="X-axis: " + xcordsDemo[i] + " Y-Axis: " + ycordsDemo[i];
+
+                i = i==xcordsDemo.length ? -1 : i;
             
-            //console.log(i)
-            if( xcordsDemo[i]>300 && ycordsDemo[i] < 250){
-                document.getElementById("tideenv").innerText= "Less than 1 metre";
-                document.getElementById("tideToggle").style.animation = "blinker 3s infinite 0s";
-
-            } else{
-                document.getElementById("tideenv").innerText= "More than 1 metre";
-                document.getElementById("tideToggle").style.animation = "none";
-
             }
-
-            document.getElementById("locEarthe").innerText="X-axis: " + xcordsDemo[i] + " Y-Axis: " + ycordsDemo[i];
-            document.getElementById("TlocEarthe").innerText="X-axis: " + xcordsDemo[i] + " Y-Axis: " + ycordsDemo[i];
-
-            i = i==xcordsDemo.length ? -1 : i;
-        
-        }
-        
-    })
+            
+        })
+    }
 }
 
 setInterval(moveEarhte,700)
 
-
-// 
+function AutoData(){
+    
+}

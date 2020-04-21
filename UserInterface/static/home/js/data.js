@@ -100,14 +100,34 @@ function throttleAuto(){
 //setInterval(throttleAuto,500);
 
 function trashAuto(){
-    test= parseInt(Math.random()*100) +"%";
-    document.getElementById("percentagePlastic").style.width= test;
-    test= parseInt(Math.random()*100) +"%";
-    document.getElementById("percentageMetal").style.width= test;
-    test= parseInt(Math.random()*100) +"%";
-    document.getElementById("percentagePaper").style.width= test;
-    test= parseInt(Math.random()*100) +"%";
-    document.getElementById("percentageUnable").style.width= test;
+    randItem=Math.random()*5
+
+    if (randItem<1){
+        document.getElementById("percentagePlastic").style.width= "0%";
+        document.getElementById("percentageMetal").style.width= "100%";
+        document.getElementById("percentagePaper").style.width= "100%";
+        document.getElementById("percentageUnable").style.width= "100%";
+        document.getElementById("trashident").innerHTML = '<center><image style="height:200px;" src="/static/home/src/Plastic-Bottle.PNG" />';
+        
+    } else if (randItem<2){
+        document.getElementById("percentagePlastic").style.width= "100%";
+        document.getElementById("percentageMetal").style.width= "0%";
+        document.getElementById("percentagePaper").style.width= "100%";
+        document.getElementById("percentageUnable").style.width= "100%";
+        document.getElementById("trashident").innerHTML = '<center><image style="height:200px;" src="/static/home/src/Can.PNG" />';
+    } else if (randItem<3){
+        document.getElementById("percentagePlastic").style.width= "100%";
+        document.getElementById("percentageMetal").style.width= "100%";
+        document.getElementById("percentagePaper").style.width= "100%";
+        document.getElementById("percentageUnable").style.width= "0%";
+        document.getElementById("trashident").innerHTML = '<center><image style="height:200px;" src="/static/home/src/.PNG" />';
+    } else {
+        document.getElementById("percentagePlastic").style.width= "100%";
+        document.getElementById("percentageMetal").style.width= "100%";
+        document.getElementById("percentagePaper").style.width= "0%";
+        document.getElementById("percentageUnable").style.width= "100%";
+        document.getElementById("trashident").innerHTML = '<center><image style="height:200px;" src="/static/home/src/silver-ring-pull-end.PNG" />';
+    }
 }
 
-setInterval(trashAuto,500);
+setInterval(trashAuto,2500);

@@ -84,7 +84,7 @@
                     <li class="nav-item menuitem">
                         <a class="caption nav-link" data-toggle="tab" href="#earth-e" style="padding-left: 0px;" >Earth-E</a>
                     </li>
-                    <li class="nav-item menuitem    ">
+                    <li class="nav-item menuitem">
                         <a class="caption nav-link" data-toggle="tab" href="#sortrig" style="padding-left: 0px;">Sorting Rig</a>
                     </li>
                 </ul>
@@ -121,96 +121,18 @@
                 <div class="boxframe1">
                     <p class="title" style="text-align: center; margin-top: -35px;">Earth-E</p>
                     <div id="muteEarthE"></div>
-                    <script>
-                        function onYouTubeIframeAPIReady() {
-                        var muteEarthE;
-                        muteEarthE = new YT.Player('muteEarthE', {
-                            videoId: 'zSRs9Y7lprk', // YouTube Video ID
-                            width: 480,               // Player width (in px)
-                            height: 360,              // Player height (in px)
-                            playerVars: {
-                                autoplay: 1,        // Auto-play the video on load
-                                controls: 0,        // Show pause/play buttons in player
-                                showinfo: 1,        // Hide the video title
-                                modestbranding: 0,  // Hide the Youtube Logo
-                                loop: 1,            // Run the video in a loop
-                                fs: 0,              // Hide the full screen button
-                                cc_load_policy: 0, // Hide closed captions
-                                iv_load_policy: 3,  // Hide the Video Annotations
-                                autohide: 0         // Hide video controls when playing
-                            },
-                            events: {
-                                onReady: function(e) {
-                                    e.target.mute();
-                                }
-                            }
-                        })
-                        }
-                    </script>
                 </div>
                 <div class="lineofboxframe2-top"><div class="powerTo"></div></div>
                 <div class="lineofboxframe2-bottom"><div class="powerTo"></div></div>
                 <div class="boxframe2">
                     <p class="title" style="text-align: center; margin-top: -35px;">Sorting Rig</p>
                     <div id="muteSortRig"></div>
-                    <script>
-                        function onYouTubeIframeAPIReady() {
-                        var muteSortRig;
-                        muteSortRig = new YT.Player('muteSortRig', {
-                            videoId: 'zSRs9Y7lprk', // YouTube Video ID
-                            width: 640,               // Player width (in px)
-                            height: 480,              // Player height (in px)
-                            playerVars: {
-                            autoplay: 1,        // Auto-play the video on load
-                            controls: 0,        // Show pause/play buttons in player
-                            showinfo: 1,        // Hide the video title
-                            modestbranding: 0,  // Hide the Youtube Logo
-                            loop: 1,            // Run the video in a loop
-                            fs: 0,              // Hide the full screen button
-                            cc_load_policy: 0, // Hide closed captions
-                            iv_load_policy: 3,  // Hide the Video Annotations
-                            autohide: 0         // Hide video controls when playing
-                            },
-                            events: {
-                            onReady: function(e) {
-                                e.target.mute();
-                            }
-                            }
-                        })
-                        }
-                    </script>
                 </div>
                 <div class="lineofboxframe3-top"><div class="powerTo"></div></div>
                 <div class="lineofboxframe3-bottom"><div class="powerTo"></div></div>
                 <div class="boxframe3">
                     <p class="title" style="text-align: center; margin-top: -35px;">Eye-in-the-Sky</p>
                     <div id="muteEyeInTheSky"></div>
-                    <script>
-                        function onYouTubeIframeAPIReady() {
-                        var muteEyeInTheSky;
-                        muteEyeInTheSky = new YT.Player('muteEyeInTheSky', {
-                            videoId: '4wFlJHVcBKs', // YouTube Video ID
-                            width: 480,               // Player width (in px)
-                            height: 360,              // Player height (in px)
-                            playerVars: {
-                            autoplay: 1,        // Auto-play the video on load
-                            controls: 0,        // Show pause/play buttons in player
-                            showinfo: 1,        // Hide the video title
-                            modestbranding: 0,  // Hide the Youtube Logo
-                            loop: 1,            // Run the video in a loop
-                            fs: 0,              // Hide the full screen button
-                            cc_load_policy: 0, // Hide closed captions
-                            iv_load_policy: 3,  // Hide the Video Annotations
-                            autohide: 0         // Hide video controls when playing
-                            },
-                            events: {
-                            onReady: function(e) {
-                                e.target.mute();
-                            }
-                            }
-                        })
-                        }
-                    </script>
                 </div>
             </div>
             <!--------Earth-E Monitor-------->
@@ -283,43 +205,29 @@
                 </div>
                 <!---------Consumption-------->
                 <div class="boxframe-consumption">
-                    <div class="tab-content">
-                        <div class="tab-pane container active" id="system">
-                            <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
-                                <tr>
-                                    <th style="text-align: center; border-top: transparent">RaspberyPi</th>
-                                    <td id="Consumption" style="text-align: center; border-top: transparent">{{Consumption}} W</td>
-                                </tr>
-                                <tr>
-                                    <td >Boarduino</th>
-                                    <td id="Consumptiona">{{Consumption}} W</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="tab-pane container fade" id="system">
-
-                        </div>
-                    </div>
+                    <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                        <tr>
+                            <th style="text-align: center; border-top: transparent">RaspberyPi</th>
+                            <td id="Consumption" style="text-align: center; border-top: transparent">{{Consumption}} W</td>
+                        </tr>
+                        <tr>
+                            <td >Boarduino</th>
+                            <td id="Consumptiona">{{Consumption}} W</td>
+                        </tr>
+                    </table>
                 </div>
                 <!---------Capacity-------->
                 <div class="boxframe-capacity">
-                    <div class="tab-content">
-                        <div class="tab-pane container active" id="system">
-                            <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
-                                <tr>
-                                    <th style="text-align: center; border-top: transparent" > Battery 1</th>
-                                    <td id="CapA"style="text-align: center; border-top: transparent">{{CapA}}</td>
-                                </tr>
-                                <tr>
-                                    <th>Battery 2</th>
-                                    <td id="CapB">{{CapB}}</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="tab-pane container fade" id="system">
-
-                        </div>
-                    </div>
+                    <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
+                        <tr>
+                            <th style="text-align: center; border-top: transparent" > Battery 1</th>
+                            <td id="CapA"style="text-align: center; border-top: transparent">{{CapA}}</td>
+                        </tr>
+                        <tr>
+                            <th>Battery 2</th>
+                            <td id="CapB">{{CapB}}</td>
+                        </tr>
+                    </table>
                 </div>
                 <!---------Automatic Manual-------->
                 <div class="boxframe-automan">
@@ -382,32 +290,6 @@
                 <div class="boxframeView">
                     <!--<img src="{% static '\home\src\sortingrig.PNG' %}" style="height:480px">-->
                     <div id="muteLiveViewEarthE"></div>
-                    <script>
-                        function onYouTubeIframeAPIReady() {
-                        var muteLiveViewEarthE;
-                        muteLiveViewEarthE = new YT.Player('muteLiveViewEarthE', {
-                            videoId: '4wFlJHVcBKs', // YouTube Video ID
-                            width: 600,               // Player width (in px)
-                            height: 470,              // Player height (in px)
-                            playerVars: {
-                            autoplay: 1,        // Auto-play the video on load
-                            controls: 0,        // Show pause/play buttons in player
-                            showinfo: 1,        // Hide the video title
-                            modestbranding: 0,  // Hide the Youtube Logo
-                            loop: 1,            // Run the video in a loop
-                            fs: 0,              // Hide the full screen button
-                            cc_load_policy: 0, // Hide closed captions
-                            iv_load_policy: 3,  // Hide the Video Annotations
-                            autohide: 0         // Hide video controls when playing
-                            },
-                            events: {
-                            onReady: function(e) {
-                                e.target.mute();
-                            }
-                            }
-                        })
-                        }
-                    </script>
                 </div>   
                 <!---------Lines to GridMap-------->
                 <div class="lineofboxframeGridMap-top"><div class="powerTo"></div></div>
@@ -467,32 +349,6 @@
                 <div class="boxframeView">
                     <!--<img src="{% static '\home\src\sortingrig.PNG' %}" style="height:480px">-->
                     <div id="muteYouTubeVideoPlayer"></div>
-                    <script>
-                        function onYouTubeIframeAPIReady() {
-                        var muteYouTubeVideoPlayer;
-                        muteYouTubeVideoPlayer = new YT.Player('muteYouTubeVideoPlayer', {
-                            videoId: '4wFlJHVcBKs', // YouTube Video ID
-                            width: 600,               // Player width (in px)
-                            height: 470,              // Player height (in px)
-                            playerVars: {
-                            autoplay: 1,        // Auto-play the video on load
-                            controls: 0,        // Show pause/play buttons in player
-                            showinfo: 1,        // Hide the video title
-                            modestbranding: 0,  // Hide the Youtube Logo
-                            loop: 1,            // Run the video in a loop
-                            fs: 0,              // Hide the full screen button
-                            cc_load_policy: 0, // Hide closed captions
-                            iv_load_policy: 3,  // Hide the Video Annotations
-                            autohide: 0         // Hide video controls when playing
-                            },
-                            events: {
-                            onReady: function(e) {
-                                e.target.mute();
-                            }
-                            }
-                        })
-                        }
-                    </script>
                 </div>
                 <div class="boxframe-ControlSortRig">
                     <p class="title" style="margin-top:0px">Control the Rig</p>
@@ -574,20 +430,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" style="margin-top: 20px;">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <center><img src="{% static '\home\src\Plastic-Bottle.PNG' %}" style="height:200px" class="img-fluid"" alt="..."></center>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <center><img src="{% static '\home\src\silver-ring-pull-end.png' %}" style="height:200px" class="img-fluid" alt="..."></center>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <center><img src="{% static '\home\src\sortingrig.PNG' %}" style="height:200px" class="img-fluid" alt="..."></center>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="col-md-6"  id="trashident">
                         </div>
                     </div>
                 </div>
@@ -724,6 +567,7 @@
             })
         </script>
         
+        <script text="javascript" src="{% static 'home/js/youtube.js' %}"></script>
         <!-- Particles -->
         <!-- Left Menu Particles -->
         <canvas id="particle1" width="20" height="500"></canvas>
