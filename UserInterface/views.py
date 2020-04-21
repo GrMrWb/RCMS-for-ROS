@@ -29,42 +29,6 @@ def getInfo(data):
 
     return datasend
 
-def testLayout(request):
-    # === Read Data from the JSON file
-    StatBoard=getInfo("Stat")
-    autocords=getInfo("auto")
-    SortStat=getInfo("sort")
-
-    return render(
-        request,
-        'home/mrk2Auto.html',    
-        {
-            # === EarthE Stats
-            "PiStat": StatBoard["PiStat"],
-            "Pi4procTri": StatBoard["Pi4procTri"],
-            "BrdStat": StatBoard["BrdStat"],
-            "BrdProc":StatBoard["BrdProc"],
-            "RosStat": StatBoard["RosStat"],
-            "ROSproc":StatBoard["ROSproc"],
-            "aXaxis":autocords["xPos"],
-            "aYaxis":autocords["yPos"],
-            # === SortRig Stats
-            "PiStatSort": SortStat["PiStat"],
-            "Pi4procTriSor": SortStat["Pi4procTri"],
-            "ArdStat": SortStat["ArdStat"],
-            "ArdProc":SortStat["ArdProc"],
-            "PrbStat": SortStat["PrbStat"],
-            "PrbProc":SortStat["PrbProc"],
-            # === Rubbish Stats
-            "totRub": Rubbish["totRub"],
-            "colRub": Rubbish["ColRub"],
-            "SortRub": Rubbish["SortRub"],
-            "BinA": Rubbish["BinA"],
-            "BinB": Rubbish["BinB"],
-            "BinC": Rubbish["BinC"],
-        }
-    )
-
 def testUI(request):
 
     # === Read Data from the JSON file

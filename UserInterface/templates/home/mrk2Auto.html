@@ -38,6 +38,7 @@
         <!--styles-->
         <link rel="stylesheet" href="{% static 'home/css/mrk2/Untitled-1.css.map' %}">
         <link rel="stylesheet" href="{% static 'home/css/mrk2/Untitled-1.css' %}">
+        <script async src="https://www.youtube.com/iframe_api"></script>
     </head>
     <body>        
         <div id="leftmenu">
@@ -119,19 +120,97 @@
                 <div class="lineofboxframe1-bottom"><div class="powerTo"></div></div>
                 <div class="boxframe1">
                     <p class="title" style="text-align: center; margin-top: -35px;">Earth-E</p>
-                    <img src="{% static '\home\src\sortingrig.PNG' %}" style="height:360px">
+                    <div id="muteEarthE"></div>
+                    <script>
+                        function onYouTubeIframeAPIReady() {
+                        var muteEarthE;
+                        muteEarthE = new YT.Player('muteEarthE', {
+                            videoId: 'zSRs9Y7lprk', // YouTube Video ID
+                            width: 480,               // Player width (in px)
+                            height: 360,              // Player height (in px)
+                            playerVars: {
+                                autoplay: 1,        // Auto-play the video on load
+                                controls: 0,        // Show pause/play buttons in player
+                                showinfo: 1,        // Hide the video title
+                                modestbranding: 0,  // Hide the Youtube Logo
+                                loop: 1,            // Run the video in a loop
+                                fs: 0,              // Hide the full screen button
+                                cc_load_policy: 0, // Hide closed captions
+                                iv_load_policy: 3,  // Hide the Video Annotations
+                                autohide: 0         // Hide video controls when playing
+                            },
+                            events: {
+                                onReady: function(e) {
+                                    e.target.mute();
+                                }
+                            }
+                        })
+                        }
+                    </script>
                 </div>
                 <div class="lineofboxframe2-top"><div class="powerTo"></div></div>
                 <div class="lineofboxframe2-bottom"><div class="powerTo"></div></div>
                 <div class="boxframe2">
                     <p class="title" style="text-align: center; margin-top: -35px;">Sorting Rig</p>
-                    <img src="{% static '\home\src\sortingrig.PNG' %}" style="height:480px">
+                    <div id="muteSortRig"></div>
+                    <script>
+                        function onYouTubeIframeAPIReady() {
+                        var muteSortRig;
+                        muteSortRig = new YT.Player('muteSortRig', {
+                            videoId: 'zSRs9Y7lprk', // YouTube Video ID
+                            width: 640,               // Player width (in px)
+                            height: 480,              // Player height (in px)
+                            playerVars: {
+                            autoplay: 1,        // Auto-play the video on load
+                            controls: 0,        // Show pause/play buttons in player
+                            showinfo: 1,        // Hide the video title
+                            modestbranding: 0,  // Hide the Youtube Logo
+                            loop: 1,            // Run the video in a loop
+                            fs: 0,              // Hide the full screen button
+                            cc_load_policy: 0, // Hide closed captions
+                            iv_load_policy: 3,  // Hide the Video Annotations
+                            autohide: 0         // Hide video controls when playing
+                            },
+                            events: {
+                            onReady: function(e) {
+                                e.target.mute();
+                            }
+                            }
+                        })
+                        }
+                    </script>
                 </div>
                 <div class="lineofboxframe3-top"><div class="powerTo"></div></div>
                 <div class="lineofboxframe3-bottom"><div class="powerTo"></div></div>
                 <div class="boxframe3">
                     <p class="title" style="text-align: center; margin-top: -35px;">Eye-in-the-Sky</p>
-                    <img src="{% static '\home\src\sortingrig.PNG' %}" style="height:360px">
+                    <div id="muteEyeInTheSky"></div>
+                    <script>
+                        function onYouTubeIframeAPIReady() {
+                        var muteEyeInTheSky;
+                        muteEyeInTheSky = new YT.Player('muteEyeInTheSky', {
+                            videoId: '4wFlJHVcBKs', // YouTube Video ID
+                            width: 480,               // Player width (in px)
+                            height: 360,              // Player height (in px)
+                            playerVars: {
+                            autoplay: 1,        // Auto-play the video on load
+                            controls: 0,        // Show pause/play buttons in player
+                            showinfo: 1,        // Hide the video title
+                            modestbranding: 0,  // Hide the Youtube Logo
+                            loop: 1,            // Run the video in a loop
+                            fs: 0,              // Hide the full screen button
+                            cc_load_policy: 0, // Hide closed captions
+                            iv_load_policy: 3,  // Hide the Video Annotations
+                            autohide: 0         // Hide video controls when playing
+                            },
+                            events: {
+                            onReady: function(e) {
+                                e.target.mute();
+                            }
+                            }
+                        })
+                        }
+                    </script>
                 </div>
             </div>
             <!--------Earth-E Monitor-------->
@@ -301,7 +380,34 @@
                 <div class="lineofboxframeView-bottom"><div class="powerTo"></div></div>
                 <!-------------Live View------------->
                 <div class="boxframeView">
-                    <img src="{% static '\home\src\sortingrig.PNG' %}" style="height:480px">
+                    <!--<img src="{% static '\home\src\sortingrig.PNG' %}" style="height:480px">-->
+                    <div id="muteLiveViewEarthE"></div>
+                    <script>
+                        function onYouTubeIframeAPIReady() {
+                        var muteLiveViewEarthE;
+                        muteLiveViewEarthE = new YT.Player('muteLiveViewEarthE', {
+                            videoId: '4wFlJHVcBKs', // YouTube Video ID
+                            width: 600,               // Player width (in px)
+                            height: 470,              // Player height (in px)
+                            playerVars: {
+                            autoplay: 1,        // Auto-play the video on load
+                            controls: 0,        // Show pause/play buttons in player
+                            showinfo: 1,        // Hide the video title
+                            modestbranding: 0,  // Hide the Youtube Logo
+                            loop: 1,            // Run the video in a loop
+                            fs: 0,              // Hide the full screen button
+                            cc_load_policy: 0, // Hide closed captions
+                            iv_load_policy: 3,  // Hide the Video Annotations
+                            autohide: 0         // Hide video controls when playing
+                            },
+                            events: {
+                            onReady: function(e) {
+                                e.target.mute();
+                            }
+                            }
+                        })
+                        }
+                    </script>
                 </div>   
                 <!---------Lines to GridMap-------->
                 <div class="lineofboxframeGridMap-top"><div class="powerTo"></div></div>
@@ -359,8 +465,34 @@
                 <div class="lineofboxframeView-top"><div class="powerTo"></div></div>
                 <div class="lineofboxframeView-bottom"><div class="powerTo"></div></div>
                 <div class="boxframeView">
-                    <p class="title" style="text-align: center; margin-top: -35px;">Sorting Rig</p>
-                    <img src="{% static '\home\src\sortingrig.PNG' %}" style="height:480px">
+                    <!--<img src="{% static '\home\src\sortingrig.PNG' %}" style="height:480px">-->
+                    <div id="muteYouTubeVideoPlayer"></div>
+                    <script>
+                        function onYouTubeIframeAPIReady() {
+                        var muteYouTubeVideoPlayer;
+                        muteYouTubeVideoPlayer = new YT.Player('muteYouTubeVideoPlayer', {
+                            videoId: '4wFlJHVcBKs', // YouTube Video ID
+                            width: 600,               // Player width (in px)
+                            height: 470,              // Player height (in px)
+                            playerVars: {
+                            autoplay: 1,        // Auto-play the video on load
+                            controls: 0,        // Show pause/play buttons in player
+                            showinfo: 1,        // Hide the video title
+                            modestbranding: 0,  // Hide the Youtube Logo
+                            loop: 1,            // Run the video in a loop
+                            fs: 0,              // Hide the full screen button
+                            cc_load_policy: 0, // Hide closed captions
+                            iv_load_policy: 3,  // Hide the Video Annotations
+                            autohide: 0         // Hide video controls when playing
+                            },
+                            events: {
+                            onReady: function(e) {
+                                e.target.mute();
+                            }
+                            }
+                        })
+                        }
+                    </script>
                 </div>
                 <div class="boxframe-ControlSortRig">
                     <p class="title" style="margin-top:0px">Control the Rig</p>
@@ -455,14 +587,6 @@
                                         <center><img src="{% static '\home\src\sortingrig.PNG' %}" style="height:200px" class="img-fluid" alt="..."></center>
                                     </div>
                                 </div>
-                                <!--<a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>-->
                             </div>
                         </div>
                     </div>

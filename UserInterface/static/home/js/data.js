@@ -28,7 +28,7 @@ function updateData(){
             document.getElementById("BrdProc").innerText = data["TriTrackDataMic"]["BrdProc"]+" %";
             document.getElementById("RosStat").innerText = data["TriTrackDataMic"]["RosStat"]== "1" ? "Not Available" : "Available Processing";
             document.getElementById("ROSproc").innerText = data["TriTrackDataMic"]["ROSproc"]+" %";
-            document.getElementById("Opeartion").innerText = data["Opeartion"]["Auto"]== "1" ? "Automatic" : "Manual";
+            document.getElementById("Operation").innerText = data["Operation"]["Auto"]== "1" ? "Automatic" : "Manual";
 
             // PoweBoard
             document.getElementById("Consumption").innerText = data["TriTrackPowerBoard"]["Consumption"] + ' W';
