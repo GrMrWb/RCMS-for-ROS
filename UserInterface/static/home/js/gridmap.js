@@ -6,12 +6,14 @@ var prexPosition = xPosition;
 var preyPosition = yPosition;
 var data
 
+
+
 container.addEventListener("click",getClickPosition,false);
 
 function getClickPosition(e) {
    
-//    data=$.getJSON("/static/home/js/data.json",function(data){
-//        if(data["Operation"]["Man"]=="1"){
+    //data=$.getJSON("/static/home/js/data.json",function(data){
+        //if(data["Operation"]["Man"]=="1"){
             
             document.getElementById("curearthe").style.display= "none";
             var parentPosition = getPosition(e.currentTarget);
@@ -59,9 +61,8 @@ function getClickPosition(e) {
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.open( 'GET'  , 'http://127.0.0.1:8000/cords/'+ xPosition + '/'+ yPosition + '/'+ parseInt(prexPosition) +'/'+ parseInt(preyPosition), true);
             xmlhttp.send();
-            //xmlhttp.abort();
-//        }
-//    });
+       //}
+  //  });
 }
 
 function moveObject(){
@@ -71,15 +72,17 @@ function moveObject(){
     test= parseInt(throttle) +"%";
     prexPosition = prexPosition + (xPosition - prexPosition)/10;
     preyPosition = preyPosition + (yPosition - preyPosition)/10;
-
-    if( document.getElementById("curearthe").style.display!="none"){
-        document.getElementById("curearthe").style.left = prexPosition + "px";
-        document.getElementById("curearthe").style.top= preyPosition - 50 + "px";
-        //Adding Location
-        document.getElementById("locEarthe").innerText="X-axis: " + parseInt(prexPosition) + " Y-Axis: " + parseInt(preyPosition);
-        document.getElementById("TlocEarthe").innerText="X-axis: " + parseInt(prexPosition) + " Y-Axis: " + parseInt(preyPosition);
-    }
-    
+    data=$.getJSON("/static/home/js/data.json",function(data){
+        if(data["Operation"]["Man"]=="1"){
+            if( document.getElementById("curearthe").style.display!="none"){
+                document.getElementById("curearthe").style.left = prexPosition + "px";
+                document.getElementById("curearthe").style.top= preyPosition - 50 + "px";
+                //Adding Location
+                document.getElementById("locEarthe").innerText="X-axis: " + parseInt(prexPosition) + " Y-Axis: " + parseInt(preyPosition);
+                document.getElementById("TlocEarthe").innerText="X-axis: " + parseInt(prexPosition) + " Y-Axis: " + parseInt(preyPosition);
+            }
+        }
+    });
     document.getElementById("percentageL").style.height= test;
     document.getElementById("percentageR").style.height= test;
 

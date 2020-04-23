@@ -75,22 +75,6 @@ function updateData(){
 }
 setInterval(updateData,2000);
 
-/*function imageExists(){
-    image_url= "http://192.168.0.100:8080/stream?topic=/camera/rgb/image_raw"
-
-    var http = new XMLHttpRequest();
-
-    http.open("GET",image_url, false);
-    http.send();
-
-    if(http.status!=404){
-        document.getElementById("sortrig").innerHTML = '<center><img src="http://192.168.0.100:8080/stream?topic=/camera/rgb/image_raw" style="height:570px;margin:10px"></center>'
-    } else {
-        document.getElementById("sortrig").innerHTML = '<center><img src="/static/home/src/liveview.jpg" style="height:570px;margin:10px"></center>'
-    }
-
-}*/
-
 function throttleAuto(){
     test= parseInt(Math.random()*100) +"%";
     document.getElementById("percentageL").style.height= test;

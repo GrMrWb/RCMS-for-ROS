@@ -1,4 +1,4 @@
-
+/*
 function onYouTubeIframeAPIReady() {
     var muteYouTubeVideoPlayer;
     muteYouTubeVideoPlayer = new YT.Player('muteYouTubeVideoPlayer', {

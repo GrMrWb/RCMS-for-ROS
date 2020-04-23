@@ -1092,12 +1092,61 @@
   display: block;
 }
 
+#redcrab{
+  position: relative;
+  left: 112px;
+  top: 20px;
+  transition: left .5s ease-in, top .5s ease-in;
+  z-index:1;
+}
+
+#bluecrab{
+  position: relative;
+  left: 382px;
+  top: 340px;
+  transition: left .5s ease-in, top .5s ease-in;
+  z-index:1;
+}
+
+#greencrab{
+  position: relative;
+  left: 486px;
+  top: 340px;
+  transition: left .5s ease-in, top .5s ease-in;
+  z-index:1;
+}
+
 #demotests{
   width:640px;
   height:480px;
   position:fixed;
 }
+i {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
 
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
 /* Toast*/
 
 #Tearthe{
