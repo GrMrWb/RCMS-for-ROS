@@ -49,12 +49,16 @@ function updateData(){
             //Rubbish
             tot=parseInt(data["Rubbish"]["BinA"])+parseInt(data["Rubbish"]["BinB"])+parseInt(data["Rubbish"]["BinC"])+parseInt(data["Rubbish"]["BinD"])
             document.getElementById("totRub").innerText = data["Rubbish"]["totRub"];
-            document.getElementById("colRub").innerText = data["Rubbish"]["ColRub"];
-            document.getElementById("SortRub").innerText = tot;
+            document.getElementById("colRub").innerText = tot;
+            document.getElementById("SortRub").innerText = tot-parseInt(data["Rubbish"]["BinA"]) + "+ 10";
             document.getElementById("BinA").innerText = data["Rubbish"]["BinA"];
             document.getElementById("BinB").innerText = data["Rubbish"]["BinB"];
             document.getElementById("BinC").innerText = data["Rubbish"]["BinC"];
             document.getElementById("BinD").innerText = data["Rubbish"]["BinD"];
+            document.getElementById("BinAtfr").innerText = 10;
+            document.getElementById("BinBtfr").innerText = 4;
+            document.getElementById("BinCtfr").innerText = 4;
+            document.getElementById("BinDtfr").innerText = 2;
             
             //Toast Rubbish
             document.getElementById("TcolRub").innerText = data["Rubbish"]["ColRub"];
@@ -104,7 +108,7 @@ function trashAuto(){
         document.getElementById("percentageMetal").style.width= "100%";
         document.getElementById("percentagePaper").style.width= "100%";
         document.getElementById("percentageUnable").style.width= "0%";
-        document.getElementById("trashident").innerHTML = '<center><image style="height:200px;" src="/static/home/src/.PNG" />';
+        document.getElementById("trashident").innerHTML = '<center><image style="height:200px;" src="/static/home/src/Error.PNG" />';
     } else {
         document.getElementById("percentagePlastic").style.width= "100%";
         document.getElementById("percentageMetal").style.width= "100%";

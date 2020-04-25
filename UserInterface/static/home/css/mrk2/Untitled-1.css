@@ -822,11 +822,11 @@
 }
 
 .boxframe-ControlSortRig{
-  width:650px;
-  height:150px;
+  width:575px;
+  height:300px;
   position: fixed;
   top:550px;
-  left:1220px;
+  left:1300px;
   border-radius:15%;
   /*border: 1px transparent rgba(150, 255, 255, 0.3);*/
   padding:5px;
@@ -1147,6 +1147,7 @@ i {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
+
 /* Toast*/
 
 #Tearthe{

@@ -77,11 +77,13 @@ function moveObject(){
             if( document.getElementById("curearthe").style.display!="none"){
                 document.getElementById("curearthe").style.left = prexPosition + "px";
                 document.getElementById("curearthe").style.top= preyPosition - 50 + "px";
+                
                 //Adding Location
                 document.getElementById("locEarthe").innerText="X-axis: " + parseInt(prexPosition) + " Y-Axis: " + parseInt(preyPosition);
                 document.getElementById("TlocEarthe").innerText="X-axis: " + parseInt(prexPosition) + " Y-Axis: " + parseInt(preyPosition);
             }
         }
+        delete data;
     });
     document.getElementById("percentageL").style.height= test;
     document.getElementById("percentageR").style.height= test;

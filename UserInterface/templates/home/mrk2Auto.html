@@ -38,6 +38,7 @@
         <!--styles-->
         <link rel="stylesheet" href="{% static 'home/css/mrk2/Untitled-1.css.map' %}">
         <link rel="stylesheet" href="{% static 'home/css/mrk2/Untitled-1.css' %}">
+        <link rel="stylesheet" href="{% static 'home/css/mrk2/arrows.css' %}">
         <script async src="https://www.youtube.com/iframe_api"></script>
     </head>
     <body>        
@@ -248,6 +249,7 @@
                                     <tr>
                                         <td>Target</th>
                                         <td id="">
+                                            Avoidng Crabs
                                             <!--
                                                 <select style="background-color: transparent; color: white;"> 
                                                     <option value=""></option>
@@ -354,8 +356,38 @@
                 </div>
                 <div class="boxframe-ControlSortRig">
                     <p class="title" style="margin-top:0px">Control the Rig</p>
-                    <p>Up arrow: <i class="arrow up"></i></p>
-                    <p>Down arrow: <i class="arrow down"></i></p>
+                    <div class="row" >
+                        <div class="col-6">
+                            <center><p style="text-decoration: underline;">Left-Right</p></center>
+                            <div class="arrow-right">
+                                <div class="arrow-right-top"></div>
+                                <div class="arrow-right-bottom"></div>
+                            </div>
+                            <div class="arrow-left" style="transform: rotate(180deg)">
+                                <div class="arrow-left-top"></div>
+                                <div class="arrow-left-bottom"></div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <center><p style="text-decoration: underline;">Backward - Forward</p></center>
+                            <div class="arrow-up">
+                                <div class="arrow-up-top"></div>
+                                <div class="arrow-up-bottom"></div>
+                            </div>
+                            <div class="arrow-down">
+                                <div class="arrow-down-top"></div>
+                                <div class="arrow-down-bottom"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-Sort">
+                        <center><p style="text-decoration: underline;">Crapper</p>
+                        <button type="button" class="btn btn-outline-light">Drop</button>
+                        <button type="button" class="btn btn-outline-light">Lift</button>
+                        
+                        <button type="button" class="btn btn-outline-light">Pick</button>
+                        <button type="button" class="btn btn-outline-light">Release</button></center>
+                    </div>
                 </div>
                 <!-------Rubbish at Bins-------->
                 <div class="boxframe-bins">
@@ -364,26 +396,26 @@
                         <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
                             <thead>
                                 <tr>
-                                    <th style="width:33%; border-top: transparent; border-bottom-color: rgba(150, 255, 255, 0.5);"><b>Bin A - Plastic</b></th>
+                                    <th style="width:33%; border-top: transparent; border-bottom-color: rgba(150, 255, 255, 0.5);"><b>Bin A - General Waste</b></th>
                                     <th style="width:33%; border-top: transparent; border-bottom-color: rgba(150, 255, 255, 0.5);"><b>Bin B - Metal</b></th>
                                 </tr>
                             </thead>
                         </table>
                         <table class="table table-dark table responsive" style="background-color: transparent; text-align:left;margin-bottom:0px;">
                             <tr><th>Amount</th><td id="BinA">{{ BinA }}</td><th>Amount</th><td id="BinB">{{ BinB }}</td></tr>
-                            <tr><th style="border-bottom:3px solid #454d55;">Trasnfer</th><td id="BinAtfr">NaN</td><th style="border-bottom:3px solid #454d55;">Waitinig</th><td id="BinBtfr">NaN</td></tr>
+                            <tr><th style="border-bottom:3px solid #454d55;" >Identified</th><td id="BinAtfr">{{BinAtfr}}</td><th style="border-bottom:3px solid #454d55;">Waitinig</th><td id="BinBtfr">{{BinBtfr}}</td></tr>
                         </table>                       
                         <table class="table table-dark table responsive" style="background-color: transparent; text-align:center;margin-bottom:0px;">
                             <thead>
                                 <tr>
                                     <th style="width:33%; border-top: transparent; border-bottom-color: rgba(150, 255, 255, 0.5);"><b>Bin C - Paper</b></th>
-                                    <th style="width:33%; border-top: transparent; border-bottom-color: rgba(150, 255, 255, 0.5);"><b>Bin D - General Waste</b></th>
+                                    <th style="width:33%; border-top: transparent; border-bottom-color: rgba(150, 255, 255, 0.5);"><b>Bin D - Plastic</b></th>
                                 </tr>
                             </thead>
                         </table>
                         <table class="table table-dark table responsive" style="background-color: transparent; text-align:left;margin-bottom:0px;">
-                            <tr><th>Amount</th><td id="BinC">{{ BinA }}</td><th>Amount</th><td id="BinD">{{ BinB }}</td></tr>
-                            <tr><th>Trasnfer</th><td id="BinCtfr">NaN</td><th>Waitinig</th><td id="BinDtfr">NaN</td></tr>
+                            <tr><th>Amount</th><td id="BinC">{{ BinC }}</td><th>Amount</th><td id="BinD">{{ BinD }}</td></tr>
+                            <tr><th>Waiting</th><td id="BinCtfr">{{BinDtfr}}</td><th>Waitinig</th><td id="BinDtfr">{{BinDtfr}}</td></tr>
                         </table>
                     </div>
                 </div>

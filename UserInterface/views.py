@@ -150,6 +150,11 @@ def testUIauto(request):
             "BinA": Rubbish["BinA"],
             "BinB": Rubbish["BinB"],
             "BinC": Rubbish["BinC"],
+            "BinD": Rubbish["BinD"],
+            "BinAtfr": Rubbish["BinD"],
+            "BinBtfr": Rubbish["BinD"],
+            "BinCtfr": Rubbish["BinD"],
+            "BinDtfr": Rubbish["BinD"],
         }
     )
 
