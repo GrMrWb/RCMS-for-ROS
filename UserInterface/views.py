@@ -5,6 +5,7 @@ import json,os,random
 
 from .forms import AutoManual
 
+# Receiving data from the JSON File
 def getInfo(data):
     datarecv=datasharing()
 
@@ -29,6 +30,8 @@ def getInfo(data):
 
     return datasend
 
+
+# Testing the User Interface and the Main Index
 def testUI(request):
 
     # === Read Data from the JSON file
@@ -105,6 +108,7 @@ def testUI(request):
             }
         )
 
+# Webpage for User Interface Automatic Operation
 def testUIauto(request):
 
     with open("UserInterface/static/home/js/data.json", "r+") as f:
@@ -158,6 +162,7 @@ def testUIauto(request):
         }
     )
 
+# Webpage for User Interface Manual Operation
 def testUIman(request):
 
     with open("UserInterface/static/home/js/data.json", "r+") as f:
@@ -206,6 +211,7 @@ def testUIman(request):
         }
     )
 
+# Webpage for User Interface Main Operation
 def home(request):
     StatBoard=getInfo("Stat")
     PowerBoard=getInfo("Power")
@@ -241,6 +247,7 @@ def home(request):
         }
     )
 
+# Webpage for User Interface Manual to Automatic Operation
 def mantoauto(request):
 
     StatBoard=getInfo("Stat")
@@ -287,7 +294,7 @@ def mantoauto(request):
                 "seagull" :warning["seagull"]
         }
     )
-
+# Webpage for User Interface Aitomatic to manual Operation
 def autotoman(request):
         
     StatBoard=getInfo("Stat")
@@ -312,7 +319,8 @@ def autotoman(request):
         'home/home.html',
         {
             # ===TriTrack Mic
-                "PiStat": StatBoard["PiStat"],
+ 
+            "PiStat": StatBoard["PiStat"],
                 "Pi4procTri": StatBoard["Pi4procTr  i"],
                 "BrdStat": StatBoard["BrdStat"],
                 "BrdProc":StatBoard["BrdProc"],
@@ -335,6 +343,12 @@ def autotoman(request):
         }
     )
 
+# Passing Data thorugh the URL
+# These are the coordinates of Instructed and Current Coordinates
+# ixaxis = Instracted X - Axis
+# iyaxis = Current y - Axis
+# cxaxis = Instracted X - Axis
+# cyaxis = Current y - Axis
 def cordOnJSON(request,ixaxis,iyaxis,cxaxis,cyaxis):
     with open("UserInterface/static/home/js/manualoperation.json", "r") as f:
         try:
@@ -363,6 +377,8 @@ def cordOnJSON(request,ixaxis,iyaxis,cxaxis,cyaxis):
 
     return HttpResponse('<p>Thanks Earth-E</p>')
 
+# Passing Data thorugh the URL
+# These are the coordinates of the current position of earthe
 def infoOnJSON(request,processedData):
     data=processedData.split(":")
     with open("UserInterface/static/home/js/data.json", "r") as f:
@@ -391,7 +407,7 @@ def infoOnJSON(request,processedData):
         f.close
 
     return HttpResponse('<p>Thanks Earth-E</p>')
-
+# Webpage for User Interface Manual to Automatic Operation
 def warning(request,seagull,tide):
     with open("UserInterface/static/home/js/warning.json", "r") as f:
         datafile = json.load(f)
@@ -404,7 +420,7 @@ def warning(request,seagull,tide):
         f.close
 
     return HttpResponse('<p>Thanks Earth-E</p>')
-
+# Webpage for User Interface Manual to Automatic Operation
 def automation(request):
     with open("UserInterface/static/home/js/data.json", "r") as f:
         datafile = json.load(f)
@@ -416,6 +432,8 @@ def automation(request):
         textResponse="False"
     return HttpResponse(textResponse)
 
+# Passing Data thorugh the URL
+# These are the coordinates of the current position of earthe
 def cordsFromRos(request,currentPosition):
     newStr=currentPosition.split(":")
     
