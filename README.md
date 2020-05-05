@@ -33,12 +33,17 @@ In order to run the User Interface on a specific IP and Port and connect to it r
 
 Noteed that there are some difference between edge and chrome and edge which have not been corrected
 
-## Data on UI
+## Data on UI# === EarthE Stats
+
 - TriTrack Mic
   - "PiStat": StatBoard["PiStat"],
   - "Pi4procTri": StatBoard["Pi4procTi"],
   - "BrdStat": StatBoard["BrdStat"],
   - "BrdProc":StatBoard["BrdProc"],
+  - "RosStat": StatBoard["RosStat"],
+  - "ROSproc":StatBoard["ROSproc"],
+  - "aXaxis":autocords["xPos"],
+  - "aYaxis":autocords["yPos"],
   > StatBoard is a dictionary which is called by <code>datasharing.mic()</code> which is located at <code>functions/data.py</code>
   
 - TriTrack PowerBoard
@@ -46,6 +51,15 @@ Noteed that there are some difference between edge and chrome and edge which hav
   - "CapA": PowerBoard["CapA"], 
   - "CapB": PowerBoard["CapB"],
   > PowerBoard is a dictionary which is called by <code>datasharing.prb()</code> which is located at <code>functions/data.py</code>
+  
+- Sorting Data
+  - "PiStatSort": SortStat["PiStat"],
+  - "Pi4procTriSor": SortStat["Pi4procTri"],
+  - "ArdStat": SortStat["ArdStat"],
+  - "ArdProc":SortStat["ArdProc"],
+  - "PrbStat": SortStat["PrbStat"],
+  - "PrbProc":SortStat["PrbProc"],
+  > Sorting Data is a dictionary which is called by <code>datasharing.prb()</code> which is located at <code>functions/data.py</code>
   
 - Rubbish Estimation
   - "totRub": Rubbish["totRub"],
