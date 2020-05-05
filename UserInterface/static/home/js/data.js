@@ -14,8 +14,10 @@ function updateData(){
             if (data["Operation"]["Auto"]=="1"){
                 $.getJSON("/static/home/js/warning.json",function(data){
                     //Environmental Data
+                    //Seagull Warning
                     document.getElementById("warnenv").innerText= data["Warning"]["seagull"]== "True" ? "SeaGulls in Vicinity" : "No Env Warning";
                     document.getElementById("warnToggle").style.animation = data["Warning"]["seagull"]== "True" ? "blinker 3s infinite 0s" : "none";
+                    //Tide Warning
                     document.getElementById("tideenv").innerText= data["Warning"]["tide"]== "True" ? "Tide Less than 1 metre" : "Tide More than 1 metre";
                     document.getElementById("tideToggle").style.animation = data["Warning"]["tide"]== "True" ? "blinker 3s infinite 0s" : "none";           
                     delete data;
@@ -87,6 +89,7 @@ function throttleAuto(){
 
 //setInterval(throttleAuto,500);
 
+// Graphics
 function trashAuto(){
     randItem=Math.random()*5
 
