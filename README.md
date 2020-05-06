@@ -25,15 +25,17 @@
 
 ## To view the User Interface
 
-In order to run the User Interface on a specific IP and Port and connect to it remotely from another pc on the network you can run the following   
-
 - Chrome: https://127.0.0.1:8000/
 - Edge: https://localhost:8000/
 - Firefox & Opera: https://127.0.0.1:8000/
 
+In order to run the User Interface on a specific _IP_ and _Port_ and connect to it remotely from another pc on the network you can run the following:
+
+<code>python manage.py runserver _IP_:_PORT_</code>
+
 Noteed that there are some difference between edge and chrome and edge which have not been corrected
 
-## Data on UI# === EarthE Stats
+## Data on UI
 
 - TriTrack Mic
   - "PiStat": StatBoard["PiStat"],
@@ -77,9 +79,6 @@ Noteed that there are some difference between edge and chrome and edge which hav
 - Warnings
   - "seagull" : warning["seagull"]
   - "tide" : warning["tide"]
-  
-## Things to be followed
-- Sorting Rig interface
 
 ## Requirements.txt
 - Python    3.8.1 (32-bit)
@@ -91,7 +90,6 @@ Noteed that there are some difference between edge and chrome and edge which hav
 - chardet   3.0.4
 - colorama  0.4.3
 - idna      2.8
-- pymongo   3.10.1
 - pytz      2019.3
 - requests  2.22.0
 - sqlparse  0.3.0
